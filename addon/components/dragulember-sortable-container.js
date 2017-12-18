@@ -6,7 +6,7 @@ export default Component.extend({
   items: null,
   dragService: Ember.inject.service('drag-service'),
 
-  didRender: function() {
+  didInsertElement: function() {
     this._super(...arguments);
 
     const dragService = this.get('dragService');

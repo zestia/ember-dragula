@@ -8,7 +8,7 @@ export default Component.extend({
   dragService: Ember.inject.service('drag-service'),
 
 
-  didReceiveAttrs() {
+  init() {
     this._super(...arguments);
     this.setupHandlers();
   },
