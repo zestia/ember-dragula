@@ -28,5 +28,10 @@ export default Component.extend({
 
   domIndexOf(child, parent) {
     return Array.prototype.indexOf.call(parent.children, child);
+  },
+
+  willDestroyElement() {
+    const drake = this.get('drake');
+    drake.destroy();
   }
 });
