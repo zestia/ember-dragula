@@ -1,0 +1,13 @@
+{{#dragulember-sortable}}
+  {{#dragulember-sortable-container key='key' items=list }}
+    {{#each list as |item|}}
+        <div id={{item.name}}>{{item.name}}</div>
+    {{/each}}
+  {{/dragulember-sortable-container}}
+
+  {{#dragulember-sortable-container key='key' items=listTwo }}
+    {{#each listTwo as |item|}}
+        <div id={{item.name}}>{{item.name}}</div>
+    {{/each}}
+  {{/dragulember-sortable-container}}
+{{/dragulember-sortable}}
