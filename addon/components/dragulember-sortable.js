@@ -7,13 +7,14 @@ export default Component.extend({
 
   init() {
     this._super(...arguments);
+    this.set('drake', window.dragula());
     this.setupHandlers();
   },
 
 
   setupHandlers() {
     const dragService = this.get('dragService');
-    const drake = dragService.getDrakeInstance();
+    const drake = this.get('drake');
     let draggingObjectIndex = null;
 
     drake.on('drag', (el, source) => {
@@ -21,14 +22,12 @@ export default Component.extend({
     });
 
     drake.on('drop', (dropElm, target, source) => {
-      const draggableItems = dragService.getDraggableItems();
       const fromIndex = this.get('draggingObjectIndex');
-
       const dropIndex = this.domIndexOf(dropElm, target);
-      const sourceModel = draggableItems[drake.containers.indexOf(source)];
-      const targetModel = draggableItems[drake.containers.indexOf(target)];
+      const sourceListIndex = drake.containers.indexOf(source);
 
-      this.sendAction('drop', fromIndex, dropIndex, sourceModel, targetModel);
+
+      this.sendAction('drop', fromIndex, dropIndex, sourceListIndex);
       this.draggingObjectIndex = null;
     });
   },
