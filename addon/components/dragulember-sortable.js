@@ -17,9 +17,10 @@ export default Component.extend({
   setupHandlers() {
     const dragService = this.get('dragService');
     const drake = dragService.getDrakeInstance();
+    let draggingObjectIndex = null;
 
     drake.on('drag', (el, source) => {
-      this.set('draggingObjectIndex', this.domIndexOf(el, source));
+      this.draggingObjectIndex = this.domIndexOf(el, source);
     });
 
     drake.on('drop', (dropElm, target, source) => {
@@ -30,10 +31,8 @@ export default Component.extend({
       const sourceModel = draggableItems[drake.containers.indexOf(source)];
       const targetModel = draggableItems[drake.containers.indexOf(target)];
 
-      //find from source model the item or index.
-
       this.sendAction('drop', fromIndex, dropIndex, sourceModel, targetModel);
-      this.set('draggingObjectIndex', null);
+      this.draggingObjectIndex = null;
     });
   },
 
