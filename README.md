@@ -2,6 +2,10 @@
 
 This README outlines the details of collaborating on this Ember addon.
 
+This Ember addon provides support for drag and drop supportable lists using [dragula](https://bevacqua.github.io/dragula/)
+
+Inspired by: [NG2 Dragula](https://github.com/valor-software/ng2-dragula)
+
 ## Installation
 
 * `git clone <repository-url>` this repository
