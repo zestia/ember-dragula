@@ -1,6 +1,4 @@
-
 import Component from '@ember/component';
-
 import { A as emberA} from '@ember/array';
 
 export default Component.extend({
@@ -19,8 +17,8 @@ export default Component.extend({
 
   actions: {
 
-    onDrop(args) {
-      console.log(args);
+    onDrop(fromIndex, toIndex, sourceListIndex, targetListIndex) {
+      console.log('fromIndex', fromIndex, 'toIndex', toIndex, 'sourceListIndex', sourceListIndex, 'targetListIndex', targetListIndex);
     }
   }
 });

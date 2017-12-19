@@ -6,6 +6,25 @@ This Ember addon provides support for drag and drop sortable lists using [dragul
 
 Inspired by: [NG2 Dragula](https://github.com/valor-software/ng2-dragula)
 
+## Usage
+
+```handlebars
+{{#dragulember-sortable}}
+  {{#dragulember-sortable-container }}
+    {{#each list as |item|}}
+        <div>{{item.name}}</div>
+    {{/each}}
+  {{/dragulember-sortable-container}}
+
+  {{#dragulember-sortable-container}}
+    {{#each listTwo as |item|}}
+        <div>{{item.name}}</div>
+    {{/each}}
+  {{/dragulember-sortable-container}}
+{{/dragulember-sortable}}
+
+```
+
 ## Installation
 
 * `git clone <repository-url>` this repository

@@ -21,7 +21,7 @@ export default Component.extend({
       const sourceListIndex = drake.containers.indexOf(source);
       const targetListIndex = drake.containers.indexOf(target);
 
-      this.sendAction('drop', this.draggingObjectIndex, dropIndex, sourceListIndex, targetListIndex);
+      this.sendAction('dropEndAction', this.draggingObjectIndex, dropIndex, sourceListIndex, targetListIndex);
       this.draggingObjectIndex = null;
     });
   },
