@@ -1,22 +1,18 @@
 # dragulember-sortable
 
-This README outlines the details of collaborating on this Ember addon.
-
 This Ember addon provides support for drag and drop sortable lists using [dragula](https://bevacqua.github.io/dragula/)
-
-Inspired by: [NG2 Dragula](https://github.com/valor-software/ng2-dragula)
 
 ## Usage
 
 ```handlebars
-{{#dragulember-sortable}}
-  {{#dragulember-sortable-container }}
+{{#dragulember-sortable dragStartAction='onDragStart' dropEndAction='onDrop' as |drake|}}
+  {{#dragulember-sortable-container drake=drake }}
     {{#each list as |item|}}
         <div>{{item.name}}</div>
     {{/each}}
   {{/dragulember-sortable-container}}
 
-  {{#dragulember-sortable-container}}
+  {{#dragulember-sortable-container drake=drake}}
     {{#each listTwo as |item|}}
         <div>{{item.name}}</div>
     {{/each}}
@@ -25,9 +21,17 @@ Inspired by: [NG2 Dragula](https://github.com/valor-software/ng2-dragula)
 
 ```
 
+## Events
+
+Event Name            | Dragula Equivalent  | Arguments                  | Event Description
+----------------------|---------------------|----------------------------|----------------------------------------------------------------------
+`dragStartAction`     | `drag`              | `el`, `source`             | The element `el` was lifted from `source`
+`dropEndAction`       | `drop`              | `el`, `source`, `target`   | The element `el` was lifted from `source` and dropped onto `target`
+
+
 ## Installation
 
-* `git clone <repository-url>` this repository
+* `git clone https://github.com/zestia/ember-dragula.git`
 * `cd dragulember-sortable`
 * `npm install`
 
