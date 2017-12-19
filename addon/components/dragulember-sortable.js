@@ -13,21 +13,12 @@ export default Component.extend({
     const drake = this.get('drake');
 
     drake.on('drag', (el, source) => {
-      this.draggingObjectIndex = this.domIndexOf(el, source);
+      this.sendAction('dragAction', el, source);
     });
 
-    drake.on('drop', (dropElm, target, source) => {
-      const dropIndex = this.domIndexOf(dropElm, target);
-      const sourceListIndex = drake.containers.indexOf(source);
-      const targetListIndex = drake.containers.indexOf(target);
-
-      this.sendAction('dropEndAction', this.draggingObjectIndex, dropIndex, sourceListIndex, targetListIndex);
-      this.draggingObjectIndex = null;
+    drake.on('drop', (dropElm, target, source) =>{
+      this.sendAction('dropEndAction', dropElm, source, target);
     });
-  },
-
-  domIndexOf(child, parent) {
-    return Array.prototype.indexOf.call(parent.children, child);
   },
 
   willDestroyElement() {

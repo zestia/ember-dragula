@@ -17,8 +17,12 @@ export default Component.extend({
 
   actions: {
 
-    onDrop(fromIndex, toIndex, sourceListIndex, targetListIndex) {
-      console.log('fromIndex', fromIndex, 'toIndex', toIndex, 'sourceListIndex', sourceListIndex, 'targetListIndex', targetListIndex);
+    onDrop(droppedElement, source, target) {
+      console.log('Item Dropped');
+    },
+
+    onDrag(element, source) {
+      console.log('Item Dragged');
     }
   }
 });
