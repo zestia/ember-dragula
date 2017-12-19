@@ -16,7 +16,7 @@ export default Component.extend({
     const drake = this.get('drake');
 
     drake.on('drag', (el, source) => {
-      this.sendAction('dragAction', el, source);
+      this.sendAction('dragStartAction', el, source);
     });
 
     drake.on('drop', (dropElm, target, source) =>{

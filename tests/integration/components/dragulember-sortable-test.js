@@ -54,7 +54,7 @@ test('it emits event on drag', async function(assert) {
   });
 
   await this.render(hbs`
-    {{#dragulember-sortable dragAction=(action onDragAction)}}
+    {{#dragulember-sortable dragStartAction=(action onDragAction)}}
       template block text
     {{/dragulember-sortable}}
   `);
