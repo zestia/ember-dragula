@@ -47,3 +47,28 @@ test('it adds each container to drake, when multiple containers', async function
 
   assert.equal(fakeDrake.containers.length, 2);
 });
+
+test('it removes a container when component is destroyed', async function(assert) {
+  assert.expect(2);
+
+  const fakeDrake = {
+    containers: []
+  }
+  this.set('fakeDrake', fakeDrake);
+  this.set('renderComponent', true);
+
+  await this.render(hbs`
+    {{#if renderComponent}}
+      {{#dragulember-sortable-container drake=fakeDrake}}
+        <div> item 1 </div>
+        <div> item 2 </div>
+      {{/dragulember-sortable-container}}
+    {{/if}}
+  `);
+
+  assert.equal(fakeDrake.containers.length, 1);
+
+  this.set('renderComponent', false);
+
+  assert.equal(fakeDrake.containers.length, 0);
+});
