@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import Component from '@ember/component';
 import { A as emberA} from '@ember/array';
 
@@ -17,11 +19,11 @@ export default Component.extend({
 
   actions: {
 
-    onDrop(droppedElement, source, target) {
+    onDrop() {
       console.log('Item Dropped');
     },
 
-    onDrag(element, source) {
+    onDrag() {
       console.log('Item Dragged');
     }
   }

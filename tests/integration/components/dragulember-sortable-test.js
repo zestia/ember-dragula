@@ -1,4 +1,5 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { moduleForComponent } from 'ember-qunit';
+import test from 'ember-sinon-qunit/test-support/test';
 import hbs from 'htmlbars-inline-precompile';
 
 moduleForComponent('dragulember-sortable', 'Integration | Component | dragulember sortable', {
@@ -6,8 +7,7 @@ moduleForComponent('dragulember-sortable', 'Integration | Component | dragulembe
 });
 
 test('it renders', function(assert) {
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+  const dragulaSpy = this.spy(window, 'dragula');
 
   this.render(hbs`{{dragulember-sortable}}`);
 

@@ -1,24 +1,49 @@
-import { moduleForComponent, test } from 'ember-qunit';
+/* eslint-disable */
+import { moduleForComponent } from 'ember-qunit';
+import test from 'ember-sinon-qunit/test-support/test';
 import hbs from 'htmlbars-inline-precompile';
 
 moduleForComponent('dragulember-sortable-container', 'Integration | Component | dragulember sortable container', {
   integration: true
 });
 
-test('it renders', function(assert) {
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+test('it adds a container to drake', async function(assert) {
+  assert.expect(1);
 
-  this.render(hbs`{{dragulember-sortable-container}}`);
+  const fakeDrake = {
+    containers: []
+  }
+  this.set('fakeDrake', fakeDrake);
 
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
-  this.render(hbs`
-    {{#dragulember-sortable-container}}
-      template block text
+  await this.render(hbs`
+    {{#dragulember-sortable-container drake=fakeDrake}}
+      <div> item 1 </div>
+      <div> item 2 </div>
     {{/dragulember-sortable-container}}
   `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(fakeDrake.containers.length, 1);
+});
+
+test('it adds each container to drake, when multiple containers', async function(assert) {
+  assert.expect(1);
+
+  const fakeDrake = {
+    containers: []
+  }
+  this.set('fakeDrake', fakeDrake);
+
+  await this.render(hbs`
+    {{#dragulember-sortable-container drake=fakeDrake}}
+      <div> item 1 </div>
+      <div> item 2 </div>
+    {{/dragulember-sortable-container}}
+
+    {{#dragulember-sortable-container drake=fakeDrake}}
+      <div> item 3 </div>
+      <div> item 4 </div>
+    {{/dragulember-sortable-container}}
+  `);
+
+  assert.equal(fakeDrake.containers.length, 2);
 });

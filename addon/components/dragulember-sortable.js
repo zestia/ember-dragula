@@ -1,6 +1,9 @@
 import Component from '@ember/component';
+import layout from 'dragulember-sortable/templates/components/dragulember-sortable';
+
 
 export default Component.extend({
+  layout,
 
   init() {
     this._super(...arguments);
