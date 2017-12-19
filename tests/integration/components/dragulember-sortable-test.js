@@ -1,24 +1,61 @@
-import { moduleForComponent } from 'ember-qunit';
-import test from 'ember-sinon-qunit/test-support/test';
+import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
 moduleForComponent('dragulember-sortable', 'Integration | Component | dragulember sortable', {
   integration: true
 });
 
-test('it renders', function(assert) {
-  const dragulaSpy = this.spy(window, 'dragula');
+test('it emits event on drop', async function(assert) {
+  assert.expect(3);
 
-  this.render(hbs`{{dragulember-sortable}}`);
+  const fakeDrake = {
+    on: (eventName, cb) => {
+      if(eventName === 'drop') {
+        cb('dropElm', 'target', 'source')
+      }
+    },
+    destroy: () => {}
+  };
+  window.dragula = () => {
+    return fakeDrake;
+  };
 
-  assert.equal(this.$().text().trim(), '');
+  this.set('onDropAction', function(dropElm, source, target) {
+    assert.equal(dropElm, 'dropElm');
+    assert.equal(target, 'target');
+    assert.equal(source, 'source');
+  });
 
-  // Template block usage:
-  this.render(hbs`
-    {{#dragulember-sortable}}
+  await this.render(hbs`
+    {{#dragulember-sortable dropEndAction=(action onDropAction)}}
       template block text
     {{/dragulember-sortable}}
   `);
+});
 
-  assert.equal(this.$().text().trim(), 'template block text');
+test('it emits event on drag', async function(assert) {
+  assert.expect(2);
+
+  const fakeDrake = {
+    on: (eventName, cb) => {
+      if(eventName === 'drag') {
+        cb('el', 'source');
+      }
+    },
+    destroy: () => {}
+  };
+  window.dragula = () => {
+    return fakeDrake;
+  };
+
+  this.set('onDragAction', function(el, source) {
+    assert.equal(el, 'el');
+    assert.equal(source, 'source');
+  });
+
+  await this.render(hbs`
+    {{#dragulember-sortable dragAction=(action onDragAction)}}
+      template block text
+    {{/dragulember-sortable}}
+  `);
 });
