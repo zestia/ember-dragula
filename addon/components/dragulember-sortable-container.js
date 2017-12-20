@@ -1,19 +1,18 @@
 import Component from '@ember/component';
+import layout from 'dragulember-sortable/templates/components/dragulember-sortable-container';
+
 
 export default Component.extend({
+  layout,
+  classNames: ['dragulember-sortable-container'],
 
-  didInsertElement: function() {
+  didInsertElement() {
     this._super(...arguments);
-
-    const drake = this.get('drake');
-
-    drake.containers.push(this.element);
+    this.get('on-insert')(this);
   },
 
   willDestroyElement() {
-    const drake = this.get('drake');
-
-    const index = drake.containers.indexOf(this.element);
-    drake.containers.splice(index, 1);
+    this._super(...arguments);
+    this.get('on-destroy')(this);
   }
 });

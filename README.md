@@ -5,18 +5,18 @@ This Ember addon provides support for drag and drop sortable lists using [dragul
 ## Usage
 
 ```handlebars
-{{#dragulember-sortable dragStartAction='onDragStart' dropEndAction='onDrop' as |drake|}}
-  {{#dragulember-sortable-container drake=drake }}
+{{#dragulember-sortable dragStartAction='onDragStart' dropEndAction='onDrop' as |dragula|}}
+  {{#dragula.container}}
     {{#each list as |item|}}
         <div>{{item.name}}</div>
     {{/each}}
-  {{/dragulember-sortable-container}}
+  {{/dragula.container}}
 
-  {{#dragulember-sortable-container drake=drake}}
+  {{#dragula.container}}
     {{#each listTwo as |item|}}
         <div>{{item.name}}</div>
     {{/each}}
-  {{/dragulember-sortable-container}}
+  {{/dragula.container}}
 {{/dragulember-sortable}}
 
 ```
@@ -28,7 +28,7 @@ dragulember-sortable supports the full range of options that dragula accepts, se
 To supply options:
 
 ``` handlebars
-{{#dragulember-sortable options = (hash option=value) as |drake|}}
+{{#dragulember-sortable options = (hash option=value) as |d|}}
 
 
 {{/dragulember-sortable}}

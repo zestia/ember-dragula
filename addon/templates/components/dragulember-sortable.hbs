@@ -1,1 +1,7 @@
-{{yield drake}}
+{{yield
+  (hash
+    container=(component "dragulember-sortable-container"
+    on-insert=(action "addContainer")
+    on-destroy=(action "removeContainer")
+  )
+)}}

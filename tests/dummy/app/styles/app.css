@@ -1,5 +1,6 @@
 .column {
   display: inline-block;
+  vertical-align: top;
   margin: 20px;
 }
 

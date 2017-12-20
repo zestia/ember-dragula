@@ -1,13 +1,13 @@
-{{#dragulember-sortable dropEndAction='onDrop' dragAction='onDrag' as |drake|}}
-  {{#dragulember-sortable-container class="list" id="list-1" drake=drake }}
+{{#dragulember-sortable dropEndAction='onDrop' dragAction='onDrag' as |d|}}
+  {{#d.container class="list" id="list-1" }}
     {{#each list as |item index|}}
         <div id="list-1-item-{{index}}">{{item.name}}</div>
     {{/each}}
-  {{/dragulember-sortable-container}}
+  {{/d.container}}
 
-  {{#dragulember-sortable-container class="list" id="list-2" drake=drake}}
+  {{#d.container class="list" id="list-2"}}
     {{#each listTwo as |item  index|}}
         <div id="list-2-item-{{index}}">{{item.name}}</div>
     {{/each}}
-  {{/dragulember-sortable-container}}
+  {{/d.container}}
 {{/dragulember-sortable}}

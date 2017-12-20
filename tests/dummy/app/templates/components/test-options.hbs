@@ -1,28 +1,27 @@
-{{#dragulember-sortable  options=(hash copy=true) dropEndAction='onDrop' dragAction='onDrag' as |drake|}}
-  {{#dragulember-sortable-container class="list" id="list-copy-1" drake=drake }}
+{{#dragulember-sortable  options=(hash copy=true) dropEndAction='onDrop' dragAction='onDrag' as |d|}}
+  {{#d.container class="list" id="list-copy-1" }}
     {{#each list as |item index|}}
         <div id="list-copy-1-item-{{index}}">{{item.name}}</div>
     {{/each}}
-  {{/dragulember-sortable-container}}
+  {{/d.container}}
 
-  {{#dragulember-sortable-container class="list" id="list-copy-2" drake=drake}}
+  {{#d.container class="list" id="list-copy-2" }}
     {{#each listTwo as |item  index|}}
         <div id="list-copy-2-item-{{index}}">{{item.name}}</div>
     {{/each}}
-  {{/dragulember-sortable-container}}
+  {{/d.container}}
 {{/dragulember-sortable}}
 
-{{#dragulember-sortable  options=(hash moves=moves) dropEndAction='onDrop' dragAction='onDrag' as |drake|}}
-  {{#dragulember-sortable-container class="list" id="list-moves-1" drake=drake }}
+{{#dragulember-sortable  options=(hash moves=moves) dropEndAction='onDrop' dragAction='onDrag' as |d|}}
+  {{#d.container class="list" id="list-moves-1" }}
     {{#each list as |item index|}}
         <div id="list-moves-1-item-{{index}}">{{item.name}}</div>
     {{/each}}
-  {{/dragulember-sortable-container}}
+  {{/d.container}}
 
-  {{#dragulember-sortable-container class="list" id="list-moves-2" drake=drake}}
+  {{#d.container class="list" id="list-moves-2"}}
     {{#each listTwo as |item  index|}}
         <div id="list-moves-2-item-{{index}}">{{item.name}}</div>
     {{/each}}
-  {{/dragulember-sortable-container}}
+  {{/d.container}}
 {{/dragulember-sortable}}
-

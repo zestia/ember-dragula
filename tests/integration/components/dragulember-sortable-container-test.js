@@ -7,68 +7,41 @@ moduleForComponent('dragulember-sortable-container', 'Integration | Component | 
   integration: true
 });
 
-test('it adds a container to drake', async function(assert) {
+test('it adds emits an on insert action when element is inserted', async function(assert) {
   assert.expect(1);
 
-  const fakeDrake = {
-    containers: []
-  }
-  this.set('fakeDrake', fakeDrake);
+  this.set('onInsert', (element) => {
+    assert.ok(element);
+  });
+
+  this.set('onDestroy', () => {});
 
   await this.render(hbs`
-    {{#dragulember-sortable-container drake=fakeDrake}}
+    {{#dragulember-sortable-container on-insert=onInsert on-destroy=onDestroy}}
       <div> item 1 </div>
       <div> item 2 </div>
     {{/dragulember-sortable-container}}
   `);
 
-  assert.equal(fakeDrake.containers.length, 1);
-});
-
-test('it adds each container to drake, when multiple containers', async function(assert) {
-  assert.expect(1);
-
-  const fakeDrake = {
-    containers: []
-  }
-  this.set('fakeDrake', fakeDrake);
-
-  await this.render(hbs`
-    {{#dragulember-sortable-container drake=fakeDrake}}
-      <div> item 1 </div>
-      <div> item 2 </div>
-    {{/dragulember-sortable-container}}
-
-    {{#dragulember-sortable-container drake=fakeDrake}}
-      <div> item 3 </div>
-      <div> item 4 </div>
-    {{/dragulember-sortable-container}}
-  `);
-
-  assert.equal(fakeDrake.containers.length, 2);
 });
 
 test('it removes a container when component is destroyed', async function(assert) {
-  assert.expect(2);
+  assert.expect(1);
 
-  const fakeDrake = {
-    containers: []
-  }
-  this.set('fakeDrake', fakeDrake);
   this.set('renderComponent', true);
+  this.set('onInsert', function() {});
+  this.set('onDestroy', (element) => {
+    assert.ok(element)
+  });
 
   await this.render(hbs`
     {{#if renderComponent}}
-      {{#dragulember-sortable-container drake=fakeDrake}}
+      {{#dragulember-sortable-container on-destroy=onDestroy on-insert=onInsert}}
         <div> item 1 </div>
         <div> item 2 </div>
       {{/dragulember-sortable-container}}
     {{/if}}
   `);
 
-  assert.equal(fakeDrake.containers.length, 1);
-
   this.set('renderComponent', false);
-
-  assert.equal(fakeDrake.containers.length, 0);
 });
