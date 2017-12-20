@@ -1,13 +1,13 @@
 import Component from '@ember/component';
 import layout from 'dragulember-sortable/templates/components/dragulember-sortable';
-
+import { assign } from '@ember/polyfills';
 
 export default Component.extend({
   layout,
 
   init() {
     this._super(...arguments);
-    this.set('drake', window.dragula());
+    this.set('drake', window.dragula(assign({}, this.get('options'))));
     this.setupHandlers();
   },
 

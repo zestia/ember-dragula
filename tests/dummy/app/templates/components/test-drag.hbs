@@ -1,4 +1,4 @@
-{{#dragulember-sortable dropEndAction='onDrop' dragAction='onDrag' as |drake|}}
+{{#dragulember-sortable options=(hash copy=true) dropEndAction='onDrop' dragAction='onDrag' as |drake|}}
   {{#dragulember-sortable-container drake=drake }}
     {{#each list as |item|}}
         <div>{{item.name}}</div>
