@@ -1,0 +1,13 @@
+.column {
+  display: inline-block;
+  margin: 20px;
+}
+
+.container {
+  margin: auto;
+  width: 50%;
+}
+
+.list {
+  margin: 10px;
+}

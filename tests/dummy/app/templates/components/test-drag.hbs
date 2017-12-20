@@ -1,13 +1,13 @@
-{{#dragulember-sortable options=(hash copy=true) dropEndAction='onDrop' dragAction='onDrag' as |drake|}}
-  {{#dragulember-sortable-container drake=drake }}
-    {{#each list as |item|}}
-        <div>{{item.name}}</div>
+{{#dragulember-sortable dropEndAction='onDrop' dragAction='onDrag' as |drake|}}
+  {{#dragulember-sortable-container class="list" id="list-1" drake=drake }}
+    {{#each list as |item index|}}
+        <div id="list-1-item-{{index}}">{{item.name}}</div>
     {{/each}}
   {{/dragulember-sortable-container}}
 
-  {{#dragulember-sortable-container drake=drake}}
-    {{#each listTwo as |item|}}
-        <div>{{item.name}}</div>
+  {{#dragulember-sortable-container class="list" id="list-2" drake=drake}}
+    {{#each listTwo as |item  index|}}
+        <div id="list-2-item-{{index}}">{{item.name}}</div>
     {{/each}}
   {{/dragulember-sortable-container}}
 {{/dragulember-sortable}}
