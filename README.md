@@ -1,4 +1,4 @@
-# @zetia/ember-dragula
+# @zestia/ember-dragula
 
 This Ember addon provides support for drag and drop sortable lists using [dragula](https://bevacqua.github.io/dragula/)
 
