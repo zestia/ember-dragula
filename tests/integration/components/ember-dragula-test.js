@@ -254,3 +254,57 @@ test('it listens for event on cloned', async function(assert) {
     {{/ember-dragula}}
   `);
 });
+
+test('it adds container to drake when container is added', async function(assert) {
+  assert.expect(1);
+
+  const fakeDrake = {
+    on: () => {},
+    destroy: () => {},
+    containers: []
+  };
+  window.dragula = () => {
+    return fakeDrake;
+  };
+
+  await this.render(hbs`
+    {{#ember-dragula as |d|}}
+      {{#d.container}}
+        Test container
+      {{/d.container}}
+    {{/ember-dragula}}
+  `);
+
+  assert.equal(fakeDrake.containers.length, 1);
+});
+
+test('it removes container from drake when container is removed', async function(assert) {
+  assert.expect(2);
+
+  const fakeDrake = {
+    on: () => {},
+    destroy: () => {},
+    containers: []
+  };
+  window.dragula = () => {
+    return fakeDrake;
+  };
+  this.set('renderContainer', true);
+
+  await this.render(hbs`
+    {{#ember-dragula as |d|}}
+      {{#if renderContainer}}
+        {{#d.container}}
+          Test container
+        {{/d.container}}
+      {{/if}}
+    {{/ember-dragula}}
+  `);
+
+  assert.equal(fakeDrake.containers.length, 1);
+
+  this.set('renderContainer', false);
+
+  assert.equal(fakeDrake.containers.length, 0);
+
+});
