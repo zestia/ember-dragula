@@ -1,0 +1,15 @@
+<div class="dragula-restyled">
+  {{#ember-dragula options=(hash mirrorContainer=mirrorContainer)  drop='onDrop' drag='onDrag' as |d|}}
+    {{#d.container class="list"}}
+      {{#each list as |item|}}
+        <div class="item restyle">{{item.name}}</div>
+      {{/each}}
+    {{/d.container}}
+
+    {{#d.container class="list" }}
+      {{#each listTwo as |item|}}
+        <div class="item restyle">{{item.name}}</div>
+      {{/each}}
+    {{/d.container}}
+  {{/ember-dragula}}
+</div>
