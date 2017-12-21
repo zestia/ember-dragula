@@ -6,6 +6,18 @@ import { run } from '@ember/runloop';
 export default Component.extend({
   layout,
 
+  events: [
+    'drag',
+    'dragend',
+    'drop',
+    'cancel',
+    'remove',
+    'shadow',
+    'over',
+    'out',
+    'cloned'
+  ],
+
   init() {
     this._super(...arguments);
     this.set('drake', window.dragula(assign({}, this.get('options'))));
@@ -16,13 +28,12 @@ export default Component.extend({
   setupHandlers() {
     const drake = this.get('drake');
 
-    drake.on('drag', (el, source) => {
-      this.sendAction('dragStartAction', el, source);
+    this.events.forEach((event) => {
+      drake.on(event, (...args) => {
+        this.sendAction(event, ...args)
+      })
     });
 
-    drake.on('drop', (dropElm, target, source) =>{
-      this.sendAction('dropEndAction', dropElm, source, target);
-    });
   },
 
   willDestroyElement() {

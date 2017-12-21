@@ -1,6 +1,5 @@
 /* eslint-disable */
-import { moduleForComponent } from 'ember-qunit';
-import test from 'ember-sinon-qunit/test-support/test';
+import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
 moduleForComponent('ember-dragula-container-container', 'Integration | Component | dragulember sortable container', {
