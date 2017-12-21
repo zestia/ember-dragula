@@ -1,1 +1,0 @@
-export { default } from 'dragulember-sortable/components/dragulember-sortable';

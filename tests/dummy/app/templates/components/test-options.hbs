@@ -1,4 +1,4 @@
-{{#dragulember-sortable  options=(hash copy=true) dropEndAction='onDrop' dragAction='onDrag' as |d|}}
+{{#ember-dragula options=(hash copy=true) dropEndAction='onDrop' dragAction='onDrag' as |d|}}
   {{#d.container class="list" id="list-copy-1" }}
     {{#each list as |item index|}}
         <div id="list-copy-1-item-{{index}}">{{item.name}}</div>
@@ -10,9 +10,9 @@
         <div id="list-copy-2-item-{{index}}">{{item.name}}</div>
     {{/each}}
   {{/d.container}}
-{{/dragulember-sortable}}
+{{/ember-dragula}}
 
-{{#dragulember-sortable  options=(hash moves=moves) dropEndAction='onDrop' dragAction='onDrag' as |d|}}
+{{#ember-dragula options=(hash moves=moves) dropEndAction='onDrop' dragAction='onDrag' as |d|}}
   {{#d.container class="list" id="list-moves-1" }}
     {{#each list as |item index|}}
         <div id="list-moves-1-item-{{index}}">{{item.name}}</div>
@@ -24,4 +24,4 @@
         <div id="list-moves-2-item-{{index}}">{{item.name}}</div>
     {{/each}}
   {{/d.container}}
-{{/dragulember-sortable}}
+{{/ember-dragula}}

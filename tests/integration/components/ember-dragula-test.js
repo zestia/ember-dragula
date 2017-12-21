@@ -1,7 +1,7 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('dragulember-sortable', 'Integration | Component | dragulember sortable', {
+moduleForComponent('ember-dragula', 'Integration | Component | dragulember sortable', {
   integration: true
 });
 
@@ -27,9 +27,9 @@ test('it emits event on drop', async function(assert) {
   });
 
   await this.render(hbs`
-    {{#dragulember-sortable dropEndAction=(action onDropAction)}}
+    {{#ember-dragula dropEndAction=(action onDropAction)}}
       template block text
-    {{/dragulember-sortable}}
+    {{/ember-dragula}}
   `);
 });
 
@@ -54,8 +54,8 @@ test('it emits event on drag', async function(assert) {
   });
 
   await this.render(hbs`
-    {{#dragulember-sortable dragStartAction=(action onDragAction)}}
+    {{#ember-dragula dragStartAction=(action onDragAction)}}
       template block text
-    {{/dragulember-sortable}}
+    {{/ember-dragula}}
   `);
 });

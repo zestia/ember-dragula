@@ -1,10 +1,10 @@
 import Component from '@ember/component';
-import layout from 'dragulember-sortable/templates/components/dragulember-sortable-container';
+import layout from 'ember-dragula/templates/components/ember-dragula-container';
 
 
 export default Component.extend({
   layout,
-  classNames: ['dragulember-sortable-container'],
+  classNames: ['ember-dragula-container'],
 
   didInsertElement() {
     this._super(...arguments);

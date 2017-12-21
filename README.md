@@ -1,11 +1,11 @@
-# dragulember-sortable
+# @zetia/ember-dragula
 
 This Ember addon provides support for drag and drop sortable lists using [dragula](https://bevacqua.github.io/dragula/)
 
 ## Usage
 
 ```handlebars
-{{#dragulember-sortable dragStartAction='onDragStart' dropEndAction='onDrop' as |dragula|}}
+{{#ember-dragula dragStartAction='onDragStart' dropEndAction='onDrop' as |dragula|}}
   {{#dragula.container}}
     {{#each list as |item|}}
         <div>{{item.name}}</div>
@@ -17,21 +17,21 @@ This Ember addon provides support for drag and drop sortable lists using [dragul
         <div>{{item.name}}</div>
     {{/each}}
   {{/dragula.container}}
-{{/dragulember-sortable}}
+{{/ember-dragula}}
 
 ```
 
 ## Options
 
-dragulember-sortable supports the full range of options that dragula accepts, see : [https://github.com/bevacqua/dragula#dragulacontainers-options](https://github.com/bevacqua/dragula#dragulacontainers-options)
+ember-dragula supports the full range of options that dragula accepts, see : [https://github.com/bevacqua/dragula#dragulacontainers-options](https://github.com/bevacqua/dragula#dragulacontainers-options)
 
 To supply options:
 
 ``` handlebars
-{{#dragulember-sortable options = (hash option=value) as |d|}}
+{{#ember-dragula options = (hash option=value) as |d|}}
 
 
-{{/dragulember-sortable}}
+{{/ember-dragula }}
 
 ```
 
@@ -47,7 +47,7 @@ Event Name            | Dragula Equivalent  | Arguments                  | Event
 To simulate dragging a HTML Element over another a test helper is provided.
 
 ```javascript
- import { simulateDragAndDrop } from 'dragulember-sortable/utils/simulate-drag-drop'
+ import { simulateDragAndDrop } from 'ember-dragula/utils/simulate-drag-drop'
 ```
 
 Then within a test 
@@ -66,7 +66,7 @@ Then within a test
 ## Installation
 
 * `git clone https://github.com/zestia/ember-dragula.git`
-* `cd dragulember-sortable`
+* `cd ember-dragula`
 * `npm install`
 
 ## Running

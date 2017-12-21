@@ -1,10 +1,10 @@
 import { test } from 'qunit';
 import moduleForAcceptance from '../../tests/helpers/module-for-acceptance';
-import { simulateDragAndDrop } from 'dragulember-sortable/utils/simulate-drag-drop';
+import { simulateDragAndDrop } from 'ember-dragula/utils/simulate-drag-drop';
 
 moduleForAcceptance('Acceptance | dragulember sortable');
 
-test('visiting /dragulember-sortable', function(assert) {
+test('visiting /ember-dragula', function(assert) {
   visit('/');
 
   andThen(function() {
