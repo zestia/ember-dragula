@@ -9,12 +9,12 @@ test('visiting /ember-dragula', function(assert) {
 
   andThen(function() {
     assert.equal(currentURL(), '/');
-    assert.equal(find('#list-1-item-0').text(), 'name1');
-    assert.equal(find('#list-1-item-1').text(), 'name2');
-    assert.equal(find('#list-1-item-2').text(), 'name3');
-    assert.equal(find('#list-2-item-0').text(), 'name4');
-    assert.equal(find('#list-2-item-1').text(), 'name5');
-    assert.equal(find('#list-2-item-2').text(), 'name6');
+    assert.equal(find('#list-1-item-0').text(), 'Item 1');
+    assert.equal(find('#list-1-item-1').text(), 'Item 2');
+    assert.equal(find('#list-1-item-2').text(), 'Item 3');
+    assert.equal(find('#list-2-item-0').text(), 'Item 4');
+    assert.equal(find('#list-2-item-1').text(), 'Item 5');
+    assert.equal(find('#list-2-item-2').text(), 'Item 6');
   });
 });
 
