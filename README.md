@@ -8,13 +8,13 @@ This Ember addon provides support for drag and drop sortable lists using [dragul
 {{#ember-dragula as |d|}}
   {{#d.container}}
     {{#each list as |item|}}
-        <div>{{item.name}}</div>
+      {{item}}
     {{/each}}
   {{/d.container}}
 
   {{#d.container}}
     {{#each listTwo as |item|}}
-        <div>{{item.name}}</div>
+      {{item}}
     {{/each}}
   {{/d.container}}
 {{/ember-dragula}}
@@ -37,19 +37,19 @@ To supply options:
 
 ## Events
 
-ember-dragula supports the full range of events that dragula provides. These can be accessed via:
+ember-dragula supports the full range of events that dragula provides, see [https://github.com/bevacqua/dragula#drakeon-events](https://github.com/bevacqua/dragula#drakeon-events). These can be accessed via:
 
 ```handlebars
 {{#ember-dragula drag="onDrag" drop="onDrop" cancel="onCancel" ..... as |d|}}
   {{#d.container}}
     {{#each list as |item|}}
-        <div>{{item.name}}</div>
+      {{item}}
     {{/each}}
   {{/d.container}}
 
   {{#d.container}}
     {{#each listTwo as |item|}}
-        <div>{{item.name}}</div>
+      {{item}}
     {{/each}}
   {{/d.container}}
 {{/ember-dragula}}
