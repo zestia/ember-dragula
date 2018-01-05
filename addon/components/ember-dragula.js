@@ -30,7 +30,10 @@ export default Component.extend({
 
     this.events.forEach((event) => {
       drake.on(event, (...args) => {
-        this.sendAction(`on-${event}`, ...args)
+        const action = this.get(`on-${event}`);
+          if (typeof action === 'function') {
+            action(...args);
+          }
       })
     });
 
