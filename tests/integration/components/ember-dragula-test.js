@@ -28,7 +28,7 @@ test('it listens for event on drop', async function(assert) {
   });
 
   await this.render(hbs`
-    {{#ember-dragula drop=(action onDropAction)}}
+    {{#ember-dragula on-drop=(action onDropAction)}}
       template block text
     {{/ember-dragula}}
   `);
@@ -55,7 +55,7 @@ test('it listens for event on drag', async function(assert) {
   });
 
   await this.render(hbs`
-    {{#ember-dragula drag=(action onDragAction)}}
+    {{#ember-dragula on-drag=(action onDragAction)}}
       template block text
     {{/ember-dragula}}
   `);
@@ -81,7 +81,7 @@ test('it listens for event on dragend', async function(assert) {
   });
 
   await this.render(hbs`
-    {{#ember-dragula dragend=(action onDragEndAction)}}
+    {{#ember-dragula on-dragend=(action onDragEndAction)}}
       template block text
     {{/ember-dragula}}
   `);
@@ -109,7 +109,7 @@ test('it listens for event on cancel', async function(assert) {
   });
 
   await this.render(hbs`
-    {{#ember-dragula cancel=(action onCancelAction)}}
+    {{#ember-dragula on-cancel=(action onCancelAction)}}
       template block text
     {{/ember-dragula}}
   `);
@@ -137,7 +137,7 @@ test('it listens for event on remove', async function(assert) {
   });
 
   await this.render(hbs`
-    {{#ember-dragula remove=(action onRemoveAction)}}
+    {{#ember-dragula on-remove=(action onRemoveAction)}}
       template block text
     {{/ember-dragula}}
   `);
@@ -165,7 +165,7 @@ test('it listens for event on shadow', async function(assert) {
   });
 
   await this.render(hbs`
-    {{#ember-dragula shadow=(action onShadowAction)}}
+    {{#ember-dragula on-shadow=(action onShadowAction)}}
       template block text
     {{/ember-dragula}}
   `);
@@ -193,7 +193,7 @@ test('it listens for event on over', async function(assert) {
   });
 
   await this.render(hbs`
-    {{#ember-dragula over=(action onOverAction)}}
+    {{#ember-dragula on-over=(action onOverAction)}}
       template block text
     {{/ember-dragula}}
   `);
@@ -221,7 +221,7 @@ test('it listens for event on out', async function(assert) {
   });
 
   await this.render(hbs`
-    {{#ember-dragula out=(action onOutAction)}}
+    {{#ember-dragula on-out=(action onOutAction)}}
       template block text
     {{/ember-dragula}}
   `);
@@ -249,7 +249,7 @@ test('it listens for event on cloned', async function(assert) {
   });
 
   await this.render(hbs`
-    {{#ember-dragula cloned=(action onClonedAction)}}
+    {{#ember-dragula on-cloned=(action onClonedAction)}}
       template block text
     {{/ember-dragula}}
   `);

@@ -1,4 +1,4 @@
-{{#ember-dragula drop='onDrop' drag='onDrag' as |d|}}
+{{#ember-dragula on-drop=(action 'onDrop') on-drag=(action 'onDrag') as |d|}}
   {{#d.container class="list" id="list-1" }}
     {{#each list as |item index|}}
         <div class="item" id="list-1-item-{{index}}">{{item.name}}</div>

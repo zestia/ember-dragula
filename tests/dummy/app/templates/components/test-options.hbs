@@ -1,5 +1,5 @@
 <h4> Copy items </h4>
-{{#ember-dragula options=(hash copy=true) drop='onDrop' drag='onDrag' as |d|}}
+{{#ember-dragula options=(hash copy=true) on-drop=(action 'onDrop') on-drag=(action 'onDrag') as |d|}}
   {{#d.container class="list" id="list-copy-1" }}
     {{#each list as |item index|}}
         <div class="item" id="list-copy-1-item-{{index}}">{{item.name}}</div>
@@ -14,7 +14,7 @@
 {{/ember-dragula}}
 
 <h4> Move disabled </h4>
-{{#ember-dragula options=(hash moves=moves) drop='onDrop' drag='onDrag' as |d|}}
+{{#ember-dragula options=(hash moves=moves) on-drop=(action 'onDrop') on-drag=(action 'onDrag') as |d|}}
   {{#d.container class="list" id="list-moves-1" }}
     {{#each list as |item index|}}
         <div class="item" id="list-moves-1-item-{{index}}">{{item.name}}</div>

@@ -30,7 +30,7 @@ export default Component.extend({
 
     this.events.forEach((event) => {
       drake.on(event, (...args) => {
-        this.sendAction(event, ...args)
+        this.sendAction(`on-${event}`, ...args)
       })
     });
 

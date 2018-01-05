@@ -37,10 +37,10 @@ To supply options:
 
 ## Events
 
-ember-dragula supports the full range of events that dragula provides, see [https://github.com/bevacqua/dragula#drakeon-events](https://github.com/bevacqua/dragula#drakeon-events). These can be accessed via:
+ember-dragula supports the full range of events that dragula provides, see [https://github.com/bevacqua/dragula#drakeon-events](https://github.com/bevacqua/dragula#drakeon-events). These can be accessed by prefixing the event name with on-:
 
 ```handlebars
-{{#ember-dragula drag="onDrag" drop="onDrop" cancel="onCancel" ..... as |d|}}
+{{#ember-dragula on-drag=(action 'drag') on-drop=(action 'drop') on-cancel=(action 'cancel') ..... as |d|}}
   {{#d.container}}
     {{#each list as |item|}}
       {{item}}
