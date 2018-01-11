@@ -32,7 +32,7 @@ export default Component.extend({
       drake.on(event, (...args) => {
         const action = this.get(`on-${event}`);
           if (typeof action === 'function') {
-            action(...args);
+            action(drake, [...args]);
           }
       })
     });

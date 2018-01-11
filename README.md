@@ -56,6 +56,14 @@ ember-dragula supports the full range of events that dragula provides, see [http
 
 ```
 
+The first argument each event is called with is the dragula instance and the second argument is an array of the arguments emitted by dragula, this can be used as follows:
+
+
+```JavaScript
+  drop(drake, [el, target, source, sibling]) {
+
+  }
+```
 
 ## Test helpers
 

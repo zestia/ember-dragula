@@ -7,7 +7,7 @@ moduleForComponent('ember-dragula', 'Integration | Component | dragulember sorta
 
 
 test('it listens for event on drop', async function(assert) {
-  assert.expect(3);
+  assert.expect(4);
 
   const fakeDrake = {
     on: (eventName, cb) => {
@@ -21,7 +21,8 @@ test('it listens for event on drop', async function(assert) {
     return fakeDrake;
   };
 
-  this.set('onDropAction', function(dropElm, source, target) {
+  this.set('onDropAction', function(drake, [dropElm, source, target]) {
+    assert.equal(drake, fakeDrake);
     assert.equal(dropElm, 'dropElm');
     assert.equal(target, 'target');
     assert.equal(source, 'source');
@@ -35,7 +36,7 @@ test('it listens for event on drop', async function(assert) {
 });
 
 test('it listens for event on drag', async function(assert) {
-  assert.expect(2);
+  assert.expect(3);
 
   const fakeDrake = {
     on: (eventName, cb) => {
@@ -49,7 +50,8 @@ test('it listens for event on drag', async function(assert) {
     return fakeDrake;
   };
 
-  this.set('onDragAction', function(el, source) {
+  this.set('onDragAction', function(drake, [el, source]) {
+    assert.equal(drake, fakeDrake);
     assert.equal(el, 'el');
     assert.equal(source, 'source');
   });
@@ -62,7 +64,7 @@ test('it listens for event on drag', async function(assert) {
 });
 
 test('it listens for event on dragend', async function(assert) {
-  assert.expect(1);
+  assert.expect(2);
 
   const fakeDrake = {
     on: (eventName, cb) => {
@@ -76,7 +78,8 @@ test('it listens for event on dragend', async function(assert) {
     return fakeDrake;
   };
 
-  this.set('onDragEndAction', function(el) {
+  this.set('onDragEndAction', function(drake, [el]) {
+    assert.equal(drake, fakeDrake);
     assert.equal(el, 'el');
   });
 
@@ -88,7 +91,7 @@ test('it listens for event on dragend', async function(assert) {
 });
 
 test('it listens for event on cancel', async function(assert) {
-  assert.expect(3);
+  assert.expect(4);
 
   const fakeDrake = {
     on: (eventName, cb) => {
@@ -102,7 +105,8 @@ test('it listens for event on cancel', async function(assert) {
     return fakeDrake;
   };
 
-  this.set('onCancelAction', function(el, container, source) {
+  this.set('onCancelAction', function(drake, [el, container, source]) {
+    assert.equal(drake, fakeDrake);
     assert.equal(el, 'el');
     assert.equal(container, 'container');
     assert.equal(source, 'source');
@@ -116,7 +120,7 @@ test('it listens for event on cancel', async function(assert) {
 });
 
 test('it listens for event on remove', async function(assert) {
-  assert.expect(3);
+  assert.expect(4);
 
   const fakeDrake = {
     on: (eventName, cb) => {
@@ -130,7 +134,8 @@ test('it listens for event on remove', async function(assert) {
     return fakeDrake;
   };
 
-  this.set('onRemoveAction', function(el, container, source) {
+  this.set('onRemoveAction', function(drake, [el, container, source]) {
+    assert.equal(drake, fakeDrake);
     assert.equal(el, 'el');
     assert.equal(container, 'container');
     assert.equal(source, 'source');
@@ -144,7 +149,7 @@ test('it listens for event on remove', async function(assert) {
 });
 
 test('it listens for event on shadow', async function(assert) {
-  assert.expect(3);
+  assert.expect(4);
 
   const fakeDrake = {
     on: (eventName, cb) => {
@@ -158,7 +163,8 @@ test('it listens for event on shadow', async function(assert) {
     return fakeDrake;
   };
 
-  this.set('onShadowAction', function(el, container, source) {
+  this.set('onShadowAction', function(drake, [el, container, source]) {
+    assert.equal(drake, fakeDrake);
     assert.equal(el, 'el');
     assert.equal(container, 'container');
     assert.equal(source, 'source');
@@ -172,7 +178,7 @@ test('it listens for event on shadow', async function(assert) {
 });
 
 test('it listens for event on over', async function(assert) {
-  assert.expect(3);
+  assert.expect(4);
 
   const fakeDrake = {
     on: (eventName, cb) => {
@@ -186,7 +192,8 @@ test('it listens for event on over', async function(assert) {
     return fakeDrake;
   };
 
-  this.set('onOverAction', function(el, container, source) {
+  this.set('onOverAction', function(drake, [el, container, source]) {
+    assert.equal(drake, fakeDrake);
     assert.equal(el, 'el');
     assert.equal(container, 'container');
     assert.equal(source, 'source');
@@ -200,7 +207,7 @@ test('it listens for event on over', async function(assert) {
 });
 
 test('it listens for event on out', async function(assert) {
-  assert.expect(3);
+  assert.expect(4);
 
   const fakeDrake = {
     on: (eventName, cb) => {
@@ -214,7 +221,8 @@ test('it listens for event on out', async function(assert) {
     return fakeDrake;
   };
 
-  this.set('onOutAction', function(el, container, source) {
+  this.set('onOutAction', function(drake, [el, container, source]) {
+    assert.equal(drake, fakeDrake);
     assert.equal(el, 'el');
     assert.equal(container, 'container');
     assert.equal(source, 'source');
@@ -228,7 +236,7 @@ test('it listens for event on out', async function(assert) {
 });
 
 test('it listens for event on cloned', async function(assert) {
-  assert.expect(3);
+  assert.expect(4);
 
   const fakeDrake = {
     on: (eventName, cb) => {
@@ -242,7 +250,8 @@ test('it listens for event on cloned', async function(assert) {
     return fakeDrake;
   };
 
-  this.set('onClonedAction', function(el, container, source) {
+  this.set('onClonedAction', function(drake, [el, container, source]) {
+    assert.equal(drake, fakeDrake);
     assert.equal(el, 'el');
     assert.equal(container, 'container');
     assert.equal(source, 'source');
