@@ -1,6 +1,12 @@
 # @zestia/ember-dragula
 
-This Ember addon provides support for drag and drop sortable lists using [dragula](https://bevacqua.github.io/dragula/)
+This Ember addon provides support for drag and drop using [dragula](https://bevacqua.github.io/dragula/)
+
+## Installation
+
+```
+ember install @zestia/ember-dragula
+```
 
 ## Usage
 
@@ -23,7 +29,7 @@ This Ember addon provides support for drag and drop sortable lists using [dragul
 
 ## Options
 
-ember-dragula supports the full range of options that dragula accepts, see : [https://github.com/bevacqua/dragula#dragulacontainers-options](https://github.com/bevacqua/dragula#dragulacontainers-options)
+@zestia/ember-dragula supports the full range of options that dragula accepts, see : [https://github.com/bevacqua/dragula#dragulacontainers-options](https://github.com/bevacqua/dragula#dragulacontainers-options)
 
 To supply options:
 
@@ -37,7 +43,7 @@ To supply options:
 
 ## Events
 
-ember-dragula supports the full range of events that dragula provides, see [https://github.com/bevacqua/dragula#drakeon-events](https://github.com/bevacqua/dragula#drakeon-events). These can be accessed by prefixing the event name with on-:
+@zestia/ember-dragula supports the full range of events that dragula emits, see [https://github.com/bevacqua/dragula#drakeon-events](https://github.com/bevacqua/dragula#drakeon-events). These can be accessed by prefixing the event name with on-:
 
 ```handlebars
 {{#ember-dragula on-drag=(action 'drag') on-drop=(action 'drop') on-cancel=(action 'cancel') ..... as |d|}}
@@ -70,7 +76,7 @@ The first argument each event is called with is the dragula instance and the sec
 To simulate dragging a HTML Element over another a test helper is provided.
 
 ```javascript
- import { simulateDragAndDrop } from 'ember-dragula/utils/simulate-drag-drop'
+ import { simulateDragAndDrop } from '@zestia/ember-dragula/utils/simulate-drag-drop'
 ```
 
 Then within a test 
@@ -85,25 +91,25 @@ Then within a test
 ```
 
 
-
-## Installation
+## Developing
+### Installation
 
 * `git clone https://github.com/zestia/ember-dragula.git`
 * `cd ember-dragula`
 * `npm install`
 
-## Running
+###  Running
 
 * `ember serve`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 
-## Running Tests
+### Running Tests
 
 * `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
 * `ember test`
 * `ember test --server`
 
-## Building
+### Building
 
 * `ember build`
 
