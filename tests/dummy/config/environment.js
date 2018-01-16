@@ -45,9 +45,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     ENV.locationType = 'hash';
-    ENV.rootURL = '/@zestia/ember-dragula/';
-    ENV.locationType = 'hash';
-    ENV.rootURL = '/@zestia/ember-dragula/';
+    ENV.rootURL = '/ember-dragula/';
     // here you can enable a production-specific feature
   }
 
