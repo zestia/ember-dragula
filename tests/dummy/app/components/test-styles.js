@@ -17,10 +17,6 @@ export default Component.extend({
     {name: 'Item 6'}
   ]),
 
-  didReceiveAttrs() {
-    this._super(...arguments);
-  },
-
   actions: {
 
     onDrop() {

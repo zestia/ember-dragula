@@ -2,32 +2,32 @@ html{
   font-family: "Helvetica";
 }
 
+body{
+  margin: 0 auto;
+  width: 50%;
+}
+
 .heading {
   text-align: center;
 }
 
-.column {
-  display: inline-block;
-  width: 300px;
-  vertical-align: top;
-  border-right: 1px solid #e9e9e9;
-  border-left: 1px solid #e9e9e9;
-  min-height: 3000px;
-}
-
 .container {
+  margin: 0 auto;
   text-align: center;
+  display: table;
 }
 
 .list {
-  margin: 15px;
-  display: flex;
-  flex-direction: column;
-
+  display: table-cell;
+  padding: 10px;
 }
 .item {
-  display: flex;
   margin: 5px auto 5px auto;
+}
+
+.example-content {
+  margin: 0 auto;
+  width: 75%;
 }
 
 .restyle {
@@ -49,8 +49,7 @@ html{
 }
 
 .restyle.gu-mirror {
-  width: inherit !important;
-  height: inherit !important;
+  width: initial !important;
+  height: initial !important;
   transform: rotate(7deg);
 }
-
