@@ -2,6 +2,8 @@
 
 This Ember addon provides support for drag and drop using [dragula](https://bevacqua.github.io/dragula/)
 
+[Demo](https://zestia.github.io/ember-dragula)
+
 ## Installation
 
 ```
@@ -79,7 +81,7 @@ To simulate dragging a HTML Element over another a test helper is provided.
  import { simulateDragAndDrop } from '@zestia/ember-dragula/utils/simulate-drag-drop'
 ```
 
-Then within a test 
+Then within a test
 
 ```javascript
 

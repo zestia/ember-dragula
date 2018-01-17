@@ -1,18 +1,15 @@
-<div class="example">
-  <h3 class="heading"> Re-styled </h3>
-  <div class="dragula-restyled">
-    {{#ember-dragula on-drop=(action 'onDrop') on-drag=(action 'onDrag') as |d|}}
-      {{#d.container class="list"}}
-        {{#each list as |item|}}
-          <div class="item restyle">{{item.name}}</div>
-        {{/each}}
-      {{/d.container}}
+<h2>Re-styled</h2>
 
-      {{#d.container class="list" }}
-        {{#each listTwo as |item|}}
-          <div class="item restyle">{{item.name}}</div>
-        {{/each}}
-      {{/d.container}}
-    {{/ember-dragula}}
-  </div>
-</div>
+{{#ember-dragula on-drop=(action "onDrop") on-drag=(action "onDrag") as |d|}}
+  {{#d.container class="list"}}
+    {{#each list as |item|}}
+      <div class="item restyle">{{item.name}}</div>
+    {{/each}}
+  {{/d.container}}
+
+  {{#d.container class="list" }}
+    {{#each listTwo as |item|}}
+      <div class="item restyle">{{item.name}}</div>
+    {{/each}}
+  {{/d.container}}
+{{/ember-dragula}}

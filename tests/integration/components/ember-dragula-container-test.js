@@ -1,17 +1,16 @@
-/* eslint-disable */
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('ember-dragula-container-container', 'Integration | Component | dragulember sortable container', {
-  integration: true
-});
+moduleForComponent(
+  'ember-dragula-container-container',
+  'Integration | Component | dragulember sortable container', {
+    integration: true
+  });
 
 test('it adds emits an on insert action when element is inserted', async function(assert) {
   assert.expect(1);
 
-  this.set('onInsert', (element) => {
-    assert.ok(element);
-  });
+  this.set('onInsert', element => assert.ok(element));
 
   this.set('onDestroy', () => {});
 
@@ -29,9 +28,7 @@ test('it removes a container when component is destroyed', async function(assert
 
   this.set('renderComponent', true);
   this.set('onInsert', function() {});
-  this.set('onDestroy', (element) => {
-    assert.ok(element)
-  });
+  this.set('onDestroy', element => assert.ok(element));
 
   await this.render(hbs`
     {{#if renderComponent}}

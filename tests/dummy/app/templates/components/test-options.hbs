@@ -1,36 +1,33 @@
-<div class="example">
-  <h3 class="heading">Drag and drop with options</h3>
-  <h4> Copy items </h4>
-  <div class="example-content">
-    {{#ember-dragula class="example-content" options=(hash copy=true) on-drop=(action 'onDrop') on-drag=(action 'onDrag') as |d|}}
-      {{#d.container class="list" id="list-copy-1" }}
-        {{#each list as |item index|}}
-            <div class="item" id="list-copy-1-item-{{index}}">{{item.name}}</div>
-        {{/each}}
-      {{/d.container}}
+<h2>Drag and drop with options</h2>
 
-      {{#d.container class="list" id="list-copy-2" }}
-        {{#each listTwo as |item  index|}}
-            <div class="item" id="list-copy-2-item-{{index}}">{{item.name}}</div>
-        {{/each}}
-      {{/d.container}}
-    {{/ember-dragula}}
-  </div>
+<h3>Copy items</h3>
 
-  <h4> Move disabled </h4>
-  <div class="example-content">
-    {{#ember-dragula class="example-content" options=(hash moves=moves) on-drop=(action 'onDrop') on-drag=(action 'onDrag') as |d|}}
-      {{#d.container class="list" id="list-moves-1" }}
-        {{#each list as |item index|}}
-            <div class="item" id="list-moves-1-item-{{index}}">{{item.name}}</div>
-        {{/each}}
-      {{/d.container}}
+{{#ember-dragula options=(hash copy=true) on-drop=(action "onDrop") on-drag=(action "onDrag") as |d|}}
+  {{#d.container class="list" id="list-copy-1" }}
+    {{#each list as |item index|}}
+      <div class="item" id="list-copy-1-item-{{index}}">{{item.name}}</div>
+    {{/each}}
+  {{/d.container}}
 
-      {{#d.container class="list" id="list-moves-2"}}
-        {{#each listTwo as |item  index|}}
-            <div class="item" id="list-moves-2-item-{{index}}">{{item.name}}</div>
-        {{/each}}
-      {{/d.container}}
-    {{/ember-dragula}}
-  </div>
-</div>
+  {{#d.container class="list" id="list-copy-2" }}
+    {{#each listTwo as |item  index|}}
+      <div class="item" id="list-copy-2-item-{{index}}">{{item.name}}</div>
+    {{/each}}
+  {{/d.container}}
+{{/ember-dragula}}
+
+<h3>Move disabled</h3>
+
+{{#ember-dragula options=(hash moves=moves) on-drop=(action "onDrop") on-drag=(action "onDrag") as |d|}}
+  {{#d.container class="list" id="list-moves-1" }}
+    {{#each list as |item index|}}
+      <div class="item" id="list-moves-1-item-{{index}}">{{item.name}}</div>
+    {{/each}}
+  {{/d.container}}
+
+  {{#d.container class="list" id="list-moves-2"}}
+    {{#each listTwo as |item  index|}}
+      <div class="item" id="list-moves-2-item-{{index}}">{{item.name}}</div>
+    {{/each}}
+  {{/d.container}}
+{{/ember-dragula}}

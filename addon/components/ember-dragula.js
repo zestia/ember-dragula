@@ -5,43 +5,41 @@ import { run } from '@ember/runloop';
 
 export default Component.extend({
   layout,
-
-  events: [
-    'drag',
-    'dragend',
-    'drop',
-    'cancel',
-    'remove',
-    'shadow',
-    'over',
-    'out',
-    'cloned'
-  ],
+  classNames: ['ember-dragula'],
 
   init() {
     this._super(...arguments);
     this.set('drake', window.dragula(assign({}, this.get('options'))));
-    this.setupHandlers();
-  },
-
-
-  setupHandlers() {
-    const drake = this.get('drake');
-
-    this.events.forEach((event) => {
-      drake.on(event, (...args) => {
-        const action = this.get(`on-${event}`);
-          if (typeof action === 'function') {
-            action(drake, [...args]);
-          }
-      })
-    });
-
+    this.set('events', [
+      'drag',
+      'dragend',
+      'drop',
+      'cancel',
+      'remove',
+      'shadow',
+      'over',
+      'out',
+      'cloned'
+    ]);
+    this._setupHandlers();
   },
 
   willDestroyElement() {
+    this._super(...arguments);
+    this.get('drake').destroy();
+  },
+
+  _setupHandlers() {
     const drake = this.get('drake');
-    drake.destroy();
+
+    this.get('events').forEach(event => {
+      drake.on(event, (...args) => {
+        const action = this.get(`on-${event}`);
+        if (typeof action === 'function') {
+          action(drake, [...args]);
+        }
+      });
+    });
   },
 
   actions: {
@@ -61,6 +59,5 @@ export default Component.extend({
         containers.splice(index, 1);
       });
     }
-
   }
 });
