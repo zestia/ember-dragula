@@ -27,13 +27,13 @@ test('dragging objects', function(assert) {
     const elemDrag = find('#list-1-item-0')[0];
     const elemDrop = find('#list-2-item-0')[0];
 
-    assert.equal(find("#list-1").children().length, 3);
-    assert.equal(find("#list-2").children().length, 3);
+    assert.equal(find('#list-1').children().length, 3);
+    assert.equal(find('#list-2').children().length, 3);
 
     simulateDragAndDrop(elemDrag, elemDrop);
 
-    assert.equal(find("#list-1").children().length, 2);
-    assert.equal(find("#list-2").children().length, 4);
+    assert.equal(find('#list-1').children().length, 2);
+    assert.equal(find('#list-2').children().length, 4);
 
   });
 });
@@ -49,26 +49,26 @@ test('accepts dragula options', function(assert) {
     const elemDrag = find('#list-copy-1-item-0')[0];
     const elemDrop = find('#list-copy-2-item-0')[0];
 
-    assert.equal(find("#list-copy-1").children().length, 3);
-    assert.equal(find("#list-copy-2").children().length, 3);
+    assert.equal(find('#list-copy-1').children().length, 3);
+    assert.equal(find('#list-copy-2').children().length, 3);
 
     simulateDragAndDrop(elemDrag, elemDrop);
 
-    assert.equal(find("#list-copy-1").children().length, 3);
-    assert.equal(find("#list-copy-2").children().length, 4);
+    assert.equal(find('#list-copy-1').children().length, 3);
+    assert.equal(find('#list-copy-2').children().length, 4);
 
     // Test passing move function as option
 
     const unDraggableElem = find('#list-moves-1-item-0')[0];
     const unDraggableElemDrop = find('#list-moves-2-item-0')[0];
 
-    assert.equal(find("#list-moves-1").children().length, 3);
-    assert.equal(find("#list-moves-2").children().length, 3);
+    assert.equal(find('#list-moves-1').children().length, 3);
+    assert.equal(find('#list-moves-2').children().length, 3);
 
     simulateDragAndDrop(unDraggableElem, unDraggableElemDrop);
 
-    assert.equal(find("#list-moves-1").children().length, 3);
-    assert.equal(find("#list-moves-2").children().length, 3);
+    assert.equal(find('#list-moves-1').children().length, 3);
+    assert.equal(find('#list-moves-2').children().length, 3);
 
   });
 });

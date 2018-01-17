@@ -1,19 +1,13 @@
-html{
-  font-family: "Helvetica";
+:root {
+  font-family: sans-serif;
 }
 
-body{
-  margin: 0 auto;
-  width: 50%;
-}
-
-.heading {
+.examples {
   text-align: center;
 }
 
-.container {
+.example {
   margin: 0 auto;
-  text-align: center;
   display: table;
 }
 
@@ -21,35 +15,23 @@ body{
   display: table-cell;
   padding: 10px;
 }
+
 .item {
-  margin: 5px auto 5px auto;
+  margin: 5px auto;
 }
 
-.example-content {
-  margin: 0 auto;
-  width: 75%;
+.ember-dragula {
+  display: inline-block;
 }
 
-.restyle {
-  border: 1px solid #d4d4d4;
+.item.restyle {
+  box-sizing: border-box;
+  border: 1px solid silver;
   border-radius: 5px;
   padding: 20px;
-  box-shadow: 0px 1px 1px 0px  rgba(149,149,149,1);
+  box-shadow: 0 1px 1px 0 rgba(149, 149, 149, 1);
 }
 
-.restyle.gu-transit {
-  width: inherit !important;
-  height: inherit !important;
-  box-sizing: border-box;
-  background: #fff;
-  height: 10px;
-  border: 1px dashed #00aeef;
-  border-radius: 5px;
-  margin: 5px auto 5px auto;
-}
-
-.restyle.gu-mirror {
-  width: initial !important;
-  height: initial !important;
+.item.restyle.gu-mirror {
   transform: rotate(7deg);
 }
