@@ -1,5 +1,8 @@
 # @zestia/ember-dragula
 
+[![dependencies Status](https://david-dm.org/zestia/ember-dragula/status.svg)](https://david-dm.org/zestia/ember-dragula)
+[![devDependencies Status](https://david-dm.org/zestia/ember-dragula/dev-status.svg)](https://david-dm.org/zestia/ember-dragula?type=dev)
+
 This Ember addon provides support for drag and drop using [dragula](https://bevacqua.github.io/dragula/)
 
 [Demo](https://zestia.github.io/ember-dragula)
