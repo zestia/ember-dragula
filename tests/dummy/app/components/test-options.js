@@ -1,28 +1,27 @@
-/* eslint-disable */
+/* eslint-disable no-console */
 
 import Component from '@ember/component';
-import { A as emberA} from '@ember/array';
+import { A as emberA } from '@ember/array';
 
 export default Component.extend({
 
   list: emberA([
-    {name: 'Item 1'},
-    {name: 'Item 2'},
-    {name: 'Item 3'}
+    { name: 'Item 1' },
+    { name: 'Item 2' },
+    { name: 'Item 3' }
   ]),
 
   listTwo: emberA([
-    {name: 'Item 4'},
-    {name: 'Item 5'},
-    {name: 'Item 6'}
+    { name: 'Item 4' },
+    { name: 'Item 5' },
+    { name: 'Item 6' }
   ]),
 
-  moves: function() {
+  moves() {
     return false;
   },
 
   actions: {
-
     onDrop() {
       console.log('Item Dropped');
     },
