@@ -1,6 +1,6 @@
 import { test } from 'qunit';
 import moduleForAcceptance from '../../tests/helpers/module-for-acceptance';
-import { simulateDragAndDrop } from 'ember-dragula/utils/simulate-drag-drop';
+import { simulateDragAndDrop } from '@zestia/ember-dragula/utils/simulate-drag-drop';
 
 moduleForAcceptance('Acceptance | dragulember sortable');
 

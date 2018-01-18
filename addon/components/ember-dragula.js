@@ -1,5 +1,5 @@
 import Component from '@ember/component';
-import layout from 'ember-dragula/templates/components/ember-dragula';
+import layout from '@zestia/ember-dragula/templates/components/ember-dragula';
 import { assign } from '@ember/polyfills';
 import { run } from '@ember/runloop';
 
