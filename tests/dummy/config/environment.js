@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = function(environment) {
-  let ENV = {
+  const ENV = {
     modulePrefix: 'dummy',
     environment,
     rootURL: '/',
@@ -11,10 +11,7 @@ module.exports = function(environment) {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
       },
-      EXTEND_PROTOTYPES: {
-        // Prevent Ember Data from overriding Date.parse.
-        Date: false
-      }
+      EXTEND_PROTOTYPES: false
     },
 
     APP: {
