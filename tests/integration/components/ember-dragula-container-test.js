@@ -3,7 +3,7 @@ import hbs from 'htmlbars-inline-precompile';
 
 moduleForComponent(
   'ember-dragula-container-container',
-  'Integration | Component | dragulember sortable container', {
+  'Integration | Component | ember-dragula container', {
     integration: true
   });
 

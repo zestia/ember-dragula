@@ -1,7 +1,7 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('ember-dragula', 'Integration | Component | dragulember sortable', {
+moduleForComponent('ember-dragula', 'Integration | Component | ember-dragula', {
   integration: true
 });
 

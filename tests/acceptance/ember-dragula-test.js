@@ -2,7 +2,7 @@ import { test } from 'qunit';
 import moduleForAcceptance from '../../tests/helpers/module-for-acceptance';
 import { simulateDragAndDrop } from '@zestia/ember-dragula/utils/simulate-drag-drop';
 
-moduleForAcceptance('Acceptance | dragulember sortable');
+moduleForAcceptance('Acceptance | ember-dragula');
 
 test('visiting /ember-dragula', function(assert) {
   visit('/');
@@ -25,7 +25,7 @@ test('dragging objects', function(assert) {
     assert.equal(currentURL(), '/');
 
     const elemDrag = find('#list-1-item-0')[0];
-    const elemDrop = find('#list-2-item-0')[0];
+    const elemDrop = find('#list-2')[0];
 
     assert.equal(find('#list-1').children().length, 3);
     assert.equal(find('#list-2').children().length, 3);
@@ -47,7 +47,7 @@ test('accepts dragula options', function(assert) {
     // Test passing copy option
 
     const elemDrag = find('#list-copy-1-item-0')[0];
-    const elemDrop = find('#list-copy-2-item-0')[0];
+    const elemDrop = find('#list-copy-2')[0];
 
     assert.equal(find('#list-copy-1').children().length, 3);
     assert.equal(find('#list-copy-2').children().length, 3);
@@ -60,7 +60,7 @@ test('accepts dragula options', function(assert) {
     // Test passing move function as option
 
     const unDraggableElem = find('#list-moves-1-item-0')[0];
-    const unDraggableElemDrop = find('#list-moves-2-item-0')[0];
+    const unDraggableElemDrop = find('#list-moves-2')[0];
 
     assert.equal(find('#list-moves-1').children().length, 3);
     assert.equal(find('#list-moves-2').children().length, 3);
