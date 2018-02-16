@@ -1,7 +1,19 @@
-/**
- * Credit: https://ghostinspector.com/blog/simulate-drag-and-drop-javascript-casperjs/
- */
+/* eslint-disable object-property-newline */
 
+import { triggerEvent } from '@ember/test-helpers';
+
+
+function _fireEmberMouseEvent(type, elem, centerX, centerY) {
+  triggerEvent(elem, type,
+    {
+      canBubble: true, cancelable: true, view: window,
+      detail: 1, screenX: 1, screenY: 1, clientX: centerX,
+      clientY: centerY, ctrlKey: false, altKey: false,
+      shiftKey: false, metaKey: false, button: 0
+    });
+}
+
+// Required for being able to do a separate drag and drop within an ember test.
 function _fireMouseEvent(type, elem, centerX, centerY) {
   const evt = document.createEvent('MouseEvents');
   evt.initMouseEvent(type, true, true, window, 1, 1, 1,
@@ -15,36 +27,50 @@ export function simulateDragAndDrop(elemDrag, elemDrop) {
     return false;
   }
 
-  // calculate positions
-  let pos = elemDrag.getBoundingClientRect();
-  const center1X = Math.floor((pos.left + pos.right) / 2);
-  const center1Y = Math.floor((pos.top + pos.bottom) / 2);
-  pos = elemDrop.getBoundingClientRect();
-  const center2X = Math.floor((pos.left + pos.right) / 2);
-  const center2Y = Math.floor((pos.top + pos.bottom) / 2);
+  const pos = elemDrag.getBoundingClientRect();
+  const centerDragX = Math.floor((pos.left + pos.right) / 2);
+  const centerDragY = Math.floor((pos.top + pos.bottom) / 2);
 
-  // mouse over dragged element and mousedown
-  _fireMouseEvent('mousemove', elemDrag, center1X, center1Y);
-  _fireMouseEvent('mouseenter', elemDrag, center1X, center1Y);
-  _fireMouseEvent('mouseover', elemDrag, center1X, center1Y);
-  _fireMouseEvent('mousedown', elemDrag, center1X, center1Y);
+  const dropPos = elemDrop.getBoundingClientRect();
+  const centerDropX = Math.floor((dropPos.left + dropPos.right) / 2);
+  const centerDropY = Math.floor((dropPos.top + dropPos.bottom) / 2);
 
-  // start dragging process over to drop target
-  _fireMouseEvent('dragstart', elemDrag, center1X, center1Y);
-  _fireMouseEvent('drag', elemDrag, center1X, center1Y);
-  _fireMouseEvent('mousemove', elemDrag, center1X, center1Y);
-  _fireMouseEvent('drag', elemDrag, center2X, center2Y);
-  _fireMouseEvent('mousemove', elemDrop, center2X, center2Y);
+  _fireEmberMouseEvent('mousedown', elemDrag, centerDragX, centerDragY);
 
-  // trigger dragging process on top of drop target
-  _fireMouseEvent('mouseenter', elemDrop, center2X, center2Y);
-  _fireMouseEvent('dragenter', elemDrop, center2X, center2Y);
-  _fireMouseEvent('mouseover', elemDrop, center2X, center2Y);
-  _fireMouseEvent('dragover', elemDrop, center2X, center2Y);
+  _fireEmberMouseEvent('mousemove', elemDrag, centerDragX + 1, centerDragY + 1 );
 
-  // release dragged element on top of drop target
-  _fireMouseEvent('drop', elemDrop, center2X, center2Y);
-  _fireMouseEvent('dragend', elemDrag, center2X, center2Y);
-  _fireMouseEvent('mouseup', elemDrag, center2X, center2Y);
+  _fireEmberMouseEvent('mousemove', elemDrag, centerDropX, centerDropY);
+
+  _fireEmberMouseEvent('mouseup', elemDrag, centerDropX, centerDropY);
+
+}
+
+export function simulateDrag(elemDrag) {
+  if (!elemDrag) {
+    return false;
+  }
+
+  const pos = elemDrag.getBoundingClientRect();
+  const centerDragX = Math.floor((pos.left + pos.right) / 2);
+  const centerDragY = Math.floor((pos.top + pos.bottom) / 2);
+
+  _fireMouseEvent('mousedown', elemDrag, centerDragX, centerDragY);
+
+  _fireMouseEvent('mousemove', elemDrag, centerDragX + 1, centerDragY + 1 );
+
+}
+
+export function simulateDrop(elemDrag, elemDrop) {
+  if (!elemDrag || !elemDrop) {
+    return false;
+  }
+
+  const pos = elemDrop.getBoundingClientRect();
+  const centerDropX = Math.floor((pos.left + pos.right) / 2);
+  const centerDropY = Math.floor((pos.top + pos.bottom) / 2);
+
+  _fireMouseEvent('mousemove', elemDrag, centerDropX, centerDropY);
+
+  _fireMouseEvent('mouseup', elemDrag, centerDropX, centerDropY);
 
 }
