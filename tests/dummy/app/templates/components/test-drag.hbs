@@ -2,14 +2,14 @@
 
 {{#ember-dragula on-drop=(action "onDrop") on-drag=(action "onDrag") as |d|}}
   {{#d.container class="list" id="list-1"}}
-    {{#each list as |item index|}}
-      <div class="item" id="list-1-item-{{index}}">{{item.name}}</div>
+    {{#each list as |item|}}
+      <div class="item">{{item.name}}</div>
     {{/each}}
   {{/d.container}}
 
   {{#d.container class="list" id="list-2"}}
-    {{#each listTwo as |item  index|}}
-      <div class="item" id="list-2-item-{{index}}">{{item.name}}</div>
+    {{#each listTwo as |item|}}
+      <div class="item">{{item.name}}</div>
     {{/each}}
   {{/d.container}}
 {{/ember-dragula}}

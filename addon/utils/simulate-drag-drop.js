@@ -21,13 +21,9 @@ export function simulateDragAndDrop(elemDrag, elemDrop) {
   const centerDropY = Math.floor((dropPos.top + dropPos.bottom) / 2);
 
   _fireMouseEvent('mousedown', elemDrag, centerDragX, centerDragY);
-
   _fireMouseEvent('mousemove', elemDrag, centerDragX + 1, centerDragY + 1 );
-
   _fireMouseEvent('mousemove', elemDrag, centerDropX, centerDropY);
-
   _fireMouseEvent('mouseup', elemDrag, centerDropX, centerDropY);
-
 }
 
 export function simulateDrag(elemDrag) {
@@ -40,9 +36,7 @@ export function simulateDrag(elemDrag) {
   const centerDragY = Math.floor((pos.top + pos.bottom) / 2);
 
   _fireMouseEvent('mousedown', elemDrag, centerDragX, centerDragY);
-
   _fireMouseEvent('mousemove', elemDrag, centerDragX + 1, centerDragY + 1 );
-
 }
 
 export function simulateDrop(elemDrag, elemDrop) {
@@ -55,7 +49,5 @@ export function simulateDrop(elemDrag, elemDrop) {
   const centerDropY = Math.floor((pos.top + pos.bottom) / 2);
 
   _fireMouseEvent('mousemove', elemDrag, centerDropX, centerDropY);
-
   _fireMouseEvent('mouseup', elemDrag, centerDropX, centerDropY);
-
 }
