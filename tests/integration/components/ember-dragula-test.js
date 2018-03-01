@@ -6,7 +6,6 @@ import hbs from 'htmlbars-inline-precompile';
 module('Integration | Component | ember-dragula', function(hooks) {
   setupRenderingTest(hooks);
 
-
   test('it listens for event on drop', async function(assert) {
     assert.expect(4);
 
@@ -306,6 +305,5 @@ module('Integration | Component | ember-dragula', function(hooks) {
     this.set('renderContainer', false);
 
     assert.equal(fakeDrake.containers.length, 0);
-
   });
 });

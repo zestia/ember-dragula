@@ -6,7 +6,7 @@ import hbs from 'htmlbars-inline-precompile';
 module('Integration | Component | ember-dragula container', function(hooks) {
   setupRenderingTest(hooks);
 
-  test('it adds emits an on insert action when element is inserted', async function(assert) {
+  test('it sends an action when inserted into the dom', async function(assert) {
     assert.expect(1);
 
     this.set('inserted', element => assert.ok(element));
@@ -20,7 +20,7 @@ module('Integration | Component | ember-dragula container', function(hooks) {
     `);
   });
 
-  test('it removes a container when component is destroyed', async function(assert) {
+  test('it sends a destroy action when removed from the dom', async function(assert) {
     assert.expect(1);
 
     this.set('renderComponent', true);
