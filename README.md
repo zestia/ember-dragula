@@ -70,11 +70,26 @@ To supply options:
 
 ```
 
-The first argument each event is called with is the dragula instance and the second argument is an array of the arguments emitted by dragula, this can be used as follows:
+
+```JavaScript
+  drop(el, target, source, sibling) {
+
+  }
+```
+
+The dragula instance is emitted via an `on-init` event as follows and allows access to all functions and fields on [drake](https://github.com/bevacqua/dragula#api):
+
+
+```handlebars
+{{#ember-dragula on-init=(action 'init') as |d|}}
+  ...
+{{/ember-dragula}}
+
+```
 
 
 ```JavaScript
-  drop(drake, [el, target, source, sibling]) {
+  init(drake) {
 
   }
 ```

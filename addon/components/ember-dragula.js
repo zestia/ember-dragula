@@ -22,12 +22,15 @@ export default Component.extend({
       'cloned'
     ]);
     this._setupHandlers();
+    this.get('on-init')(this.get('drake'));
   },
 
   willDestroyElement() {
     this._super(...arguments);
     this.get('drake').destroy();
   },
+
+  'on-init'() {},
 
   _setupHandlers() {
     const drake = this.get('drake');
@@ -36,7 +39,7 @@ export default Component.extend({
       drake.on(event, (...args) => {
         const action = this.get(`on-${event}`);
         if (typeof action === 'function') {
-          action(drake, [...args]);
+          action(...args);
         }
       });
     });

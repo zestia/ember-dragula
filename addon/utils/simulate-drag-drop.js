@@ -1,4 +1,3 @@
-/* eslint-disable object-property-newline */
 function _fireMouseEvent(type, elem, centerX, centerY) {
   const evt = document.createEvent('MouseEvents');
   evt.initMouseEvent(type, true, true, window, 1, 1, 1,

@@ -7,7 +7,7 @@ moduleForComponent('ember-dragula', 'Integration | Component | ember-dragula', {
 
 
 test('it listens for event on drop', async function(assert) {
-  assert.expect(4);
+  assert.expect(3);
 
   const fakeDrake = {
     on(eventName, cb) {
@@ -20,8 +20,7 @@ test('it listens for event on drop', async function(assert) {
 
   window.dragula = () => fakeDrake;
 
-  this.set('drop', function(drake, [dropElm, source, target]) {
-    assert.equal(drake, fakeDrake);
+  this.set('drop', function(dropElm, source, target) {
     assert.equal(dropElm, 'dropElm');
     assert.equal(target, 'target');
     assert.equal(source, 'source');
@@ -35,7 +34,7 @@ test('it listens for event on drop', async function(assert) {
 });
 
 test('it listens for event on drag', async function(assert) {
-  assert.expect(3);
+  assert.expect(2);
 
   const fakeDrake = {
     on(eventName, cb) {
@@ -48,8 +47,7 @@ test('it listens for event on drag', async function(assert) {
 
   window.dragula = () => fakeDrake;
 
-  this.set('drag', function(drake, [el, source]) {
-    assert.equal(drake, fakeDrake);
+  this.set('drag', function(el, source) {
     assert.equal(el, 'el');
     assert.equal(source, 'source');
   });
@@ -62,7 +60,7 @@ test('it listens for event on drag', async function(assert) {
 });
 
 test('it listens for event on dragend', async function(assert) {
-  assert.expect(2);
+  assert.expect(1);
 
   const fakeDrake = {
     on(eventName, cb) {
@@ -75,8 +73,7 @@ test('it listens for event on dragend', async function(assert) {
 
   window.dragula = () => fakeDrake;
 
-  this.set('dragEnd', function(drake, [el]) {
-    assert.equal(drake, fakeDrake);
+  this.set('dragEnd', function(el) {
     assert.equal(el, 'el');
   });
 
@@ -88,7 +85,7 @@ test('it listens for event on dragend', async function(assert) {
 });
 
 test('it listens for event on cancel', async function(assert) {
-  assert.expect(4);
+  assert.expect(3);
 
   const fakeDrake = {
     on(eventName, cb) {
@@ -101,8 +98,7 @@ test('it listens for event on cancel', async function(assert) {
 
   window.dragula = () => fakeDrake;
 
-  this.set('cancel', function(drake, [el, container, source]) {
-    assert.equal(drake, fakeDrake);
+  this.set('cancel', function(el, container, source) {
     assert.equal(el, 'el');
     assert.equal(container, 'container');
     assert.equal(source, 'source');
@@ -116,7 +112,7 @@ test('it listens for event on cancel', async function(assert) {
 });
 
 test('it listens for event on remove', async function(assert) {
-  assert.expect(4);
+  assert.expect(3);
 
   const fakeDrake = {
     on(eventName, cb) {
@@ -129,8 +125,7 @@ test('it listens for event on remove', async function(assert) {
 
   window.dragula = () => fakeDrake;
 
-  this.set('remove', function(drake, [el, container, source]) {
-    assert.equal(drake, fakeDrake);
+  this.set('remove', function(el, container, source) {
     assert.equal(el, 'el');
     assert.equal(container, 'container');
     assert.equal(source, 'source');
@@ -144,7 +139,7 @@ test('it listens for event on remove', async function(assert) {
 });
 
 test('it listens for event on shadow', async function(assert) {
-  assert.expect(4);
+  assert.expect(3);
 
   const fakeDrake = {
     on(eventName, cb) {
@@ -157,8 +152,7 @@ test('it listens for event on shadow', async function(assert) {
 
   window.dragula = () => fakeDrake;
 
-  this.set('shadow', function(drake, [el, container, source]) {
-    assert.equal(drake, fakeDrake);
+  this.set('shadow', function(el, container, source) {
     assert.equal(el, 'el');
     assert.equal(container, 'container');
     assert.equal(source, 'source');
@@ -172,7 +166,7 @@ test('it listens for event on shadow', async function(assert) {
 });
 
 test('it listens for event on over', async function(assert) {
-  assert.expect(4);
+  assert.expect(3);
 
   const fakeDrake = {
     on(eventName, cb) {
@@ -185,8 +179,7 @@ test('it listens for event on over', async function(assert) {
 
   window.dragula = () => fakeDrake;
 
-  this.set('over', function(drake, [el, container, source]) {
-    assert.equal(drake, fakeDrake);
+  this.set('over', function(el, container, source) {
     assert.equal(el, 'el');
     assert.equal(container, 'container');
     assert.equal(source, 'source');
@@ -200,7 +193,7 @@ test('it listens for event on over', async function(assert) {
 });
 
 test('it listens for event on out', async function(assert) {
-  assert.expect(4);
+  assert.expect(3);
 
   const fakeDrake = {
     on(eventName, cb) {
@@ -213,8 +206,7 @@ test('it listens for event on out', async function(assert) {
 
   window.dragula = () => fakeDrake;
 
-  this.set('out', function(drake, [el, container, source]) {
-    assert.equal(drake, fakeDrake);
+  this.set('out', function(el, container, source) {
     assert.equal(el, 'el');
     assert.equal(container, 'container');
     assert.equal(source, 'source');
@@ -228,7 +220,7 @@ test('it listens for event on out', async function(assert) {
 });
 
 test('it listens for event on cloned', async function(assert) {
-  assert.expect(4);
+  assert.expect(3);
 
   const fakeDrake = {
     on(eventName, cb) {
@@ -241,8 +233,7 @@ test('it listens for event on cloned', async function(assert) {
 
   window.dragula = () => fakeDrake;
 
-  this.set('cloned', function(drake, [el, container, source]) {
-    assert.equal(drake, fakeDrake);
+  this.set('cloned', function(el, container, source) {
     assert.equal(el, 'el');
     assert.equal(container, 'container');
     assert.equal(source, 'source');
@@ -254,6 +245,29 @@ test('it listens for event on cloned', async function(assert) {
     {{/ember-dragula}}
   `);
 });
+
+test('it emits drake on init', async function(assert) {
+  assert.expect(1);
+
+  const fakeDrake = {
+    on: () => {},
+    destroy() {},
+    containers: []
+  };
+
+  window.dragula = () => fakeDrake;
+
+  this.set('init', function(drake) {
+    assert.equal(drake, fakeDrake);
+  });
+
+  await this.render(hbs`
+    {{#ember-dragula on-init=(action init)}}
+      template block text
+    {{/ember-dragula}}
+  `);
+});
+
 
 test('it adds container to drake when container is added', async function(assert) {
   assert.expect(1);
