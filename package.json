@@ -1,6 +1,6 @@
 {
   "name": "@zestia/ember-dragula",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "An ember addon for dragula support.",
   "keywords": [
     "ember-addon",
@@ -31,6 +31,7 @@
     "@zestia/eslint-config": "1.0.17",
     "@zestia/stylelint-config": "1.0.2",
     "broccoli-asset-rev": "2.6.0",
+    "ember-cli": "3.0.0",
     "ember-cli-dependency-checker": "2.1.0",
     "ember-cli-eslint": "4.2.3",
     "ember-cli-github-pages": "0.2.0",
@@ -44,14 +45,13 @@
     "ember-cli-template-lint": "0.7.5",
     "ember-cli-test-loader": "2.2.0",
     "ember-cli-uglify": "2.0.2",
-    "ember-cli": "3.0.0",
     "ember-disable-prototype-extensions": "1.1.3",
     "ember-disable-proxy-controllers": "1.0.1",
     "ember-load-initializers": "1.0.0",
     "ember-maybe-import-regenerator": "0.1.6",
     "ember-resolver": "4.5.0",
-    "ember-source-channel-url": "1.0.1",
     "ember-source": "3.0.0",
+    "ember-source-channel-url": "1.0.1",
     "ember-try": "0.2.23",
     "loader.js": "4.6.0"
   },
