@@ -17,11 +17,11 @@ export default Component.extend({
   ]),
 
   actions: {
-    onDrop() {
+    dropped() {
       console.log('Item Dropped');
     },
 
-    onDrag() {
+    dragged() {
       console.log('Item Dragged');
     }
   }

@@ -4,7 +4,6 @@ import Component from '@ember/component';
 import { A as emberA } from '@ember/array';
 
 export default Component.extend({
-
   list: emberA([
     { name: 'Item 1' },
     { name: 'Item 2' },
@@ -22,11 +21,11 @@ export default Component.extend({
   },
 
   actions: {
-    onDrop() {
+    dropped() {
       console.log('Item Dropped');
     },
 
-    onDrag() {
+    dragged() {
       console.log('Item Dragged');
     }
   }

@@ -1,6 +1,6 @@
 <h2>Basic Drag and Drop</h2>
 
-{{#ember-dragula on-drop=(action "onDrop") on-drag=(action "onDrag") as |d|}}
+{{#ember-dragula on-drop=(action "dropped") on-drag=(action "dragged") as |d|}}
   {{#d.container class="list" id="list-1"}}
     {{#each list as |item|}}
       <div class="item">{{item.name}}</div>
