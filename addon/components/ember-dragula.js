@@ -1,7 +1,6 @@
 import Component from '@ember/component';
 import layout from '@zestia/ember-dragula/templates/components/ember-dragula';
 import { assign } from '@ember/polyfills';
-import { run } from '@ember/runloop';
 
 export default Component.extend({
   layout,
@@ -47,20 +46,16 @@ export default Component.extend({
 
   actions: {
     addContainer(component) {
-      run(() => {
-        const element = component.get('element');
-        const containers = this.get('drake.containers');
-        containers.push(element);
-      });
+      const element = component.get('element');
+      const containers = this.get('drake.containers');
+      containers.push(element);
     },
 
     removeContainer(component) {
-      run(() => {
-        const element = component.get('element');
-        const containers = this.get('drake.containers');
-        const index = containers.indexOf(element);
-        containers.splice(index, 1);
-      });
+      const element = component.get('element');
+      const containers = this.get('drake.containers');
+      const index = containers.indexOf(element);
+      containers.splice(index, 1);
     }
   }
 });
