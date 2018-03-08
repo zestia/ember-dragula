@@ -113,6 +113,23 @@ Then within a test
 
 ```
 
+If you need to drag an element, wait for an async event and then drop that element there are separate test helpers provided for this use case:
+
+```javascript
+import { simulateDrag, simulateDrop } from '@zestia/ember-dragula/utils/simulate-drag-drop'
+
+  const draggingElement = this.$('foo');
+  const droppingElement = this.$('bar');
+
+  simulateDrag(draggingElement);
+
+  await someAsyncAction
+
+  simulateDrop(draggingElement, droppingElement);
+
+```
+
+
 
 ## Developing
 ### Installation
