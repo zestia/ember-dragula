@@ -21,27 +21,12 @@ export default Component.extend({
       'cloned'
     ]);
     this._setupHandlers();
-    this.get('on-init')(this.get('drake'));
+    this.getWithDefault('on-init', () => {})(this.get('drake'));
   },
 
   willDestroyElement() {
     this._super(...arguments);
     this.get('drake').destroy();
-  },
-
-  'on-init'() {},
-
-  _setupHandlers() {
-    const drake = this.get('drake');
-
-    this.get('events').forEach(event => {
-      drake.on(event, (...args) => {
-        const action = this.get(`on-${event}`);
-        if (typeof action === 'function') {
-          action(...args);
-        }
-      });
-    });
   },
 
   actions: {
@@ -57,5 +42,13 @@ export default Component.extend({
       const index = containers.indexOf(element);
       containers.splice(index, 1);
     }
+  },
+
+  _setupHandlers() {
+    this.get('events').forEach(event => {
+      this.get('drake').on(event, (...args) => {
+        this.getWithDefault(`on-${event}`, () => {})(...args);
+      });
+    });
   }
 });
