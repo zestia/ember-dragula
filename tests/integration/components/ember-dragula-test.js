@@ -244,7 +244,6 @@ module('Integration | Component | ember-dragula', function(hooks) {
         template block text
       {{/ember-dragula}}
     `);
-
   });
 
   test('it emits drake on init', async function(assert) {
