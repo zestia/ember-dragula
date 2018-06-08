@@ -6,8 +6,8 @@ export default class EmberDragulaContainer extends Component.extend( {
   classNames: ["ember-dragula-container"],
   layout,
 }) {
-  public onInsert: (container: EmberDragulaContainer) => void;
-  public onDestroy: (container: EmberDragulaContainer) => void;
+  public onInsert!: (container: EmberDragulaContainer) => void;
+  public onDestroy!: (container: EmberDragulaContainer) => void;
 
   public didInsertElement(this: EmberDragulaContainer) {
     this._super(...arguments);

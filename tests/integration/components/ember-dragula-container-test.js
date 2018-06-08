@@ -13,7 +13,7 @@ module('Integration | Component | ember-dragula container', function(hooks) {
     this.set('destroyed', () => {});
 
     await this.render(hbs`
-      {{#ember-dragula-container on-insert=inserted on-destroy=destroyed}}
+      {{#ember-dragula-container onInsert=inserted onDestroy=destroyed}}
         <div> item 1 </div>
         <div> item 2 </div>
       {{/ember-dragula-container}}
@@ -29,7 +29,7 @@ module('Integration | Component | ember-dragula container', function(hooks) {
 
     await this.render(hbs`
       {{#if renderComponent}}
-        {{#ember-dragula-container on-destroy=destroyed on-insert=inserted}}
+        {{#ember-dragula-container onDestroy=destroyed onInsert=inserted}}
           <div> item 1 </div>
           <div> item 2 </div>
         {{/ember-dragula-container}}
