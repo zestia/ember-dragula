@@ -18,5 +18,4 @@ export default class EmberDragulaContainer extends Component.extend( {
     this._super(...arguments);
     this.onDestroy(this);
   }
-
 }
