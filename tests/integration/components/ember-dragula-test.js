@@ -262,7 +262,7 @@ module('Integration | Component | ember-dragula', function(hooks) {
     });
 
     await this.render(hbs`
-      {{#ember-dragula on-init=(action init)}}
+      {{#ember-dragula onInit=(action init)}}
         template block text
       {{/ember-dragula}}
     `);
