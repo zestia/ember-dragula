@@ -146,6 +146,10 @@
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
 
+"@types/dragula@^2.1.33":
+  version "2.1.33"
+  resolved "https://registry.yarnpkg.com/@types/dragula/-/dragula-2.1.33.tgz#63a694bd8a5fb7bfa570778a12a069be98462919"
+
 "@types/ember-qunit@^3.0.2":
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/@types/ember-qunit/-/ember-qunit-3.0.2.tgz#83e5df08eec860071de3c8faa2cc0f06494bf4d6"

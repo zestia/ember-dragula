@@ -1,28 +1,29 @@
 import Component from "@ember/component";
 import { assign } from "@ember/polyfills";
+import { DragulaOptions, Drake } from "dragula";
+import EmberDragulaContainer from "./ember-dragula-container";
 // @ts-ignore
 import layout from "@zestia/ember-dragula/templates/components/ember-dragula";
-import EmberDragulaContainer from "./ember-dragula-container";
 
 export default class EmberDragula extends Component.extend( {
   classNames: ["ember-dragula"],
   layout,
 }) {
 
-  public drake: any;
-  public options: any;
+  public drake!: Drake;
   public events: string[];
+  public options?: DragulaOptions;
   public onInit?: (drake: any) => void;
 
   public actions = {
     addContainer(this: EmberDragula, containerComponent: EmberDragulaContainer) {
-      const element = containerComponent.get("element");
+      const element = containerComponent.element;
       const containers = this.drake.containers;
       containers.push(element);
     },
 
     removeContainer(this: EmberDragula, containerComponent: EmberDragulaContainer) {
-      const element = containerComponent.get("element");
+      const element = containerComponent.element;
       const containers = this.drake.containers;
       const index = containers.indexOf(element);
       containers.splice(index, 1);

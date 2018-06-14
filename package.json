@@ -24,6 +24,7 @@
     "postpublish": "ember ts:clean"
   },
   "dependencies": {
+    "@types/dragula": "^2.1.33",
     "babel-eslint": "8.2.3",
     "dragula": "^3.7.2",
     "ember-cli-babel": "^6.6.0",
