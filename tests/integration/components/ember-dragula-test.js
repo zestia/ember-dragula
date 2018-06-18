@@ -27,7 +27,7 @@ module('Integration | Component | ember-dragula', function(hooks) {
     });
 
     await this.render(hbs`
-      {{#ember-dragula on-drop=(action drop)}}
+      {{#ember-dragula onDrop=(action drop)}}
         template block text
       {{/ember-dragula}}
     `);
@@ -53,7 +53,7 @@ module('Integration | Component | ember-dragula', function(hooks) {
     });
 
     await this.render(hbs`
-      {{#ember-dragula on-drag=(action drag)}}
+      {{#ember-dragula onDrag=(action drag)}}
         template block text
       {{/ember-dragula}}
     `);
@@ -78,7 +78,7 @@ module('Integration | Component | ember-dragula', function(hooks) {
     });
 
     await this.render(hbs`
-      {{#ember-dragula on-dragend=(action dragEnd)}}
+      {{#ember-dragula onDragend=(action dragEnd)}}
         template block text
       {{/ember-dragula}}
     `);
@@ -105,7 +105,7 @@ module('Integration | Component | ember-dragula', function(hooks) {
     });
 
     await this.render(hbs`
-      {{#ember-dragula on-cancel=(action cancel)}}
+      {{#ember-dragula onCancel=(action cancel)}}
         template block text
       {{/ember-dragula}}
     `);
@@ -132,7 +132,7 @@ module('Integration | Component | ember-dragula', function(hooks) {
     });
 
     await this.render(hbs`
-      {{#ember-dragula on-remove=(action remove)}}
+      {{#ember-dragula onRemove=(action remove)}}
         template block text
       {{/ember-dragula}}
     `);
@@ -159,7 +159,7 @@ module('Integration | Component | ember-dragula', function(hooks) {
     });
 
     await this.render(hbs`
-      {{#ember-dragula on-shadow=(action shadow)}}
+      {{#ember-dragula onShadow=(action shadow)}}
         template block text
       {{/ember-dragula}}
     `);
@@ -186,7 +186,7 @@ module('Integration | Component | ember-dragula', function(hooks) {
     });
 
     await this.render(hbs`
-      {{#ember-dragula on-over=(action over)}}
+      {{#ember-dragula onOver=(action over)}}
         template block text
       {{/ember-dragula}}
     `);
@@ -213,7 +213,7 @@ module('Integration | Component | ember-dragula', function(hooks) {
     });
 
     await this.render(hbs`
-      {{#ember-dragula on-out=(action out)}}
+      {{#ember-dragula onOut=(action out)}}
         template block text
       {{/ember-dragula}}
     `);
@@ -240,7 +240,7 @@ module('Integration | Component | ember-dragula', function(hooks) {
     });
 
     await this.render(hbs`
-      {{#ember-dragula on-cloned=(action cloned)}}
+      {{#ember-dragula onCloned=(action cloned)}}
         template block text
       {{/ember-dragula}}
     `);

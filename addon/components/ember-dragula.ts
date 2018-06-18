@@ -13,6 +13,15 @@ export default class EmberDragula extends Component.extend( {
   public drake!: Drake;
   public options?: DragulaOptions;
   public onInit?: (drake: any) => void;
+  public onDrag?: (el?: HTMLElement, source?: HTMLElement) => void;
+  public onDragend?: (el?: HTMLElement) => void;
+  public onDrop?: (el?: HTMLElement, target?: HTMLElement, source?: HTMLElement, sibling?: HTMLElement) => void;
+  public onCancel?: (el?: HTMLElement, container?: HTMLElement, source?: HTMLElement) => void;
+  public onRemove?: (el?: HTMLElement, container?: HTMLElement, source?: HTMLElement) => void;
+  public onShadow?: (el?: HTMLElement, container?: HTMLElement, source?: HTMLElement) => void;
+  public onOver?: (el?: HTMLElement, container?: HTMLElement, source?: HTMLElement) => void;
+  public onOut?: (el?: HTMLElement, container?: HTMLElement, source?: HTMLElement) => void;
+  public onCloned?: (clone?: HTMLElement, original?: HTMLElement, type?: "mirror" | "copy" ) => void;
 
   public actions = {
     addContainer(this: EmberDragula, containerComponent: EmberDragulaContainer) {
@@ -57,12 +66,17 @@ export default class EmberDragula extends Component.extend( {
   }
 
   private setupHandlers(this: EmberDragula) {
-      this.events.forEach((event) => {
-        this.drake.on(event, (...args: any[]) => {
-          // @ts-ignore
-          // tslint:disable
-          this.getWithDefault(`on-${event}`, () => {})(...args);
-        });
+    this.events.forEach((event) => {
+      this.drake.on(event, (...args: any[]) => {
+        const camelEvent = this.capitalize(event);
+        if ((this as any)[`on${camelEvent}`]) {
+          (this as any)[`on${camelEvent}`](...args);
+        }
       });
-    }
+    });
+  }
+
+  private capitalize(event: string) {
+    return event.charAt(0).toUpperCase() + event.slice(1);
+  }
 }

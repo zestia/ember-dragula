@@ -1,6 +1,6 @@
 <h2>Re-styled</h2>
 
-{{#ember-dragula on-drop=(action "dropped") on-drag=(action "dragged") as |d|}}
+{{#ember-dragula onDrop=(action "dropped") onDrag=(action "dragged") as |d|}}
   {{#d.container class="list"}}
     {{#each list as |item|}}
       <div class="item restyle">{{item.name}}</div>

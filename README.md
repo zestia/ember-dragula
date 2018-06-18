@@ -51,10 +51,10 @@ To supply options:
 
 ## Events
 
-@zestia/ember-dragula supports the full range of events that dragula emits, see [https://github.com/bevacqua/dragula#drakeon-events](https://github.com/bevacqua/dragula#drakeon-events). These can be accessed by prefixing the event name with on-:
+@zestia/ember-dragula supports the full range of events that dragula emits, see [https://github.com/bevacqua/dragula#drakeon-events](https://github.com/bevacqua/dragula#drakeon-events). These can be accessed by prefixing the event name with on:
 
 ```handlebars
-{{#ember-dragula on-drag=(action 'drag') on-drop=(action 'drop') on-cancel=(action 'cancel') ..... as |d|}}
+{{#ember-dragula onDrag=(action 'drag') onDrop=(action 'drop') onCancel=(action 'cancel') ..... as |d|}}
   {{#d.container}}
     {{#each list as |item|}}
       {{item}}
@@ -77,11 +77,11 @@ To supply options:
   }
 ```
 
-The dragula instance is emitted via an `on-init` event as follows and allows access to all functions and fields on [drake](https://github.com/bevacqua/dragula#api):
+The dragula instance is emitted via an `onInit` event as follows and allows access to all functions and fields on [drake](https://github.com/bevacqua/dragula#api):
 
 
 ```handlebars
-{{#ember-dragula on-init=(action 'init') as |d|}}
+{{#ember-dragula onInit=(action 'init') as |d|}}
   ...
 {{/ember-dragula}}
 
