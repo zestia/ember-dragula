@@ -17,7 +17,6 @@
   "repository": "https://github.com/zestia/ember-dragula",
   "scripts": {
     "build": "ember build",
-    "lint:js": "eslint ./*.js addon addon-test-support app config lib server test-support tests",
     "start": "ember serve",
     "test": "ember try:each",
     "prepublishOnly": "ember ts:precompile",
@@ -28,8 +27,7 @@
     "babel-eslint": "8.2.3",
     "dragula": "^3.7.2",
     "ember-cli-babel": "^6.6.0",
-    "ember-cli-htmlbars": "^2.0.1",
-    "ember-cli-htmlbars-inline-precompile": "^1.0.0"
+    "ember-cli-htmlbars": "^2.0.1"
   },
   "devDependencies": {
     "@types/ember": "^2.8.25",
@@ -44,7 +42,6 @@
     "broccoli-asset-rev": "2.6.0",
     "ember-cli": "3.0.1",
     "ember-cli-dependency-checker": "2.1.0",
-    "ember-cli-eslint": "4.2.3",
     "ember-cli-github-pages": "0.2.0",
     "ember-cli-htmlbars-inline-precompile": "1.0.2",
     "ember-cli-inject-live-reload": "1.7.0",

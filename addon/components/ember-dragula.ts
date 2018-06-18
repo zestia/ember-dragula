@@ -11,7 +11,6 @@ export default class EmberDragula extends Component.extend( {
 }) {
 
   public drake!: Drake;
-  public events: string[];
   public options?: DragulaOptions;
   public onInit?: (drake: any) => void;
 
@@ -29,6 +28,8 @@ export default class EmberDragula extends Component.extend( {
       containers.splice(index, 1);
     },
   };
+
+  private events: string[];
 
   constructor() {
     super(...arguments);
