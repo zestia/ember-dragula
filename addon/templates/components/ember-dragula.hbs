@@ -1,6 +1,7 @@
-{{yield (hash
-  container=(component "ember-dragula-container"
-    on-insert=(action "addContainer")
-    on-destroy=(action "removeContainer")
+{{yield
+  (hash
+    container=(component "ember-dragula-container"
+      onInsert=(action "addContainer")
+      onDestroy=(action "removeContainer")
   )
 )}}
