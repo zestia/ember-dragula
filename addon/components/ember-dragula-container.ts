@@ -1,9 +1,10 @@
 import Component from "@ember/component";
+import { classNames } from "@ember-decorators/component";
 // @ts-ignore
 import layout from "@zestia/ember-dragula/templates/components/ember-dragula-container";
 
+@classNames("ember-dragula-container")
 export default class EmberDragulaContainer extends Component.extend( {
-  classNames: ["ember-dragula-container"],
   layout,
 }) {
   public onInsert!: (container: EmberDragulaContainer) => void;

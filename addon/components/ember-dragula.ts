@@ -1,12 +1,14 @@
 import Component from "@ember/component";
 import { assign } from "@ember/polyfills";
+import { action } from "@ember-decorators/object";
+import { classNames } from "@ember-decorators/component";
 import { DragulaOptions, Drake } from "dragula";
 import EmberDragulaContainer from "./ember-dragula-container";
 // @ts-ignore
 import layout from "@zestia/ember-dragula/templates/components/ember-dragula";
 
+@classNames("ember-dragula")
 export default class EmberDragula extends Component.extend( {
-  classNames: ["ember-dragula"],
   layout,
 }) {
 
@@ -22,21 +24,6 @@ export default class EmberDragula extends Component.extend( {
   public onOver?: (el?: HTMLElement, container?: HTMLElement, source?: HTMLElement) => void;
   public onOut?: (el?: HTMLElement, container?: HTMLElement, source?: HTMLElement) => void;
   public onCloned?: (clone?: HTMLElement, original?: HTMLElement, type?: "mirror" | "copy" ) => void;
-
-  public actions = {
-    addContainer(this: EmberDragula, containerComponent: EmberDragulaContainer) {
-      const element = containerComponent.element;
-      const containers = this.drake.containers;
-      containers.push(element);
-    },
-
-    removeContainer(this: EmberDragula, containerComponent: EmberDragulaContainer) {
-      const element = containerComponent.element;
-      const containers = this.drake.containers;
-      const index = containers.indexOf(element);
-      containers.splice(index, 1);
-    },
-  };
 
   private events: string[];
 
@@ -63,6 +50,21 @@ export default class EmberDragula extends Component.extend( {
   public willDestroyElement(this: EmberDragula) {
     this._super(...arguments);
     this.drake.destroy();
+  }
+
+  @action
+  public addContainer(this: EmberDragula, containerComponent: EmberDragulaContainer) {
+    const element = containerComponent.element;
+    const containers = this.drake.containers;
+    containers.push(element);
+  }
+
+  @action
+  public removeContainer(this: EmberDragula, containerComponent: EmberDragulaContainer) {
+    const element = containerComponent.element;
+    const containers = this.drake.containers;
+    const index = containers.indexOf(element);
+    containers.splice(index, 1);
   }
 
   private setupHandlers(this: EmberDragula) {
