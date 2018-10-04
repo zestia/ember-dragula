@@ -19,19 +19,19 @@ ember install @zestia/ember-dragula
 ## Usage
 
 ```handlebars
-{{#ember-dragula as |d|}}
-  {{#d.container}}
+<EmberDragula as |d|>
+  <d.container>
     {{#each list as |item|}}
       {{item}}
     {{/each}}
-  {{/d.container}}
+  </d.container>
 
-  {{#d.container}}
+  <#d.container>
     {{#each listTwo as |item|}}
       {{item}}
     {{/each}}
-  {{/d.container}}
-{{/ember-dragula}}
+  </d.container>
+</EmberDragula>
 
 ```
 
@@ -42,10 +42,9 @@ ember install @zestia/ember-dragula
 To supply options:
 
 ``` handlebars
-{{#ember-dragula options = (hash option=value) as |d|}}
-
-
-{{/ember-dragula }}
+<EmberDragula @options={{hash option=value}} as |d|>
+  ...
+</EmberDragula>
 
 ```
 
@@ -54,20 +53,19 @@ To supply options:
 @zestia/ember-dragula supports the full range of events that dragula emits, see [https://github.com/bevacqua/dragula#drakeon-events](https://github.com/bevacqua/dragula#drakeon-events). These can be accessed by prefixing the event name with on:
 
 ```handlebars
-{{#ember-dragula onDrag=(action 'drag') onDrop=(action 'drop') onCancel=(action 'cancel') ..... as |d|}}
-  {{#d.container}}
+<EmberDragula @onDrag={{action "drag"}} @onDrop={{action "drop"}} @onCancel={{action "cancel"}} ... as |d|>
+  <d.container>
     {{#each list as |item|}}
       {{item}}
     {{/each}}
-  {{/d.container}}
+  </d.container>
 
-  {{#d.container}}
+  <#d.container>
     {{#each listTwo as |item|}}
       {{item}}
     {{/each}}
-  {{/d.container}}
-{{/ember-dragula}}
-
+  </d.container>
+</EmberDragula>
 ```
 
 
@@ -81,9 +79,9 @@ The dragula instance is emitted via an `onInit` event as follows and allows acce
 
 
 ```handlebars
-{{#ember-dragula onInit=(action 'init') as |d|}}
+<EmberDragula @onInit={{action "init"}} as |d|>
   ...
-{{/ember-dragula}}
+</EmberDragula>
 
 ```
 
