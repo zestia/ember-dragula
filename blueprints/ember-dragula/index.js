@@ -1,11 +1,9 @@
-/* eslint-env node */
+'use strict';
+
 module.exports = {
   normalizeEntityName() {},
 
   afterInstall() {
-    this.addPackagesToProject([
-      {name: 'dragula'}
-    ])
+    this.addPackagesToProject([{ name: 'dragula' }]);
   }
-
 };
