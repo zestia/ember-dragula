@@ -26,7 +26,7 @@ ember install @zestia/ember-dragula
     {{/each}}
   </d.container>
 
-  <#d.container>
+  <d.container>
     {{#each listTwo as |item|}}
       {{item}}
     {{/each}}
@@ -60,7 +60,7 @@ To supply options:
     {{/each}}
   </d.container>
 
-  <#d.container>
+  <d.container>
     {{#each listTwo as |item|}}
       {{item}}
     {{/each}}
