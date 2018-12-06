@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  name: require('./package').name, // eslint-disable-line global-require
+  name: '@zestia/ember-dragula',
 
   included(app) {
     app.import('node_modules/dragula/dist/dragula.js');
