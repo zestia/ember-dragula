@@ -1,7 +1,7 @@
 import Component from "@ember/component";
 import { assign } from "@ember/polyfills";
 import { action } from "@ember-decorators/object";
-import { classNames } from "@ember-decorators/component";
+import { classNames, attribute } from "@ember-decorators/component";
 import { DragulaOptions, Drake } from "dragula";
 import EmberDragulaContainer from "./ember-dragula-container";
 // @ts-ignore
@@ -25,10 +25,10 @@ export default class EmberDragula extends Component.extend( {
   public onOut?: (el?: HTMLElement, container?: HTMLElement, source?: HTMLElement) => void;
   public onCloned?: (clone?: HTMLElement, original?: HTMLElement, type?: "mirror" | "copy" ) => void;
 
-  private events: string[];
+  private events!: string[];
 
-  constructor() {
-    super(...arguments);
+  public init() {
+    super.init();
     this.drake = (window as any).dragula(assign({}, this.options));
     this.events = [
       "drag",
