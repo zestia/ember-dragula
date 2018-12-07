@@ -1,7 +1,7 @@
 import Component from "@ember/component";
 import { assign } from "@ember/polyfills";
 import { action } from "@ember-decorators/object";
-import { classNames, attribute } from "@ember-decorators/component";
+import { classNames } from "@ember-decorators/component";
 import { DragulaOptions, Drake } from "dragula";
 import EmberDragulaContainer from "./ember-dragula-container";
 // @ts-ignore
@@ -13,7 +13,7 @@ export default class EmberDragula extends Component.extend( {
 }) {
 
   public drake!: Drake;
-  public options?: DragulaOptions;
+  public options?: DragulaOptions = {};
   public onInit?: (drake: any) => void;
   public onDrag?: (el?: HTMLElement, source?: HTMLElement) => void;
   public onDragend?: (el?: HTMLElement) => void;
