@@ -1,6 +1,6 @@
 {
   "name": "@zestia/ember-dragula",
-  "version": "3.0.1",
+  "version": "4.0.0",
   "description": "An ember addon for dragula support.",
   "directories": {
     "doc": "doc",
@@ -41,7 +41,6 @@
     "ember-cli-test-loader": "2.2.0",
     "ember-cli-uglify": "2.1.0",
     "ember-cli-update": "0.27.3",
-    "ember-cli": "3.5.0",
     "ember-cli": "3.6.0",
     "ember-data": "3.6.0",
     "ember-disable-prototype-extensions": "1.1.3",
