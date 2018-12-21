@@ -1,15 +1,15 @@
 <h2>Re-styled</h2>
 
-{{#ember-dragula onDrop=(action "dropped") onDrag=(action "dragged") as |d|}}
-  {{#d.container class="list"}}
+<EmberDragula @onDrop={{action "dropped"}} @onDrag={{action "dragged"}} as |d|>
+  <d.container class="list">
     {{#each list as |item|}}
       <div class="item restyle">{{item.name}}</div>
     {{/each}}
-  {{/d.container}}
+  </d.container>
 
-  {{#d.container class="list" }}
+  <d.container class="list">
     {{#each listTwo as |item|}}
       <div class="item restyle">{{item.name}}</div>
     {{/each}}
-  {{/d.container}}
-{{/ember-dragula}}
+  </d.container>
+</EmberDragula>

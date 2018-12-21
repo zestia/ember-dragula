@@ -2,32 +2,32 @@
 
 <h3>Copy items</h3>
 
-{{#ember-dragula options=(hash copy=true) onDrop=(action "dropped") onDrag=(action "dragged") as |d|}}
-  {{#d.container class="list" id="list-copy-1"}}
+<EmberDragula @options={{hash copy=true}} @onDrop={{action "dropped"}} @onDrag={{action "dragged"}} as |d|>
+  <d.container class="list" id="list-copy-1">
     {{#each list as |item|}}
       <div class="item">{{item.name}}</div>
     {{/each}}
-  {{/d.container}}
+  </d.container>
 
-  {{#d.container class="list" id="list-copy-2"}}
+  <d.container class="list" id="list-copy-2">
     {{#each listTwo as |item|}}
       <div class="item">{{item.name}}</div>
     {{/each}}
-  {{/d.container}}
-{{/ember-dragula}}
+  </d.container>
+</EmberDragula>
 
 <h3>Move disabled</h3>
 
-{{#ember-dragula options=(hash moves=moves) onDrop=(action "dropped") onDrag=(action "dragged") as |d|}}
-  {{#d.container class="list" id="list-moves-1"}}
+<EmberDragula @options={{hash moves=this.moves}} @onDrop={{action "dropped"}} @onDrag={{action "dragged"}} as |d|>
+  <d.container class="list" id="list-moves-1">
     {{#each list as |item|}}
       <div class="item">{{item.name}}</div>
     {{/each}}
-  {{/d.container}}
+  </d.container>
 
-  {{#d.container class="list" id="list-moves-2"}}
+  <d.container class="list" id="list-moves-2">
     {{#each listTwo as |item|}}
       <div class="item">{{item.name}}</div>
     {{/each}}
-  {{/d.container}}
-{{/ember-dragula}}
+  </d.container>
+</EmberDragula>

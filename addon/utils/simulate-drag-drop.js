@@ -1,11 +1,28 @@
-function _fireMouseEvent(type: string, elem: HTMLElement, centerX: number, centerY: number): void {
+function _fireMouseEvent(type, elem, centerX, centerY) {
   const evt = document.createEvent("MouseEvents");
-  evt.initMouseEvent(type, true, true, window, 1, 1, 1,
-    centerX, centerY, false, false, false, false, 0, elem);
+
+  evt.initMouseEvent(
+    type,
+    true,
+    true,
+    window,
+    1,
+    1,
+    1,
+    centerX,
+    centerY,
+    false,
+    false,
+    false,
+    false,
+    0,
+    elem
+  );
+
   elem.dispatchEvent(evt);
 }
 
-export function simulateDragAndDrop(elemDrag: HTMLElement, elemDrop: HTMLElement): void {
+export function simulateDragAndDrop(elemDrag, elemDrop) {
   if (!elemDrag || !elemDrop) {
     return;
   }
@@ -19,12 +36,12 @@ export function simulateDragAndDrop(elemDrag: HTMLElement, elemDrop: HTMLElement
   const centerDropY = Math.floor((dropPos.top + dropPos.bottom) / 2);
 
   _fireMouseEvent("mousedown", elemDrag, centerDragX, centerDragY);
-  _fireMouseEvent("mousemove", elemDrag, centerDragX + 1, centerDragY + 1 );
+  _fireMouseEvent("mousemove", elemDrag, centerDragX + 1, centerDragY + 1);
   _fireMouseEvent("mousemove", elemDrag, centerDropX, centerDropY);
   _fireMouseEvent("mouseup", elemDrag, centerDropX, centerDropY);
 }
 
-export function simulateDrag(elemDrag: HTMLElement): void {
+export function simulateDrag(elemDrag) {
   if (!elemDrag) {
     return;
   }
@@ -34,10 +51,10 @@ export function simulateDrag(elemDrag: HTMLElement): void {
   const centerDragY = Math.floor((pos.top + pos.bottom) / 2);
 
   _fireMouseEvent("mousedown", elemDrag, centerDragX, centerDragY);
-  _fireMouseEvent("mousemove", elemDrag, centerDragX + 1, centerDragY + 1 );
+  _fireMouseEvent("mousemove", elemDrag, centerDragX + 1, centerDragY + 1);
 }
 
-export function simulateDrop(elemDrag: HTMLElement, elemDrop: HTMLElement): void {
+export function simulateDrop(elemDrag, elemDrop) {
   if (!elemDrag || !elemDrop) {
     return;
   }
