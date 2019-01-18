@@ -2,13 +2,13 @@
 
 <EmberDragula @onDrop={{action "dropped"}} @onDrag={{action "dragged"}} as |d|>
   <d.container class="list list-1">
-    {{#each list as |item|}}
+    {{#each this.list as |item|}}
       <div class="item">{{item.name}}</div>
     {{/each}}
   </d.container>
 
   <d.container class="list list-2">
-    {{#each listTwo as |item|}}
+    {{#each this.listTwo as |item|}}
       <div class="item">{{item.name}}</div>
     {{/each}}
   </d.container>
