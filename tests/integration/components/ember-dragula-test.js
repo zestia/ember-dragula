@@ -261,7 +261,7 @@ module('Integration | Component | ember-dragula', function(hooks) {
 
     await this.render(hbs`
       <EmberDragula as |d|>
-        <#d.container>
+        <d.container>
           Test container
         </d.container>
       </EmberDragula>
@@ -286,7 +286,7 @@ module('Integration | Component | ember-dragula', function(hooks) {
     await this.render(hbs`
       <EmberDragula as |d|>
         {{#if this.renderContainer}}
-          <#d.container>
+          <d.container>
             Test container
           </d.container>
         {{/if}}
