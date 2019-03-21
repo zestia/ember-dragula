@@ -1,9 +1,6 @@
 # @zestia/ember-dragula
 
-[![dependencies Status](https://david-dm.org/zestia/ember-dragula/status.svg)](https://david-dm.org/zestia/ember-dragula)
-[![devDependencies Status](https://david-dm.org/zestia/ember-dragula/dev-status.svg)](https://david-dm.org/zestia/ember-dragula?type=dev)
-[![Build Status](https://travis-ci.org/zestia/ember-dragula.svg?branch=master)](https://travis-ci.org/zestia/ember-dragula)
-
+<a href="https://badge.fury.io/js/%40zestia%2Fember-dragula"><img src="https://badge.fury.io/js/%40zestia%2Fember-dragula.svg" alt="npm version" height="18"></a> &nbsp; <a href="http://travis-ci.org/zestia/ember-dragula"><img src="https://travis-ci.org/zestia/ember-dragula.svg?branch=master"></a> &nbsp; <a href="https://david-dm.org/zestia/ember-dragula#badge-embed"><img src="https://david-dm.org/zestia/ember-dragula.svg"></a> &nbsp; <a href="https://david-dm.org/zestia/ember-dragula#dev-badge-embed"><img src="https://david-dm.org/zestia/ember-dragula/dev-status.svg"></a> &nbsp; <a href="http://emberobserver.com/addons/ember-dragula"><img src="http://emberobserver.com/badges/ember-dragula.svg"></a>
 
 
 This Ember addon provides support for drag and drop using [dragula](https://bevacqua.github.io/dragula/)
