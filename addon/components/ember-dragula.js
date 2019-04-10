@@ -2,6 +2,8 @@ import Component from '@ember/component';
 import { assign } from '@ember/polyfills';
 import layout from '@zestia/ember-dragula/templates/components/ember-dragula';
 import { bind } from '@ember/runloop';
+import dragula from 'dragula';
+
 const { keys } = Object;
 
 export default Component.extend({
@@ -12,7 +14,7 @@ export default Component.extend({
   init() {
     this._super(...arguments);
 
-    this.drake = window.dragula(assign({}, this.options));
+    this.drake = dragula(assign({}, this.options));
 
     this.events = {
       drag: 'onDrag',
