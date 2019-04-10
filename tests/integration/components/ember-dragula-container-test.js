@@ -13,10 +13,9 @@ module('Integration | Component | ember-dragula container', function(hooks) {
     this.set('destroyed', () => {});
 
     await this.render(hbs`
-      <EmberDragulaContainer @onInsert={{this.inserted}} @onDestroy={{this.destroyed}}>
-        <div> item 1 </div>
-        <div> item 2 </div>
-      </EmberDragulaContainer>
+      <EmberDragulaContainer
+        @onInsert={{this.inserted}}
+        @onDestroy={{this.destroyed}} />
     `);
   });
 
@@ -29,10 +28,9 @@ module('Integration | Component | ember-dragula container', function(hooks) {
 
     await this.render(hbs`
       {{#if this.renderComponent}}
-        <EmberDragulaContainer @onDestroy={{this.destroyed}} @onInsert={{this.inserted}}>
-          <div> item 1 </div>
-          <div> item 2 </div>
-        </EmberDragulaContainer>
+        <EmberDragulaContainer
+          @onDestroy={{this.destroyed}}
+          @onInsert={{this.inserted}} />
       {{/if}}
     `);
 
