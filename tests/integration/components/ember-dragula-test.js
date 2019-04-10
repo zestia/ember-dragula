@@ -9,7 +9,6 @@ module('Integration | Component | ember-dragula', function(hooks) {
 
   hooks.beforeEach(function() {
     this.events = this.owner.lookup('component:ember-dragula').events;
-    console.log(this.events);
   });
 
   test('it emits dragula events as actions', async function(assert) {
