@@ -17,13 +17,13 @@ ember install @zestia/ember-dragula
 ```handlebars
 <EmberDragula as |d|>
   <d.container>
-    {{#each list as |item|}}
+    {{#each this.listOne as |item|}}
       {{item}}
     {{/each}}
   </d.container>
 
   <d.container>
-    {{#each listTwo as |item|}}
+    {{#each this.listTwo as |item|}}
       {{item}}
     {{/each}}
   </d.container>
@@ -51,13 +51,13 @@ To supply options:
 ```handlebars
 <EmberDragula @onDrag={{action "drag"}} @onDrop={{action "drop"}} @onCancel={{action "cancel"}} ... as |d|>
   <d.container>
-    {{#each list as |item|}}
+    {{#each this.listOne as |item|}}
       {{item}}
     {{/each}}
   </d.container>
 
   <d.container>
-    {{#each listTwo as |item|}}
+    {{#each this.listTwo as |item|}}
       {{item}}
     {{/each}}
   </d.container>
@@ -100,8 +100,8 @@ Then within a test
 
 ```javascript
 
-  const draggingElement = this.$('foo');
-  const droppingElement = this.$('bar');
+  const draggingElement = find('.foo');
+  const droppingElement = find('.bar');
 
   simulateDragAndDrop(draggingElement, droppingElement);
 
@@ -112,8 +112,8 @@ If you need to drag an element, wait for an async event and then drop that eleme
 ```javascript
 import { simulateDrag, simulateDrop } from '@zestia/ember-dragula/utils/simulate-drag-drop'
 
-  const draggingElement = this.$('foo');
-  const droppingElement = this.$('bar');
+  const draggingElement = find('.foo');
+  const droppingElement = find('.bar');
 
   simulateDrag(draggingElement);
 
