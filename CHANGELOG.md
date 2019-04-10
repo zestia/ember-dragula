@@ -1,6 +1,11 @@
 # Changelog
 
+3.2.3
+
+* Upgrade dependencies
+
 3.2.2
+
 * Imports dragula rather than using the global
 
 3.2.0
