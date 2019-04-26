@@ -1,5 +1,9 @@
 # Changelog
 
+4.0.0
+
+* Changes `d.container` to `d.Container`
+
 3.2.4
 
 * Upgrade dependencies

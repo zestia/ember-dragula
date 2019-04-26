@@ -3,31 +3,31 @@
 <h3>Copy items</h3>
 
 <EmberDragula @options={{hash copy=true}} @onDrop={{action "dropped"}} @onDrag={{action "dragged"}} as |d|>
-  <d.container class="list list-copy-1">
+  <d.Container class="list list-copy-1">
     {{#each this.list as |item|}}
       <div class="item">{{item.name}}</div>
     {{/each}}
-  </d.container>
+  </d.Container>
 
-  <d.container class="list list-copy-2">
+  <d.Container class="list list-copy-2">
     {{#each this.listTwo as |item|}}
       <div class="item">{{item.name}}</div>
     {{/each}}
-  </d.container>
+  </d.Container>
 </EmberDragula>
 
 <h3>Move disabled</h3>
 
 <EmberDragula @options={{hash moves=this.moves}} @onDrop={{action "dropped"}} @onDrag={{action "dragged"}} as |d|>
-  <d.container class="list list-moves-1">
+  <d.Container class="list list-moves-1">
     {{#each this.list as |item|}}
       <div class="item">{{item.name}}</div>
     {{/each}}
-  </d.container>
+  </d.Container>
 
-  <d.container class="list list-moves-2">
+  <d.Container class="list list-moves-2">
     {{#each this.listTwo as |item|}}
       <div class="item">{{item.name}}</div>
     {{/each}}
-  </d.container>
+  </d.Container>
 </EmberDragula>

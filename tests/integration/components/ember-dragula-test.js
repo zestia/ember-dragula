@@ -69,7 +69,7 @@ module('Integration | Component | ember-dragula', function(hooks) {
 
     await this.render(hbs`
       <EmberDragula @onInit={{action this.init}} as |d|>
-        <d.container />
+        <d.Container />
       </EmberDragula>
     `);
 
@@ -90,7 +90,7 @@ module('Integration | Component | ember-dragula', function(hooks) {
     await this.render(hbs`
       <EmberDragula @onInit={{action this.init}} as |d|>
         {{#if this.renderContainer}}
-          <d.container />
+          <d.Container />
         {{/if}}
       </EmberDragula>
     `);

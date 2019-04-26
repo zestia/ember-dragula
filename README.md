@@ -16,17 +16,17 @@ ember install @zestia/ember-dragula
 
 ```handlebars
 <EmberDragula as |d|>
-  <d.container>
+  <d.Container>
     {{#each this.listOne as |item|}}
       {{item}}
     {{/each}}
-  </d.container>
+  </d.Container>
 
-  <d.container>
+  <d.Container>
     {{#each this.listTwo as |item|}}
       {{item}}
     {{/each}}
-  </d.container>
+  </d.Container>
 </EmberDragula>
 
 ```
@@ -50,17 +50,17 @@ To supply options:
 
 ```handlebars
 <EmberDragula @onDrag={{action "drag"}} @onDrop={{action "drop"}} @onCancel={{action "cancel"}} ... as |d|>
-  <d.container>
+  <d.Container>
     {{#each this.listOne as |item|}}
       {{item}}
     {{/each}}
-  </d.container>
+  </d.Container>
 
-  <d.container>
+  <d.Container>
     {{#each this.listTwo as |item|}}
       {{item}}
     {{/each}}
-  </d.container>
+  </d.Container>
 </EmberDragula>
 ```
 
