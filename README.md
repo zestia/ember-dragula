@@ -90,39 +90,22 @@ The dragula instance is emitted via an `onInit` event as follows and allows acce
 
 ## Test helpers
 
-To simulate dragging a HTML Element over another a test helper is provided.
+To simulate dragging and dropping, test helpers are provided:
 
 ```javascript
- import { simulateDragAndDrop } from '@zestia/ember-dragula/utils/simulate-drag-drop'
+ import { simulateDragDrop } from '@zestia/ember-dragula/test-support/helpers/simulate-drag-drop'
 ```
 
-Then within a test
+Within a test:
 
 ```javascript
+  const dragMe = find('.drag-me');
+  const dropHere = find('.drop-here');
 
-  const draggingElement = find('.foo');
-  const droppingElement = find('.bar');
-
-  simulateDragAndDrop(draggingElement, droppingElement);
-
+  await simulateDrag(dragMe);
+  await simulateDrop(dragMe, dropHere);
+  await simulateDragDrop(dragMe, dropHere);
 ```
-
-If you need to drag an element, wait for an async event and then drop that element there are separate test helpers provided for this use case:
-
-```javascript
-import { simulateDrag, simulateDrop } from '@zestia/ember-dragula/utils/simulate-drag-drop'
-
-  const draggingElement = find('.foo');
-  const droppingElement = find('.bar');
-
-  simulateDrag(draggingElement);
-
-  await someAsyncAction
-
-  simulateDrop(draggingElement, droppingElement);
-
-```
-
 
 
 ## Developing

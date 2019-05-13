@@ -1,5 +1,10 @@
 # Changelog
 
+5.0.0
+
+* Moves location of simulate drag drop test helpers
+* Improves drag drop test helpers (see [Readme](README.md))
+
 4.0.0
 
 * Changes `d.container` to `d.Container`
