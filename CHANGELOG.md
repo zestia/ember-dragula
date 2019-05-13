@@ -3,7 +3,7 @@
 5.0.0
 
 * Moves location of simulate drag drop test helpers
-* Improves drag drop test helpers (see [Readme](README.md))
+* Updates drag drop test helpers to use Ember test helpers under the hood
 
 4.0.0
 
