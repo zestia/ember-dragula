@@ -10,9 +10,9 @@ export function simulateDragDrop(elemDrag, elemDrop) {
 }
 
 export function simulateDrag(elemDrag) {
-  const dragRect = elemDrag.getBoundingClientRect();
-  const centerDragX = floor(dragRect.left + (dragRect.width / 2));
-  const centerDragY = floor(dragRect.top + (dragRect.height / 2));
+  const rectDrag = elemDrag.getBoundingClientRect();
+  const centerDragX = floor(rectDrag.left + (rectDrag.width / 2));
+  const centerDragY = floor(rectDrag.top + (rectDrag.height / 2));
   const fromOptions = { clientX: centerDragX, clientY: centerDragY };
   const toOptions = { clientX: centerDragX + 1, clientY: centerDragY + 1 };
 
@@ -23,9 +23,9 @@ export function simulateDrag(elemDrag) {
 }
 
 export function simulateDrop(elemDrag, elemDrop) {
-  const dropRect = elemDrop.getBoundingClientRect();
-  const centerDropX = floor(dropRect.left + (dropRect.width / 2));
-  const centerDropY = floor(dropRect.top + (dropRect.height / 2));
+  const rectDrop = elemDrop.getBoundingClientRect();
+  const centerDropX = floor(rectDrop.left + (rectDrop.width / 2));
+  const centerDropY = floor(rectDrop.top + (rectDrop.height / 2));
   const toOptions = { clientX: centerDropX, clientY: centerDropY };
 
   return all([

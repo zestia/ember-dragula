@@ -1,5 +1,9 @@
 # Changelog
 
+5.0.1
+
+* Correct center drag point calculation in test helpers
+
 5.0.0
 
 * Moves location of simulate drag drop test helpers
