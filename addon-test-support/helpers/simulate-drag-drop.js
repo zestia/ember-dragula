@@ -10,25 +10,26 @@ export function simulateDragDrop(elemDrag, elemDrop) {
 }
 
 export function simulateDrag(elemDrag) {
-  const dragPos = elemDrag.getBoundingClientRect();
-  const centerDragX = floor((dragPos.left + dragPos.right) / 2);
-  const centerDragY = floor((dragPos.top + dragPos.bottom) / 2);
-  const startOptions = { clientX: centerDragX, clientY: centerDragY };
-  const endOptions = { clientX: centerDragX + 1, clientY: centerDragY + 1 };
+  const dragRect = elemDrag.getBoundingClientRect();
+  const centerDragX = floor(dragRect.left + (dragRect.width / 2));
+  const centerDragY = floor(dragRect.top + (dragRect.height / 2));
+  const fromOptions = { clientX: centerDragX, clientY: centerDragY };
+  const toOptions = { clientX: centerDragX + 1, clientY: centerDragY + 1 };
+
   return all([
-    triggerEvent(elemDrag, 'mousedown', startOptions),
-    triggerEvent(elemDrag, 'mousemove', endOptions),
-    triggerEvent(elemDrag, 'mousemove', startOptions)
+    triggerEvent(elemDrag, 'mousedown', fromOptions),
+    triggerEvent(elemDrag, 'mousemove', toOptions)
   ]);
 }
 
 export function simulateDrop(elemDrag, elemDrop) {
-  const pos = elemDrop.getBoundingClientRect();
-  const centerDropX = floor((pos.left + pos.right) / 2);
-  const centerDropY = floor((pos.top + pos.bottom) / 2);
-  const dropOptions = { clientX: centerDropX, clientY: centerDropY };
+  const dropRect = elemDrop.getBoundingClientRect();
+  const centerDropX = floor(dropRect.left + (dropRect.width / 2));
+  const centerDropY = floor(dropRect.top + (dropRect.height / 2));
+  const toOptions = { clientX: centerDropX, clientY: centerDropY };
+
   return all([
-    triggerEvent(elemDrag, 'mousemove', dropOptions),
-    triggerEvent(elemDrag, 'mouseup', dropOptions)
+    triggerEvent(elemDrag, 'mousemove', toOptions),
+    triggerEvent(elemDrag, 'mouseup', toOptions)
   ]);
 }
