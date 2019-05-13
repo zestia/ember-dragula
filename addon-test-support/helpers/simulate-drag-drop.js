@@ -1,5 +1,4 @@
 import { triggerEvent } from '@ember/test-helpers';
-import { assign } from '@ember/polyfills';
 import { all } from 'rsvp';
 const { floor } = Math;
 
@@ -10,12 +9,12 @@ export function simulateDragDrop(elemDrag, elemDrop) {
   ]);
 }
 
-export function simulateDrag(elemDrag, options) {
+export function simulateDrag(elemDrag) {
   const dragPos = elemDrag.getBoundingClientRect();
   const centerDragX = floor((dragPos.left + dragPos.right) / 2);
   const centerDragY = floor((dragPos.top + dragPos.bottom) / 2);
   const startOptions = { clientX: centerDragX, clientY: centerDragY };
-  const endOptions = assign({ clientX: centerDragX + 1, clientY: centerDragY + 1 }, options);
+  const endOptions = { clientX: centerDragX + 1, clientY: centerDragY + 1 };
   return all([
     triggerEvent(elemDrag, 'mousedown', startOptions),
     triggerEvent(elemDrag, 'mousemove', endOptions),
