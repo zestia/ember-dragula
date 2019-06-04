@@ -1,5 +1,9 @@
 # Changelog
 
+## 5.0.2
+
+- Upgrade dependencies
+
 ## 5.0.1
 
 - Correct center drag point calculation in test helpers
