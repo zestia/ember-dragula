@@ -35,7 +35,7 @@ ember install @zestia/ember-dragula
 
 ## Options
 
-@zestia/ember-dragula supports the full range of options that dragula accepts, see : [https://github.com/bevacqua/dragula#dragulacontainers-options](https://github.com/bevacqua/dragula#dragulacontainers-options)
+@zestia/ember-dragula supports the full range of options that dragula accepts, see: [https://github.com/bevacqua/dragula#dragulacontainers-options](https://github.com/bevacqua/dragula#dragulacontainers-options)
 
 To supply options:
 
@@ -48,7 +48,7 @@ To supply options:
 
 ## Events
 
-@zestia/ember-dragula supports the full range of events that dragula emits, see [https://github.com/bevacqua/dragula#drakeon-events](https://github.com/bevacqua/dragula#drakeon-events). These can be accessed by prefixing the event name with on:
+@zestia/ember-dragula supports the full range of events that dragula emits, see [https://github.com/bevacqua/dragula#drakeon-events](https://github.com/bevacqua/dragula#drakeon-events). These can be accessed by prefixing the event name with "on":
 
 ```handlebars
 <EmberDragula @onDrag={{action "drag"}} @onDrop={{action "drop"}} @onCancel={{action "cancel"}} ... as |d|>
@@ -72,7 +72,7 @@ To supply options:
   }
 ```
 
-The dragula instance is emitted via an `onInit` event as follows and allows access to all functions and fields on [drake](https://github.com/bevacqua/dragula#api):
+The dragula instance is emitted via an `onInit` event as follows and allows access to all functions and fields on `drake` (https://github.com/bevacqua/dragula#api):
 
 ```handlebars
 <EmberDragula @onInit={{action "init"}} as |d|>
