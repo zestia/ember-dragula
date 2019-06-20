@@ -4,7 +4,9 @@
 
 This Ember addon provides support for drag and drop using [dragula](https://bevacqua.github.io/dragula/)
 
-[Demo](https://zestia.github.io/ember-dragula)
+## Demo
+
+https://zestia.github.io/ember-dragula
 
 ## Installation
 
@@ -37,7 +39,7 @@ ember install @zestia/ember-dragula
 
 To supply options:
 
-``` handlebars
+```handlebars
 <EmberDragula @options={{hash option=value}} as |d|>
   ...
 </EmberDragula>
@@ -64,7 +66,6 @@ To supply options:
 </EmberDragula>
 ```
 
-
 ```JavaScript
   drop(el, target, source, sibling) {
 
@@ -73,14 +74,12 @@ To supply options:
 
 The dragula instance is emitted via an `onInit` event as follows and allows access to all functions and fields on [drake](https://github.com/bevacqua/dragula#api):
 
-
 ```handlebars
 <EmberDragula @onInit={{action "init"}} as |d|>
   ...
 </EmberDragula>
 
 ```
-
 
 ```JavaScript
   init(drake) {
@@ -93,41 +92,41 @@ The dragula instance is emitted via an `onInit` event as follows and allows acce
 To simulate dragging and dropping, test helpers are provided:
 
 ```javascript
- import { simulateDragDrop } from '@zestia/ember-dragula/test-support/helpers/simulate-drag-drop'
+import { simulateDragDrop } from '@zestia/ember-dragula/test-support/helpers/simulate-drag-drop';
 ```
 
 Within a test:
 
 ```javascript
-  const dragMe = find('.drag-me');
-  const dropHere = find('.drop-here');
+const dragMe = find('.drag-me');
+const dropHere = find('.drop-here');
 
-  await simulateDrag(dragMe);
-  await simulateDrop(dragMe, dropHere);
-  await simulateDragDrop(dragMe, dropHere);
+await simulateDrag(dragMe);
+await simulateDrop(dragMe, dropHere);
+await simulateDragDrop(dragMe, dropHere);
 ```
 
-
 ## Developing
+
 ### Installation
 
-* `git clone https://github.com/zestia/ember-dragula.git`
-* `cd ember-dragula`
-* `npm install`
+- `git clone https://github.com/zestia/ember-dragula.git`
+- `cd ember-dragula`
+- `npm install`
 
-###  Running
+### Running
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+- `ember serve`
+- Visit your app at [http://localhost:4200](http://localhost:4200).
 
 ### Running Tests
 
-* `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
+- `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
+- `ember test`
+- `ember test --server`
 
 ### Building
 
-* `ember build`
+- `ember build`
 
 For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
