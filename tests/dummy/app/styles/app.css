@@ -1,5 +1,8 @@
 :root {
-  font-family: sans-serif;
+  --font: sans-serif;
+  --shadow: silver;
+
+  font-family: var(--font);
 }
 
 .examples {
@@ -29,7 +32,7 @@
   border: 1px solid silver;
   border-radius: 5px;
   padding: 20px;
-  box-shadow: 0 1px 1px 0 rgba(149, 149, 149, 1);
+  box-shadow: 0 1px 1px 0 var(--shadow);
 }
 
 .item.restyle.gu-mirror {
