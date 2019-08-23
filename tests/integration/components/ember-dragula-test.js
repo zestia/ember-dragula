@@ -73,7 +73,10 @@ module('Integration | Component | ember-dragula', function(hooks) {
       </EmberDragula>
     `);
 
-    assert.deepEqual(drake.containers[0], find('.ember-dragula-container:nth-child(1)'));
+    assert.deepEqual(
+      drake.containers[0],
+      find('.ember-dragula-container:nth-child(1)')
+    );
   });
 
   test('it removes container from drake when container is removed', async function(assert) {
@@ -95,7 +98,10 @@ module('Integration | Component | ember-dragula', function(hooks) {
       </EmberDragula>
     `);
 
-    assert.deepEqual(drake.containers[0], find('.ember-dragula-container:nth-child(1)'));
+    assert.deepEqual(
+      drake.containers[0],
+      find('.ember-dragula-container:nth-child(1)')
+    );
 
     this.set('renderContainer', false);
 

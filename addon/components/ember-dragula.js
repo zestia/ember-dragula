@@ -45,7 +45,10 @@ export default Component.extend({
     },
 
     removeContainer(containerComponent) {
-      this.drake.containers.splice(this.drake.containers.indexOf(containerComponent.element), 1);
+      this.drake.containers.splice(
+        this.drake.containers.indexOf(containerComponent.element),
+        1
+      );
     }
   },
 

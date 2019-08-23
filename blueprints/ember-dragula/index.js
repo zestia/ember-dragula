@@ -4,6 +4,6 @@ module.exports = {
   normalizeEntityName() {},
 
   afterInstall() {
-    this.addPackagesToProject([{ name: 'dragula' }])
+    this.addPackagesToProject([{ name: 'dragula' }]);
   }
 };

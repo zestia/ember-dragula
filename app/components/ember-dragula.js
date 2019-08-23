@@ -1,1 +1,1 @@
-export { default } from "@zestia/ember-dragula/components/ember-dragula";
+export { default } from '@zestia/ember-dragula/components/ember-dragula';
