@@ -1,5 +1,9 @@
 # Changelog
 
+## 5.0.4
+
+- Upgrade dependencies
+
 ## 5.0.3
 
 - Upgrade dependencies
