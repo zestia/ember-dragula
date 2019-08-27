@@ -9,7 +9,7 @@ const { keys } = Object;
 export default Component.extend({
   layout,
 
-  classNames: ['ember-dragula'],
+  tagName: '',
 
   init() {
     this._super(...arguments);
@@ -30,26 +30,22 @@ export default Component.extend({
     };
 
     this._setupHandlers();
-
     this._performAction('init', this.drake);
   },
 
-  willDestroyElement() {
-    this._super(...arguments);
-    this.drake.destroy();
-  },
-
   actions: {
-    addContainer(containerComponent) {
-      this.drake.containers.push(containerComponent.element);
+    addContainer(element) {
+      this.drake.containers.push(element);
     },
 
-    removeContainer(containerComponent) {
-      this.drake.containers.splice(
-        this.drake.containers.indexOf(containerComponent.element),
-        1
-      );
+    removeContainer(element) {
+      this.drake.containers.splice(this.drake.containers.indexOf(element), 1);
     }
+  },
+
+  willDestroy() {
+    this._super(...arguments);
+    this.drake.destroy();
   },
 
   _setupHandlers() {

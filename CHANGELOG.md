@@ -1,5 +1,9 @@
 # Changelog
 
+## 5.0.5
+
+- Update templates
+
 ## 5.0.4
 
 - Upgrade dependencies

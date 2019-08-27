@@ -1,7 +1,9 @@
-{{yield
-  (hash
+<div
+  class="ember-dragula"
+  ...attributes>
+  {{yield (hash
     Container=(component "ember-dragula-container"
       onInsert=(action "addContainer")
       onDestroy=(action "removeContainer")
-  )
-)}}
+  ))}}
+</div>
