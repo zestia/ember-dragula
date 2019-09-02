@@ -3,6 +3,7 @@
 ## 5.0.5
 
 - Update templates
+- Upgrade dependencies
 
 ## 5.0.4
 
