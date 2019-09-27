@@ -1,5 +1,9 @@
 # Changelog
 
+## 6.0.1
+
+- Upgrade dependencies
+
 ## 6.0.0
 
 - Update templates
