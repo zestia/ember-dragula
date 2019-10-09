@@ -75,7 +75,7 @@ module('Integration | Component | ember-dragula', function(hooks) {
 
     assert.deepEqual(
       drake.containers[0],
-      find('.ember-dragula-container:nth-child(1)')
+      find('.ember-dragula__container:nth-child(1)')
     );
   });
 
@@ -100,7 +100,7 @@ module('Integration | Component | ember-dragula', function(hooks) {
 
     assert.deepEqual(
       drake.containers[0],
-      find('.ember-dragula-container:nth-child(1)')
+      find('.ember-dragula__container:nth-child(1)')
     );
 
     this.set('renderContainer', false);

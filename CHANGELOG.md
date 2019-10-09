@@ -1,5 +1,9 @@
 # Changelog
 
+## 7.0.0
+
+- Switch to BEM syntax
+
 ## 6.0.1
 
 - Upgrade dependencies
