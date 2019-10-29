@@ -1,5 +1,9 @@
 # Changelog
 
+## 8.0.0
+
+- Rename `@onInit=` action to `@onReady=`
+
 ## 7.0.0
 
 - Switch to BEM syntax

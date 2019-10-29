@@ -18,7 +18,7 @@ module('Integration | Component | ember-dragula', function(hooks) {
 
     let drake;
 
-    this.set('init', d => {
+    this.set('ready', d => {
       drake = d;
     });
 
@@ -29,7 +29,7 @@ module('Integration | Component | ember-dragula', function(hooks) {
 
     await this.render(hbs`
       <EmberDragula
-        @onInit={{action this.init}}
+        @onReady={{action this.ready}}
         @onDrag={{action this.test "drag"}}
         @onDragEnd={{action this.test "dragEnd"}}
         @onDrop={{action this.test "drop"}}
@@ -63,12 +63,12 @@ module('Integration | Component | ember-dragula', function(hooks) {
 
     let drake;
 
-    this.set('init', d => {
+    this.set('ready', d => {
       drake = d;
     });
 
     await this.render(hbs`
-      <EmberDragula @onInit={{action this.init}} as |d|>
+      <EmberDragula @onReady={{action this.ready}} as |d|>
         <d.Container />
       </EmberDragula>
     `);
@@ -84,14 +84,14 @@ module('Integration | Component | ember-dragula', function(hooks) {
 
     let drake;
 
-    this.set('init', d => {
+    this.set('ready', d => {
       drake = d;
     });
 
     this.set('renderContainer', true);
 
     await this.render(hbs`
-      <EmberDragula @onInit={{action this.init}} as |d|>
+      <EmberDragula @onReady={{action this.ready}} as |d|>
         {{#if this.renderContainer}}
           <d.Container />
         {{/if}}

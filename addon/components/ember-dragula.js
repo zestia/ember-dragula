@@ -25,12 +25,11 @@ export default Component.extend({
       shadow: 'onShadow',
       over: 'onOver',
       out: 'onOut',
-      cloned: 'onCloned',
-      init: 'onInit'
+      cloned: 'onCloned'
     };
 
     this._setupHandlers();
-    this._performAction('init', this.drake);
+    this._performAction('onReady', this.drake);
   },
 
   actions: {
@@ -50,12 +49,12 @@ export default Component.extend({
 
   _setupHandlers() {
     keys(this.events).forEach(name => {
-      this.drake.on(name, bind(this, '_performAction', name));
+      this.drake.on(name, bind(this, '_performAction', this.events[name]));
     });
   },
 
   _performAction(name, ...args) {
-    const action = this[this.events[name]];
+    const action = this[name];
 
     if (typeof action === 'function') {
       action(...args);

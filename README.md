@@ -72,17 +72,17 @@ To supply options:
   }
 ```
 
-The dragula instance is emitted via an `onInit` event as follows and allows access to all functions and fields on `drake` (https://github.com/bevacqua/dragula#api):
+The dragula instance is emitted via an `onReady` action, and allows access to all functions and fields on `drake` (https://github.com/bevacqua/dragula#api):
 
 ```handlebars
-<EmberDragula @onInit={{action "init"}} as |d|>
+<EmberDragula @onReady={{action "ready"}} as |d|>
   ...
 </EmberDragula>
 
 ```
 
 ```JavaScript
-  init(drake) {
+  ready(drake) {
 
   }
 ```
