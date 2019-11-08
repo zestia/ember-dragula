@@ -4,17 +4,17 @@
 
 This Ember addon provides support for drag and drop using [dragula](https://bevacqua.github.io/dragula/)
 
-## Demo
-
-https://zestia.github.io/ember-dragula
-
 ## Installation
 
 ```
 ember install @zestia/ember-dragula
 ```
 
-## Usage
+## Demo
+
+https://zestia.github.io/ember-dragula
+
+## Example
 
 ```handlebars
 <EmberDragula as |d|>
@@ -105,28 +105,3 @@ await simulateDrag(dragMe);
 await simulateDrop(dragMe, dropHere);
 await simulateDragDrop(dragMe, dropHere);
 ```
-
-## Developing
-
-### Installation
-
-- `git clone https://github.com/zestia/ember-dragula.git`
-- `cd ember-dragula`
-- `npm install`
-
-### Running
-
-- `ember serve`
-- Visit your app at [http://localhost:4200](http://localhost:4200).
-
-### Running Tests
-
-- `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
-- `ember test`
-- `ember test --server`
-
-### Building
-
-- `ember build`
-
-For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
