@@ -66,12 +66,6 @@ To supply options:
 </EmberDragula>
 ```
 
-```JavaScript
-  drop(el, target, source, sibling) {
-
-  }
-```
-
 The dragula instance is emitted via an `onReady` action, and allows access to all functions and fields on `drake` (https://github.com/bevacqua/dragula#api):
 
 ```handlebars
@@ -79,12 +73,6 @@ The dragula instance is emitted via an `onReady` action, and allows access to al
   ...
 </EmberDragula>
 
-```
-
-```JavaScript
-  ready(drake) {
-
-  }
 ```
 
 ## Test helpers
