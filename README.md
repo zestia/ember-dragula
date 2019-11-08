@@ -51,7 +51,7 @@ To supply options:
 @zestia/ember-dragula supports the full range of events that dragula emits, see [https://github.com/bevacqua/dragula#drakeon-events](https://github.com/bevacqua/dragula#drakeon-events). These can be accessed by prefixing the event name with "on":
 
 ```handlebars
-<EmberDragula @onDrag={{action "drag"}} @onDrop={{action "drop"}} @onCancel={{action "cancel"}} ... as |d|>
+<EmberDragula @onDrag={{this.onDrag}} @onDrop={{this.drop}} @onCancel={{this.cancel}} ... as |d|>
   <d.Container>
     {{#each this.listOne as |item|}}
       {{item}}
@@ -69,7 +69,7 @@ To supply options:
 The dragula instance is emitted via an `onReady` action, and allows access to all functions and fields on `drake` (https://github.com/bevacqua/dragula#api):
 
 ```handlebars
-<EmberDragula @onReady={{action "ready"}} as |d|>
+<EmberDragula @onReady={{this.ready}} as |d|>
   ...
 </EmberDragula>
 
