@@ -1,5 +1,9 @@
 # Changelog
 
+## 8.0.1
+
+- Upgrade dependencies
+
 ## 8.0.0
 
 - Rename `@onInit=` action to `@onReady=`
