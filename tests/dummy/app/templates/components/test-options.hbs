@@ -1,33 +1,55 @@
-<h2>Drag and drop with options</h2>
+<h2>
+  Drag and drop with options
+</h2>
 
-<h3>Copy items</h3>
+<h3>
+  Copy items
+</h3>
 
-<EmberDragula @options={{hash copy=true}} @onDrop={{action "dropped"}} @onDrag={{action "dragged"}} as |d|>
+<EmberDragula
+  @options={{hash copy=true}}
+  @onDrop={{action "dropped"}}
+  @onDrag={{action "dragged"}} as |d|
+>
   <d.Container class="list list-copy-1">
     {{#each this.list as |item|}}
-      <div class="item">{{item.name}}</div>
+      <div class="item">
+        {{item.name}}
+      </div>
     {{/each}}
   </d.Container>
 
   <d.Container class="list list-copy-2">
     {{#each this.listTwo as |item|}}
-      <div class="item">{{item.name}}</div>
+      <div class="item">
+        {{item.name}}
+      </div>
     {{/each}}
   </d.Container>
 </EmberDragula>
 
-<h3>Move disabled</h3>
+<h3>
+  Move disabled
+</h3>
 
-<EmberDragula @options={{hash moves=this.moves}} @onDrop={{action "dropped"}} @onDrag={{action "dragged"}} as |d|>
+<EmberDragula
+  @options={{hash moves=this.moves}}
+  @onDrop={{action "dropped"}}
+  @onDrag={{action "dragged"}} as |d|
+>
   <d.Container class="list list-moves-1">
     {{#each this.list as |item|}}
-      <div class="item">{{item.name}}</div>
+      <div class="item">
+        {{item.name}}
+      </div>
     {{/each}}
   </d.Container>
 
   <d.Container class="list list-moves-2">
     {{#each this.listTwo as |item|}}
-      <div class="item">{{item.name}}</div>
+      <div class="item">
+        {{item.name}}
+      </div>
     {{/each}}
   </d.Container>
 </EmberDragula>

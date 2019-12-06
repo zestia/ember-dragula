@@ -1,15 +1,21 @@
-<h2>Basic Drag and Drop</h2>
+<h2>
+  Basic Drag and Drop
+</h2>
 
 <EmberDragula @onDrop={{action "dropped"}} @onDrag={{action "dragged"}} as |d|>
   <d.Container class="list list-1">
     {{#each this.list as |item|}}
-      <div class="item">{{item.name}}</div>
+      <div class="item">
+        {{item.name}}
+      </div>
     {{/each}}
   </d.Container>
 
   <d.Container class="list list-2">
     {{#each this.listTwo as |item|}}
-      <div class="item">{{item.name}}</div>
+      <div class="item">
+        {{item.name}}
+      </div>
     {{/each}}
   </d.Container>
 </EmberDragula>
