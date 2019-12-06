@@ -8,11 +8,11 @@
 
 <EmberDragula
   @options={{hash copy=true}}
-  @onDrop={{action "dropped"}}
-  @onDrag={{action "dragged"}} as |d|
+  @onDrop={{this.dropped}}
+  @onDrag={{this.dragged}} as |d|
 >
   <d.Container class="list list-copy-1">
-    {{#each this.list as |item|}}
+    {{#each this.listOne as |item|}}
       <div class="item">
         {{item.name}}
       </div>
@@ -34,11 +34,11 @@
 
 <EmberDragula
   @options={{hash moves=this.moves}}
-  @onDrop={{action "dropped"}}
-  @onDrag={{action "dragged"}} as |d|
+  @onDrop={{this.dropped}}
+  @onDrag={{this.dragged}} as |d|
 >
   <d.Container class="list list-moves-1">
-    {{#each this.list as |item|}}
+    {{#each this.listOne as |item|}}
       <div class="item">
         {{item.name}}
       </div>

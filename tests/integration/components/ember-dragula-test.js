@@ -29,16 +29,16 @@ module('Integration | Component | ember-dragula', function(hooks) {
 
     await this.render(hbs`
       <EmberDragula
-        @onReady={{action this.ready}}
-        @onDrag={{action this.test "drag"}}
-        @onDragEnd={{action this.test "dragEnd"}}
-        @onDrop={{action this.test "drop"}}
-        @onCancel={{action this.test "cancel"}}
-        @onRemove={{action this.test "remove"}}
-        @onShadow={{action this.test "shadow"}}
-        @onOver={{action this.test "over"}}
-        @onOut={{action this.test "out"}}
-        @onCloned={{action this.test "cloned"}} />
+        @onReady={{this.ready}}
+        @onDrag={{fn this.test "drag"}}
+        @onDragEnd={{fn this.test "dragEnd"}}
+        @onDrop={{fn this.test "drop"}}
+        @onCancel={{fn this.test "cancel"}}
+        @onRemove={{fn this.test "remove"}}
+        @onShadow={{fn this.test "shadow"}}
+        @onOver={{fn this.test "over"}}
+        @onOut={{fn this.test "out"}}
+        @onCloned={{fn this.test "cloned"}} />
     `);
 
     keys(this.events).forEach(name => {
@@ -68,7 +68,7 @@ module('Integration | Component | ember-dragula', function(hooks) {
     });
 
     await this.render(hbs`
-      <EmberDragula @onReady={{action this.ready}} as |d|>
+      <EmberDragula @onReady={{this.ready}} as |d|>
         <d.Container />
       </EmberDragula>
     `);
@@ -91,7 +91,7 @@ module('Integration | Component | ember-dragula', function(hooks) {
     this.set('renderContainer', true);
 
     await this.render(hbs`
-      <EmberDragula @onReady={{action this.ready}} as |d|>
+      <EmberDragula @onReady={{this.ready}} as |d|>
         {{#if this.renderContainer}}
           <d.Container />
         {{/if}}

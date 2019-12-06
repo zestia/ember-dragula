@@ -1,35 +1,27 @@
 /* eslint-disable no-console */
 
 import Component from '@ember/component';
+import { action } from '@ember/object';
 
-export default Component.extend({
-  init() {
-    this._super(...arguments);
+export default class TestOptionsComponent extends Component {
+  constructor() {
+    super(...arguments);
 
-    this.set('list', [
-      { name: 'Item 1' },
-      { name: 'Item 2' },
-      { name: 'Item 3' }
-    ]);
+    this.listOne = [{ name: 'Item 1' }, { name: 'Item 2' }, { name: 'Item 3' }];
+    this.listTwo = [{ name: 'Item 4' }, { name: 'Item 5' }, { name: 'Item 6' }];
+  }
 
-    this.set('listTwo', [
-      { name: 'Item 4' },
-      { name: 'Item 5' },
-      { name: 'Item 6' }
-    ]);
-  },
+  @action
+  dropped() {
+    console.log('Item Dropped');
+  }
 
-  actions: {
-    dropped() {
-      console.log('Item Dropped');
-    },
-
-    dragged() {
-      console.log('Item Dragged');
-    }
-  },
+  @action
+  dragged() {
+    console.log('Item Dragged');
+  }
 
   moves() {
     return false;
   }
-});
+}

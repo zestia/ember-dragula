@@ -3,8 +3,8 @@
     (hash
       Container=(component
         "ember-dragula-container"
-        onInsert=(action "addContainer")
-        onDestroy=(action "removeContainer")
+        onInsert=this.addContainer
+        onDestroy=this.removeContainer
       )
     )
   }}

@@ -2,9 +2,9 @@
   Re-styled
 </h2>
 
-<EmberDragula @onDrop={{action "dropped"}} @onDrag={{action "dragged"}} as |d|>
+<EmberDragula @onDrop={{this.dropped}} @onDrag={{this.dragged}} as |d|>
   <d.Container class="list">
-    {{#each this.list as |item|}}
+    {{#each this.listOne as |item|}}
       <div class="item restyle">
         {{item.name}}
       </div>
