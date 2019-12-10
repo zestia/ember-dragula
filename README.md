@@ -53,7 +53,7 @@ https://zestia.github.io/ember-dragula
 
 ## Options
 
-@zestia/ember-dragula supports the full range of options that dragula accepts, see: [https://github.com/bevacqua/dragula#dragulacontainers-options](https://github.com/bevacqua/dragula#dragulacontainers-options)
+The full range of options that dragula accepts are supported, see: [https://github.com/bevacqua/dragula#dragulacontainers-options](https://github.com/bevacqua/dragula#dragulacontainers-options)
 
 To supply options:
 
@@ -66,7 +66,7 @@ To supply options:
 
 ## Events
 
-@zestia/ember-dragula supports the full range of events that dragula emits, see [https://github.com/bevacqua/dragula#drakeon-events](https://github.com/bevacqua/dragula#drakeon-events). These can be accessed by prefixing the event name with "on":
+The full range of events that dragula emits are supported, see: [https://github.com/bevacqua/dragula#drakeon-events](https://github.com/bevacqua/dragula#drakeon-events). These can be accessed by prefixing the event name with "on":
 
 ```handlebars
 <EmberDragula @onDrag={{this.onDrag}} @onDrop={{this.drop}} @onCancel={{this.cancel}} ... as |d|>
