@@ -1,22 +1,5 @@
-:root {
-  --font: sans-serif;
-  --silver: silver;
-
-  font-family: var(--font);
-}
-
-.examples {
-  text-align: center;
-}
-
-.example {
-  margin: 0 auto;
-  display: table;
-}
-
 .list {
-  display: table-cell;
-  padding: 10px;
+  margin-right: 10px;
 }
 
 .item {
@@ -24,15 +7,7 @@
 }
 
 .ember-dragula {
-  display: inline-block;
-}
-
-.item.restyle {
-  box-sizing: border-box;
-  border: 1px solid var(--silver);
-  border-radius: 5px;
-  padding: 20px;
-  box-shadow: 0 1px 1px 0 var(--silver);
+  display: flex;
 }
 
 .item.restyle.gu-mirror {
