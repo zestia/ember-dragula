@@ -1,5 +1,10 @@
 # Changelog
 
+## 9.0.0
+
+- Small internal refactor
+- Drop support for Ember < 3.11
+
 ## 8.0.1
 
 - Upgrade dependencies
