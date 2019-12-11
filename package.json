@@ -1,6 +1,6 @@
 {
   "name": "@zestia/ember-dragula",
-  "version": "8.0.1",
+  "version": "9.0.0",
   "description": "An ember addon for dragula support.",
   "directories": {
     "doc": "doc",
