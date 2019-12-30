@@ -1,5 +1,9 @@
 # Changelog
 
+## 9.0.1
+
+- Upgrade dependencies
+
 ## 9.0.0
 
 - Small internal refactor
