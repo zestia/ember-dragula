@@ -1,5 +1,10 @@
 # Changelog
 
+## 9.0.2
+
+- Move render modifiers to dependencies
+- Upgrade dependencies
+
 ## 9.0.1
 
 - Upgrade dependencies
