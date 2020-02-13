@@ -17,7 +17,7 @@
     <img src="https://emberobserver.com/badges/-zestia-ember-dragula.svg">
   </a>
 
-  <img src="https://img.shields.io/badge/Ember-%3E%3D%203.12-brightgreen">
+  <img src="https://img.shields.io/badge/Ember-%3E%3D%203.16-brightgreen">
 </p>
 
 This Ember addon provides support for drag and drop using [dragula](https://bevacqua.github.io/dragula/)

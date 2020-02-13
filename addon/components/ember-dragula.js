@@ -1,35 +1,33 @@
-import Component from '@ember/component';
+import Component from '@glimmer/component';
 import { assign } from '@ember/polyfills';
-import layout from '@zestia/ember-dragula/templates/components/ember-dragula';
 import { bind } from '@ember/runloop';
 import { action } from '@ember/object';
 import dragula from 'dragula';
 
 const { keys } = Object;
 
+const events = {
+  drag: 'onDrag',
+  dragend: 'onDragEnd',
+  drop: 'onDrop',
+  cancel: 'onCancel',
+  remove: 'onRemove',
+  shadow: 'onShadow',
+  over: 'onOver',
+  out: 'onOut',
+  cloned: 'onCloned'
+};
+
 export default class EmberDragula extends Component {
-  layout = layout;
-  tagName = '';
+  static events = events;
 
-  init() {
-    super.init(...arguments);
+  constructor() {
+    super(...arguments);
 
-    this.drake = dragula(assign({}, this.options));
-
-    this.events = {
-      drag: 'onDrag',
-      dragend: 'onDragEnd',
-      drop: 'onDrop',
-      cancel: 'onCancel',
-      remove: 'onRemove',
-      shadow: 'onShadow',
-      over: 'onOver',
-      out: 'onOut',
-      cloned: 'onCloned'
-    };
+    this.drake = dragula(assign({}, this.args.options));
 
     this._setupHandlers();
-    this._performAction('onReady', this.drake);
+    this._invokeAction('onReady', this.drake);
   }
 
   @action
@@ -42,19 +40,19 @@ export default class EmberDragula extends Component {
     this.drake.containers.splice(this.drake.containers.indexOf(element), 1);
   }
 
-  willDestroy() {
-    super.willDestroy(...arguments);
+  @action
+  handleDestroyElement() {
     this.drake.destroy();
   }
 
   _setupHandlers() {
-    keys(this.events).forEach(name => {
-      this.drake.on(name, bind(this, '_performAction', this.events[name]));
+    keys(events).forEach(name => {
+      this.drake.on(name, bind(this, '_invokeAction', events[name]));
     });
   }
 
-  _performAction(name, ...args) {
-    const action = this[name];
+  _invokeAction(name, ...args) {
+    const action = this.args[name];
 
     if (typeof action === 'function') {
       action(...args);

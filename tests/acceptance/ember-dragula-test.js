@@ -6,7 +6,7 @@ import { find, findAll, visit, currentURL } from '@ember/test-helpers';
 module('Acceptance | ember-dragula', function(hooks) {
   setupApplicationTest(hooks);
 
-  test('visiting /ember-dragula', async function(assert) {
+  test('visiting /', async function(assert) {
     await visit('/');
 
     assert.equal(currentURL(), '/');

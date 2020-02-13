@@ -2,14 +2,11 @@ import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { find } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
+import EmberDragula from '@zestia/ember-dragula/components/ember-dragula';
 const { keys } = Object;
 
 module('Integration | Component | ember-dragula', function(hooks) {
   setupRenderingTest(hooks);
-
-  hooks.beforeEach(function() {
-    this.events = this.owner.lookup('component:ember-dragula').events;
-  });
 
   test('it emits dragula events as actions', async function(assert) {
     assert.expect(19);
@@ -41,7 +38,7 @@ module('Integration | Component | ember-dragula', function(hooks) {
         @onCloned={{fn this.test "cloned"}} />
     `);
 
-    keys(this.events).forEach(name => {
+    keys(EmberDragula.events).forEach(name => {
       drake.emit(name, ...testArgs);
     });
 
