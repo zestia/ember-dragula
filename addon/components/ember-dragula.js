@@ -15,7 +15,7 @@ const events = {
   shadow: 'onShadow',
   over: 'onOver',
   out: 'onOut',
-  cloned: 'onCloned'
+  cloned: 'onCloned',
 };
 
 export default class EmberDragula extends Component {
@@ -46,7 +46,7 @@ export default class EmberDragula extends Component {
   }
 
   _setupHandlers() {
-    keys(events).forEach(name => {
+    keys(events).forEach((name) => {
       this.drake.on(name, bind(this, '_invokeAction', events[name]));
     });
   }

@@ -5,17 +5,17 @@ import hbs from 'htmlbars-inline-precompile';
 import EmberDragula from '@zestia/ember-dragula/components/ember-dragula';
 const { keys } = Object;
 
-module('Integration | Component | ember-dragula', function(hooks) {
+module('Integration | Component | ember-dragula', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('it emits dragula events as actions', async function(assert) {
+  test('it emits dragula events as actions', async function (assert) {
     assert.expect(19);
 
     const testArgs = ['a', 'b', 'c', 'd'];
 
     let drake;
 
-    this.set('ready', d => {
+    this.set('ready', (d) => {
       drake = d;
     });
 
@@ -38,7 +38,7 @@ module('Integration | Component | ember-dragula', function(hooks) {
         @onCloned={{fn this.test "cloned"}} />
     `);
 
-    keys(EmberDragula.events).forEach(name => {
+    keys(EmberDragula.events).forEach((name) => {
       drake.emit(name, ...testArgs);
     });
 
@@ -51,16 +51,16 @@ module('Integration | Component | ember-dragula', function(hooks) {
       'shadow',
       'over',
       'out',
-      'cloned'
+      'cloned',
     ]);
   });
 
-  test('it adds container to drake when container is added', async function(assert) {
+  test('it adds container to drake when container is added', async function (assert) {
     assert.expect(1);
 
     let drake;
 
-    this.set('ready', d => {
+    this.set('ready', (d) => {
       drake = d;
     });
 
@@ -76,12 +76,12 @@ module('Integration | Component | ember-dragula', function(hooks) {
     );
   });
 
-  test('it removes container from drake when container is removed', async function(assert) {
+  test('it removes container from drake when container is removed', async function (assert) {
     assert.expect(2);
 
     let drake;
 
-    this.set('ready', d => {
+    this.set('ready', (d) => {
       drake = d;
     });
 

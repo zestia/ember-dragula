@@ -3,13 +3,13 @@ import { setupRenderingTest } from 'ember-qunit';
 import '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-module('Integration | Component | ember-dragula container', function(hooks) {
+module('Integration | Component | ember-dragula container', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('it sends an action when inserted into the dom', async function(assert) {
+  test('it sends an action when inserted into the dom', async function (assert) {
     assert.expect(1);
 
-    this.set('inserted', element => assert.ok(element));
+    this.set('inserted', (element) => assert.ok(element));
     this.set('destroyed', () => {});
 
     await this.render(hbs`
@@ -19,12 +19,12 @@ module('Integration | Component | ember-dragula container', function(hooks) {
     `);
   });
 
-  test('it sends a destroy action when removed from the dom', async function(assert) {
+  test('it sends a destroy action when removed from the dom', async function (assert) {
     assert.expect(1);
 
     this.set('renderComponent', true);
     this.set('inserted', () => {});
-    this.set('destroyed', element => assert.ok(element));
+    this.set('destroyed', (element) => assert.ok(element));
 
     await this.render(hbs`
       {{#if this.renderComponent}}

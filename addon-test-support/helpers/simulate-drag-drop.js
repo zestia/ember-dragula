@@ -15,7 +15,7 @@ export function simulateDrag(elemDrag) {
 
   return all([
     triggerEvent(elemDrag, 'mousedown', fromOptions),
-    triggerEvent(elemDrag, 'mousemove', toOptions)
+    triggerEvent(elemDrag, 'mousemove', toOptions),
   ]);
 }
 
@@ -27,6 +27,6 @@ export function simulateDrop(elemDrag, elemDrop) {
 
   return all([
     triggerEvent(elemDrag, 'mousemove', toOptions),
-    triggerEvent(elemDrag, 'mouseup', toOptions)
+    triggerEvent(elemDrag, 'mouseup', toOptions),
   ]);
 }

@@ -3,10 +3,10 @@ import { setupApplicationTest } from 'ember-qunit';
 import { simulateDragDrop } from '@zestia/ember-dragula/test-support/helpers/simulate-drag-drop';
 import { find, findAll, visit, currentURL } from '@ember/test-helpers';
 
-module('Acceptance | ember-dragula', function(hooks) {
+module('Acceptance | ember-dragula', function (hooks) {
   setupApplicationTest(hooks);
 
-  test('visiting /', async function(assert) {
+  test('visiting /', async function (assert) {
     await visit('/');
 
     assert.equal(currentURL(), '/');
@@ -18,7 +18,7 @@ module('Acceptance | ember-dragula', function(hooks) {
     assert.dom(findAll('.list-2 .item')[2]).hasText('Item 6');
   });
 
-  test('dragging objects', async function(assert) {
+  test('dragging objects', async function (assert) {
     await visit('/');
 
     assert.equal(currentURL(), '/');
@@ -35,7 +35,7 @@ module('Acceptance | ember-dragula', function(hooks) {
     assert.dom('.list-2 .item').exists({ count: 4 });
   });
 
-  test('accepts dragula options', async function(assert) {
+  test('accepts dragula options', async function (assert) {
     await visit('/');
 
     assert.equal(currentURL(), '/');

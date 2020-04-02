@@ -5,5 +5,5 @@ module.exports = {
 
   afterInstall() {
     this.addPackagesToProject([{ name: 'dragula' }]);
-  }
+  },
 };
