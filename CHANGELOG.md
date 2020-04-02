@@ -1,5 +1,9 @@
 # Changelog
 
+## 10.0.1
+
+- Upgrade dependencies
+
 ## 10.0.0
 
 - Glimmerise component
