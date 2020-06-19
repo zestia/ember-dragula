@@ -16,6 +16,6 @@ export default function (name, options = {}) {
     afterEach() {
       const afterEach = options.afterEach && options.afterEach(...arguments);
       return resolve(afterEach).then(() => destroyApp(this.application));
-    },
+    }
   });
 }

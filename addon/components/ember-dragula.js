@@ -15,7 +15,7 @@ const events = {
   shadow: 'onShadow',
   over: 'onOver',
   out: 'onOut',
-  cloned: 'onCloned',
+  cloned: 'onCloned'
 };
 
 export default class EmberDragula extends Component {

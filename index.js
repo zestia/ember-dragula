@@ -6,13 +6,13 @@ module.exports = {
   options: {
     autoImport: {
       alias: {
-        dragula: 'dragula/dist/dragula.js',
-      },
-    },
+        dragula: 'dragula/dist/dragula.js'
+      }
+    }
   },
 
   included(app) {
     this._super.included.apply(this, arguments);
     app.import('node_modules/dragula/dist/dragula.css');
-  },
+  }
 };

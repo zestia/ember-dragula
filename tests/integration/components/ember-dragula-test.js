@@ -51,7 +51,7 @@ module('Integration | Component | ember-dragula', function (hooks) {
       'shadow',
       'over',
       'out',
-      'cloned',
+      'cloned'
     ]);
   });
 
