@@ -1,5 +1,9 @@
 # Changelog
 
+## 10.0.6
+
+- Upgrade dependencies
+
 ## 10.0.5
 
 - Upgrade dependencies
