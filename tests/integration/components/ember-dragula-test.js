@@ -1,6 +1,6 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { find } from '@ember/test-helpers';
+import { find, render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 import EmberDragula from '@zestia/ember-dragula/components/ember-dragula';
 const { keys } = Object;
@@ -15,18 +15,16 @@ module('Integration | Component | ember-dragula', function (hooks) {
 
     let drake;
 
-    this.set('ready', (d) => {
-      drake = d;
-    });
+    this.handleReady = (d) => (drake = d);
 
-    this.set('test', (name, ...args) => {
+    this.test = (name, ...args) => {
       assert.step(name);
       assert.deepEqual(args, testArgs);
-    });
+    };
 
-    await this.render(hbs`
+    await render(hbs`
       <EmberDragula
-        @onReady={{this.ready}}
+        @onReady={{this.handleReady}}
         @onDrag={{fn this.test "drag"}}
         @onDragEnd={{fn this.test "dragEnd"}}
         @onDrop={{fn this.test "drop"}}
@@ -35,7 +33,8 @@ module('Integration | Component | ember-dragula', function (hooks) {
         @onShadow={{fn this.test "shadow"}}
         @onOver={{fn this.test "over"}}
         @onOut={{fn this.test "out"}}
-        @onCloned={{fn this.test "cloned"}} />
+        @onCloned={{fn this.test "cloned"}}
+      />
     `);
 
     keys(EmberDragula.events).forEach((name) => {
@@ -60,12 +59,10 @@ module('Integration | Component | ember-dragula', function (hooks) {
 
     let drake;
 
-    this.set('ready', (d) => {
-      drake = d;
-    });
+    this.handleReady = (d) => (drake = d);
 
-    await this.render(hbs`
-      <EmberDragula @onReady={{this.ready}} as |d|>
+    await render(hbs`
+      <EmberDragula @onReady={{this.handleReady}} as |d|>
         <d.Container />
       </EmberDragula>
     `);
@@ -81,14 +78,11 @@ module('Integration | Component | ember-dragula', function (hooks) {
 
     let drake;
 
-    this.set('ready', (d) => {
-      drake = d;
-    });
+    this.renderContainer = true;
+    this.handleReady = (d) => (drake = d);
 
-    this.set('renderContainer', true);
-
-    await this.render(hbs`
-      <EmberDragula @onReady={{this.ready}} as |d|>
+    await render(hbs`
+      <EmberDragula @onReady={{this.handleReady}} as |d|>
         {{#if this.renderContainer}}
           <d.Container />
         {{/if}}

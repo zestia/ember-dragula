@@ -1,6 +1,6 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import '@ember/test-helpers';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
 module('Integration | Component | ember-dragula container', function (hooks) {
@@ -9,28 +9,30 @@ module('Integration | Component | ember-dragula container', function (hooks) {
   test('it sends an action when inserted into the dom', async function (assert) {
     assert.expect(1);
 
-    this.set('inserted', (element) => assert.ok(element));
-    this.set('destroyed', () => {});
+    this.handleInserted = (element) => assert.ok(element);
+    this.handleDestroyed = () => {};
 
-    await this.render(hbs`
+    await render(hbs`
       <EmberDragulaContainer
-        @onInsert={{this.inserted}}
-        @onDestroy={{this.destroyed}} />
+        @onInsert={{this.handleInserted}}
+        @onDestroy={{this.handleDestroyed}}
+      />
     `);
   });
 
   test('it sends a destroy action when removed from the dom', async function (assert) {
     assert.expect(1);
 
-    this.set('renderComponent', true);
-    this.set('inserted', () => {});
-    this.set('destroyed', (element) => assert.ok(element));
+    this.renderComponent = true;
+    this.handleInserted = () => {};
+    this.handleDestroyed = (element) => assert.ok(element);
 
-    await this.render(hbs`
+    await render(hbs`
       {{#if this.renderComponent}}
         <EmberDragulaContainer
-          @onDestroy={{this.destroyed}}
-          @onInsert={{this.inserted}} />
+          @onDestroy={{this.handleDestroyed}}
+          @onInsert={{this.handleInserted}}
+        />
       {{/if}}
     `);
 
