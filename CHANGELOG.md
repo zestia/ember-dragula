@@ -1,5 +1,9 @@
 # Changelog
 
+## 10.0.8
+
+- Run ember-cli-update
+
 ## 10.0.7
 
 - Upgrade dependencies
