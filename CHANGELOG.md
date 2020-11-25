@@ -1,5 +1,9 @@
 # Changelog
 
+## 10.0.9
+
+- Use async/await in test helpers
+
 ## 10.0.8
 
 - Run ember-cli-update
