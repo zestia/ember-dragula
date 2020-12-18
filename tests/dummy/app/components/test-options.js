@@ -1,15 +1,11 @@
 /* eslint-disable no-console */
 
-import Component from '@ember/component';
+import Component from '@glimmer/component';
 import { action } from '@ember/object';
 
 export default class TestOptionsComponent extends Component {
-  constructor() {
-    super(...arguments);
-
-    this.listOne = [{ name: 'Item 1' }, { name: 'Item 2' }, { name: 'Item 3' }];
-    this.listTwo = [{ name: 'Item 4' }, { name: 'Item 5' }, { name: 'Item 6' }];
-  }
+  listOne = [{ name: 'Item 1' }, { name: 'Item 2' }, { name: 'Item 3' }];
+  listTwo = [{ name: 'Item 4' }, { name: 'Item 5' }, { name: 'Item 6' }];
 
   @action
   dropped() {
