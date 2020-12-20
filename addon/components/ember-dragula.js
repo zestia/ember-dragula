@@ -1,5 +1,4 @@
 import Component from '@glimmer/component';
-import { assign } from '@ember/polyfills';
 import { bind } from '@ember/runloop';
 import { action } from '@ember/object';
 import dragula from 'dragula';
@@ -24,7 +23,7 @@ export default class EmberDragula extends Component {
   constructor() {
     super(...arguments);
 
-    this.drake = dragula(assign({}, this.args.options));
+    this.drake = dragula(this.args.options);
 
     this._setupHandlers();
     this._invokeAction('onReady', this.drake);
