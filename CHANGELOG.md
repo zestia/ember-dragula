@@ -1,5 +1,9 @@
 # Changelog
 
+## 10.0.9
+
+- Upgrade dependencies
+
 ## 10.0.8
 
 - Use async/await in test helpers
