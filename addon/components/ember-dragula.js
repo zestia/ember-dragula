@@ -2,6 +2,7 @@ import Component from '@glimmer/component';
 import { bind } from '@ember/runloop';
 import { action } from '@ember/object';
 import dragula from 'dragula';
+import EmberDragulaContainer from './ember-dragula-container';
 
 const { keys } = Object;
 
@@ -24,6 +25,7 @@ export default class EmberDragula extends Component {
     super(...arguments);
 
     this.drake = dragula(this.args.options);
+    this.EmberDragulaContainer = EmberDragulaContainer;
 
     this._setupHandlers();
     this._invokeAction('onReady', this.drake);
