@@ -1,8 +1,4 @@
-<div
-  class="ember-dragula"
-  ...attributes
-  {{will-destroy this.handleDestroyElement}}
->
+<div class="ember-dragula" ...attributes {{this.handleDestroyElement}}>
   {{yield
     (hash
       Container=(component

@@ -78,12 +78,12 @@ module('Integration | Component | ember-dragula', function (hooks) {
 
     let drake;
 
-    this.renderContainer = true;
+    this.showContainer = true;
     this.handleReady = (d) => (drake = d);
 
     await render(hbs`
       <EmberDragula @onReady={{this.handleReady}} as |d|>
-        {{#if this.renderContainer}}
+        {{#if this.showContainer}}
           <d.Container />
         {{/if}}
       </EmberDragula>
@@ -94,8 +94,37 @@ module('Integration | Component | ember-dragula', function (hooks) {
       find('.ember-dragula__container:nth-child(1)')
     );
 
-    this.set('renderContainer', false);
+    this.set('showContainer', false);
 
     assert.deepEqual(drake.containers, []);
+  });
+
+  test('tear down', async function (assert) {
+    assert.expect(2);
+
+    let drake;
+
+    this.show = true;
+    this.handleReady = (d) => (drake = d);
+
+    await render(hbs`
+      {{#if this.show}}
+        <EmberDragula @onReady={{this.handleReady}} />
+      {{/if}}
+    `);
+
+    const originalDrakeDestroy = drake.destroy;
+
+    drake.destroy = () => {
+      assert.step('destroyed drake');
+      originalDrakeDestroy();
+    };
+
+    this.set('show', false);
+
+    assert.verifySteps(
+      ['destroyed drake'],
+      'drake is torn down when the component is torn down'
+    );
   });
 });
