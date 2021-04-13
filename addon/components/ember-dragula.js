@@ -20,11 +20,12 @@ const events = {
 export default class EmberDragula extends Component {
   static events = events;
 
+  EmberDragulaContainer = EmberDragulaContainer;
+
   constructor() {
     super(...arguments);
 
     this.drake = dragula(this.args.options);
-    this.EmberDragulaContainer = EmberDragulaContainer;
 
     this._setupHandlers();
 
