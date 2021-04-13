@@ -1,5 +1,4 @@
 import Component from '@glimmer/component';
-import { bind } from '@ember/runloop';
 import { action } from '@ember/object';
 import dragula from 'dragula';
 import { modifier } from 'ember-modifier';
@@ -27,7 +26,8 @@ export default class EmberDragula extends Component {
     this.drake = dragula(this.args.options);
 
     this._setupHandlers();
-    this._invokeAction('onReady', this.drake);
+
+    this.args.onReady?.(this.drake);
   }
 
   handleDestroyElement = modifier(() => {
@@ -46,15 +46,11 @@ export default class EmberDragula extends Component {
 
   _setupHandlers() {
     keys(events).forEach((name) => {
-      this.drake.on(name, bind(this, '_invokeAction', events[name]));
+      const handler = this.args[events[name]];
+
+      if (typeof handler === 'function') {
+        this.drake.on(name, handler);
+      }
     });
-  }
-
-  _invokeAction(name, ...args) {
-    const action = this.args[name];
-
-    if (typeof action === 'function') {
-      action(...args);
-    }
   }
 }
