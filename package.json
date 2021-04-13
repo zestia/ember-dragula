@@ -65,6 +65,7 @@
     "stylelint": "^13.12.0"
   },
   "dependencies": {
+    "@embroider/util": "^0.39.1",
     "@glimmer/component": "^1.0.4",
     "@glimmer/tracking": "^1.0.4",
     "dragula": "^3.7.3",

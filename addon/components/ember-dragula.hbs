@@ -1,11 +1,11 @@
-<div class="ember-dragula" ...attributes {{this.handleDestroyElement}}>
-  {{yield
-    (hash
-      Container=(component
-        "ember-dragula-container"
-        onInsert=this.addContainer
-        onDestroy=this.removeContainer
-      )
-    )
+<div class="ember-dragula" ...attributes {{this.dragula}}>
+  {{#let
+    (component
+      (ensure-safe-component this.EmberDragulaContainer)
+      onInsert=this.addContainer
+      onDestroy=this.removeContainer
+    ) as |Container|
   }}
+    {{yield (hash Container=Container)}}
+  {{/let}}
 </div>

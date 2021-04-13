@@ -2,7 +2,7 @@ import Component from '@glimmer/component';
 import { modifier } from 'ember-modifier';
 
 export default class EmberDragulaContainer extends Component {
-  handleElementLifecycle = modifier((element) => {
+  lifecycleActions = modifier((element) => {
     this.args.onInsert(element);
     return () => this.args.onDestroy(element);
   });

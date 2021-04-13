@@ -2,6 +2,7 @@ import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import dragula from 'dragula';
 import { modifier } from 'ember-modifier';
+import EmberDragulaContainer from './ember-dragula-container';
 
 const { keys } = Object;
 
@@ -20,17 +21,13 @@ const events = {
 export default class EmberDragula extends Component {
   static events = events;
 
-  constructor() {
-    super(...arguments);
+  EmberDragulaContainer = EmberDragulaContainer;
 
+  dragula = modifier(() => {
     this.drake = dragula(this.args.options);
-
     this._setupHandlers();
-
     this.args.onReady?.(this.drake);
-  }
 
-  handleDestroyElement = modifier(() => {
     return () => this.drake.destroy();
   });
 
