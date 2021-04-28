@@ -1,11 +1,13 @@
 <div class="ember-dragula" ...attributes {{this.dragula @options}}>
-  {{#let
-    (component
-      (ensure-safe-component this.EmberDragulaContainer)
-      onInsert=this.addContainer
-      onDestroy=this.removeContainer
-    ) as |Container|
-  }}
-    {{yield (hash Container=Container)}}
-  {{/let}}
+  {{#if this.drake}}
+    {{#let
+      (component
+        (ensure-safe-component this.EmberDragulaContainer)
+        onInsert=this.addContainer
+        onDestroy=this.removeContainer
+      ) as |Container|
+    }}
+      {{yield (hash Container=Container)}}
+    {{/let}}
+  {{/if}}
 </div>

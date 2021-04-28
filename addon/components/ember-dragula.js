@@ -3,6 +3,7 @@ import { action } from '@ember/object';
 import dragula from 'dragula';
 import { modifier } from 'ember-modifier';
 import EmberDragulaContainer from './ember-dragula-container';
+import { tracked } from '@glimmer/tracking';
 
 const { keys } = Object;
 
@@ -22,6 +23,8 @@ export default class EmberDragula extends Component {
   static events = events;
 
   EmberDragulaContainer = EmberDragulaContainer;
+
+  @tracked drake = null;
 
   dragula = modifier((element, [options]) => {
     this.drake = dragula(options);
