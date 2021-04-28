@@ -1,9 +1,11 @@
 # @zestia/ember-dragula
 
 <p>
-  <a href="http://travis-ci.org/zestia/ember-dragula">
-    <img src="https://travis-ci.org/zestia/ember-dragula.svg?branch=master">
+  <!--
+  <a href="https://github.com/zestia/ember-dragula/actions/workflows/ci.yml">
+    <img src="https://github.com/zestia/ember-dragula/actions/workflows/ci.yml/badge.svg">
   </a>
+  -->
 
   <a href="https://david-dm.org/zestia/ember-dragula#badge-embed">
     <img src="https://david-dm.org/zestia/ember-dragula.svg">
