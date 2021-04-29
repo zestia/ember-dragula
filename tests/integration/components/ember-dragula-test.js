@@ -3,6 +3,7 @@ import { setupRenderingTest } from 'ember-qunit';
 import { find, render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 import EmberDragula from '@zestia/ember-dragula/components/ember-dragula';
+import { simulateDragDrop } from '@zestia/ember-dragula/test-support/helpers/simulate-drag-drop';
 const { keys } = Object;
 
 module('Integration | Component | ember-dragula', function (hooks) {
@@ -97,6 +98,44 @@ module('Integration | Component | ember-dragula', function (hooks) {
     this.set('showContainer', false);
 
     assert.deepEqual(drake.containers, []);
+  });
+
+  test('changing the options', async function (assert) {
+    assert.expect(1);
+
+    this.options = {
+      invalid: (element) => element.classList.contains('drag-me')
+    };
+
+    await render(hbs`
+      <EmberDragula @options={{this.options}} as |d|>
+        <d.Container>
+          <div class="drag-me">Drag me</div>
+        </d.Container>
+        <d.Container class="drop-here">
+          Drop here
+        </d.Container>
+      </EmberDragula>
+    `);
+
+    const dragMe = find('.drag-me');
+    const dropHere = find('.drop-here');
+
+    await simulateDragDrop(dragMe, dropHere);
+
+    assert
+      .dom('.drop-here .drag-me')
+      .doesNotExist('precondition: initial options are working');
+
+    this.set('options', {
+      invalid: () => false
+    });
+
+    await simulateDragDrop(dragMe, dropHere);
+
+    assert
+      .dom('.drop-here .drag-me')
+      .exists('a change to the options re-initialises dragula');
   });
 
   test('tear down', async function (assert) {
