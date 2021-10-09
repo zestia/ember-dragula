@@ -25,6 +25,10 @@ export default class EmberDragula extends Component {
   constructor() {
     super(...arguments);
 
+    if (this.constructor !== EmberDragula) {
+      throw new Error('Not intended to be subclassed');
+    }
+
     this.drake = dragula(this.args.options);
 
     this._setupHandlers();

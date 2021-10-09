@@ -1,12 +1,16 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { find, render } from '@ember/test-helpers';
+import { find, render, setupOnerror, resetOnerror } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 import EmberDragula from '@zestia/ember-dragula/components/ember-dragula';
 const { keys } = Object;
 
 module('Integration | Component | ember-dragula', function (hooks) {
   setupRenderingTest(hooks);
+
+  hooks.afterEach(function () {
+    resetOnerror();
+  });
 
   test('it emits dragula events as actions', async function (assert) {
     assert.expect(19);
@@ -52,6 +56,27 @@ module('Integration | Component | ember-dragula', function (hooks) {
       'out',
       'cloned'
     ]);
+  });
+
+  test('subclass', async function (assert) {
+    assert.expect(2);
+
+    setupOnerror((error) => {
+      if (error.message === 'Not intended to be subclassed') {
+        assert.step('throws');
+        return;
+      }
+
+      throw error;
+    });
+
+    class MyDrgula extends EmberDragula {}
+
+    this.owner.register('component:my-dragula', MyDrgula);
+
+    await render(hbs`<MyDragula />`);
+
+    assert.verifySteps(['throws']);
   });
 
   test('it adds container to drake when container is added', async function (assert) {
