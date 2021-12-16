@@ -2,8 +2,8 @@
 
 ## 11.0.0
 
-- Ember Auto Import to 2x [#15](https://github.com/zestia/ember-dragula/pull/14)
 - Upgrade dependencies
+  - Ember Auto Import 2x [#15](https://github.com/zestia/ember-dragula/pull/14)
 - Add Embroider support
 
 ## 10.0.9
