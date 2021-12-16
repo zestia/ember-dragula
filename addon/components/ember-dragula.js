@@ -25,7 +25,8 @@ export default class EmberDragula extends Component {
   constructor() {
     super(...arguments);
 
-    this.drake = dragula(this.args.options);
+    const options = { ...this.args.options };
+    this.drake = dragula(options);
 
     this._setupHandlers();
 
