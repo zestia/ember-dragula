@@ -1,5 +1,4 @@
 import Component from '@glimmer/component';
-import { action } from '@ember/object';
 import dragula from 'dragula';
 import EmberDragulaContainer from './ember-dragula-container';
 
@@ -32,20 +31,17 @@ export default class EmberDragula extends Component {
     this.args.onReady?.(this.drake);
   }
 
-  @action
-  addContainer(element) {
+  addContainer = (element) => {
     this.drake.containers.push(element);
-  }
+  };
 
-  @action
-  removeContainer(element) {
+  removeContainer = (element) => {
     this.drake.containers.splice(this.drake.containers.indexOf(element), 1);
-  }
+  };
 
-  @action
-  handleDestroyElement() {
+  handleDestroyElement = () => {
     this.drake.destroy();
-  }
+  };
 
   _setupHandlers() {
     keys(events).forEach((name) => {
