@@ -39,9 +39,10 @@ export default class EmberDragula extends Component {
     this.drake.containers.splice(this.drake.containers.indexOf(element), 1);
   };
 
-  handleDestroyElement = () => {
+  willDestroy() {
+    super.willDestroy(...arguments);
     this.drake.destroy();
-  };
+  }
 
   _setupHandlers() {
     keys(events).forEach((name) => {

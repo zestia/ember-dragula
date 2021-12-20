@@ -1,8 +1,7 @@
 <div
   class="ember-dragula__container"
   ...attributes
-  {{did-insert @onInsert}}
-  {{will-destroy @onDestroy}}
+  {{this.lifecycleHooks didInstall=@onInsert willDestroy=@onDestroy}}
 >
   {{yield}}
 </div>
