@@ -1,5 +1,9 @@
 # Changelog
 
+## 11.0.1
+
+- Run `ember-cli-update`
+
 ## 11.0.0
 
 - Upgrade dependencies
