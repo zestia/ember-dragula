@@ -1,15 +1,16 @@
 import { module, test } from 'qunit';
 import { setupApplicationTest } from 'ember-qunit';
 import { simulateDragDrop } from '@zestia/ember-dragula/test-support/helpers/simulate-drag-drop';
-import { find, findAll, visit, currentURL } from '@ember/test-helpers';
+import { find, findAll, visit } from '@ember/test-helpers';
 
 module('Acceptance | ember-dragula', function (hooks) {
   setupApplicationTest(hooks);
 
   test('visiting /', async function (assert) {
+    assert.expect(6);
+
     await visit('/');
 
-    assert.equal(currentURL(), '/');
     assert.dom(findAll('.list-1 .item')[0]).hasText('Item 1');
     assert.dom(findAll('.list-1 .item')[1]).hasText('Item 2');
     assert.dom(findAll('.list-1 .item')[2]).hasText('Item 3');
@@ -19,9 +20,9 @@ module('Acceptance | ember-dragula', function (hooks) {
   });
 
   test('dragging objects', async function (assert) {
-    await visit('/');
+    assert.expect(4);
 
-    assert.equal(currentURL(), '/');
+    await visit('/');
 
     const elemDrag = findAll('.list-1 .item')[0];
     const elemDrop = find('.list-2');
@@ -36,9 +37,9 @@ module('Acceptance | ember-dragula', function (hooks) {
   });
 
   test('accepts dragula options', async function (assert) {
-    await visit('/');
+    assert.expect(8);
 
-    assert.equal(currentURL(), '/');
+    await visit('/');
 
     const elemDrag = findAll('.list-copy-1 .item')[0];
     const elemDrop = find('.list-copy-2');
