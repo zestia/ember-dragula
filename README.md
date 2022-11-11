@@ -50,7 +50,7 @@ Optional. The full range of options that dragula accepts are supported, see the 
 
 ### `@onReady`
 
-Optional. The dragula instance is emitted via this action action, allowing access to the [`drake`](https://github.com/bevacqua/dragula#api) API.
+Optional. The dragula instance is emitted via this action, allowing access to the [`drake`](https://github.com/bevacqua/dragula#api) API.
 
 ### Events
 
