@@ -46,7 +46,7 @@ https://zestia.github.io/ember-dragula
 
 ### `@options`
 
-The full range of options that dragula accepts are supported, see: [https://github.com/bevacqua/dragula#dragulacontainers-options](https://github.com/bevacqua/dragula#dragulacontainers-options)
+The full range of options that dragula accepts are supported, see the [docs](https://github.com/bevacqua/dragula#dragulacontainers-options).
 
 ### `@onReady`
 
@@ -60,7 +60,7 @@ The dragula instance is emitted via an `onReady` action, and allows access to al
 
 ### Events
 
-The full range of events that dragula emits are supported, see: [https://github.com/bevacqua/dragula#drakeon-events](https://github.com/bevacqua/dragula#drakeon-events). These can be accessed by prefixing the event name with "on", e.g. `@onDrag`
+The full range of events that dragula emits are supported, see the [docs](https://github.com/bevacqua/dragula#drakeon-events). These can be accessed by prefixing the event name with "on", e.g. `@onDrag`
 
 ## Test helpers
 
