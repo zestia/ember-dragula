@@ -7,6 +7,7 @@ module.exports = async function () {
   return {
     scenarios: [
       {
+<<<<<<< HEAD:config/ember-try.js
         name: 'ember-lts-3.24',
         npm: {
           devDependencies: {
@@ -15,12 +16,22 @@ module.exports = async function () {
         }
       },
       {
+=======
+>>>>>>> 703d588 (v4.3.0...v4.10.0):tests/dummy/config/ember-try.js
         name: 'ember-lts-3.28',
         npm: {
           devDependencies: {
             'ember-source': '~3.28.0'
           }
         }
+      },
+      {
+        name: 'ember-lts-4.4',
+        npm: {
+          devDependencies: {
+            'ember-source': '~4.4.0',
+          },
+        },
       },
       {
         name: 'ember-release',
