@@ -2,20 +2,20 @@
   Basic Drag and Drop
 </h2>
 
-<Dragula @onDrop={{this.dropped}} @onDrag={{this.dragged}} as |dragula|>
-  <dragula.Container class="list list-1">
+<Dragula @onDrop={{this.dropped}} @onDrag={{this.dragged}} as |Container|>
+  <Container class="list list-1">
     {{#each this.listOne as |item|}}
       <div class="item">
         {{item.name}}
       </div>
     {{/each}}
-  </dragula.Container>
+  </Container>
 
-  <dragula.Container class="list list-2">
+  <Container class="list list-2">
     {{#each this.listTwo as |item|}}
       <div class="item">
         {{item.name}}
       </div>
     {{/each}}
-  </dragula.Container>
+  </Container>
 </Dragula>

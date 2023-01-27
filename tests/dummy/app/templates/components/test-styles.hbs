@@ -2,20 +2,20 @@
   Re-styled
 </h2>
 
-<Dragula @onDrop={{this.dropped}} @onDrag={{this.dragged}} as |dragula|>
-  <dragula.Container class="list">
+<Dragula @onDrop={{this.dropped}} @onDrag={{this.dragged}} as |Container|>
+  <Container class="list">
     {{#each this.listOne as |item|}}
       <div class="item restyle">
         {{item.name}}
       </div>
     {{/each}}
-  </dragula.Container>
+  </Container>
 
-  <dragula.Container class="list">
+  <Container class="list">
     {{#each this.listTwo as |item|}}
       <div class="item restyle">
         {{item.name}}
       </div>
     {{/each}}
-  </dragula.Container>
+  </Container>
 </Dragula>

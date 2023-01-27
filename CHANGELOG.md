@@ -4,6 +4,7 @@
 
 - Remove `Ember` prefix from components
 - Run `ember-cli-update`
+- Yield only a `Container`, not `dragula.Container`
 - Upgrade dependencies
 
 ## 11.0.2

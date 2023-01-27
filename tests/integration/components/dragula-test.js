@@ -70,8 +70,8 @@ module('Integration | Component | dragula', function (hooks) {
     this.handleReady = (d) => (drake = d);
 
     await render(hbs`
-      <Dragula @onReady={{this.handleReady}} as |dragula|>
-        <dragula.Container />
+      <Dragula @onReady={{this.handleReady}} as |Container|>
+        <Container />
       </Dragula>
     `);
 
@@ -90,9 +90,9 @@ module('Integration | Component | dragula', function (hooks) {
     this.handleReady = (d) => (drake = d);
 
     await render(hbs`
-      <Dragula @onReady={{this.handleReady}} as |dragula|>
+      <Dragula @onReady={{this.handleReady}} as |Container|>
         {{#if this.showContainer}}
-          <dragula.Container />
+          <Container />
         {{/if}}
       </Dragula>
     `);
