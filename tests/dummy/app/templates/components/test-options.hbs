@@ -10,23 +10,23 @@
   @options={{hash copy=true}}
   @onDrop={{this.dropped}}
   @onDrag={{this.dragged}}
-  as |d|
+  as |dragula|
 >
-  <d.Container class="list list-copy-1">
+  <dragula.Container class="list list-copy-1">
     {{#each this.listOne as |item|}}
       <div class="item">
         {{item.name}}
       </div>
     {{/each}}
-  </d.Container>
+  </dragula.Container>
 
-  <d.Container class="list list-copy-2">
+  <dragula.Container class="list list-copy-2">
     {{#each this.listTwo as |item|}}
       <div class="item">
         {{item.name}}
       </div>
     {{/each}}
-  </d.Container>
+  </dragula.Container>
 </Dragula>
 
 <h3>
@@ -37,21 +37,21 @@
   @options={{hash moves=this.moves}}
   @onDrop={{this.dropped}}
   @onDrag={{this.dragged}}
-  as |d|
+  as |dragula|
 >
-  <d.Container class="list list-moves-1">
+  <dragula.Container class="list list-moves-1">
     {{#each this.listOne as |item|}}
       <div class="item">
         {{item.name}}
       </div>
     {{/each}}
-  </d.Container>
+  </dragula.Container>
 
-  <d.Container class="list list-moves-2">
+  <dragula.Container class="list list-moves-2">
     {{#each this.listTwo as |item|}}
       <div class="item">
         {{item.name}}
       </div>
     {{/each}}
-  </d.Container>
+  </dragula.Container>
 </Dragula>

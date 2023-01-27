@@ -27,18 +27,18 @@ https://zestia.github.io/ember-dragula
 ## Example
 
 ```handlebars
-<Dragula as |d|>
-  <d.Container>
+<Dragula as |dragula|>
+  <dragula.Container>
     {{#each this.listOne as |item|}}
       {{item}}
     {{/each}}
-  </d.Container>
+  </dragula.Container>
 
-  <d.Container>
+  <dragula.Container>
     {{#each this.listTwo as |item|}}
       {{item}}
     {{/each}}
-  </d.Container>
+  </dragula.Container>
 </Dragula>
 ```
 
