@@ -6,7 +6,7 @@
   Copy items
 </h3>
 
-<EmberDragula
+<Dragula
   @options={{hash copy=true}}
   @onDrop={{this.dropped}}
   @onDrag={{this.dragged}}
@@ -27,13 +27,13 @@
       </div>
     {{/each}}
   </d.Container>
-</EmberDragula>
+</Dragula>
 
 <h3>
   Move disabled
 </h3>
 
-<EmberDragula
+<Dragula
   @options={{hash moves=this.moves}}
   @onDrop={{this.dropped}}
   @onDrag={{this.dragged}}
@@ -54,4 +54,4 @@
       </div>
     {{/each}}
   </d.Container>
-</EmberDragula>
+</Dragula>

@@ -2,7 +2,7 @@
   Re-styled
 </h2>
 
-<EmberDragula @onDrop={{this.dropped}} @onDrag={{this.dragged}} as |d|>
+<Dragula @onDrop={{this.dropped}} @onDrag={{this.dragged}} as |d|>
   <d.Container class="list">
     {{#each this.listOne as |item|}}
       <div class="item restyle">
@@ -18,4 +18,4 @@
       </div>
     {{/each}}
   </d.Container>
-</EmberDragula>
+</Dragula>

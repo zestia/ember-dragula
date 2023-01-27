@@ -2,11 +2,19 @@ import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { find, render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
-import EmberDragula from '@zestia/ember-dragula/components/ember-dragula';
+import Dragula from '@zestia/ember-dragula/components/dragula';
 const { keys } = Object;
 
-module('Integration | Component | ember-dragula', function (hooks) {
+module('Integration | Component | dragula', function (hooks) {
   setupRenderingTest(hooks);
+
+  test('it renders', async function (assert) {
+    assert.expect(1);
+
+    await render(hbs`<Dragula />`);
+
+    assert.dom('.dragula').exists();
+  });
 
   test('it emits dragula events as actions', async function (assert) {
     assert.expect(19);
@@ -23,7 +31,7 @@ module('Integration | Component | ember-dragula', function (hooks) {
     };
 
     await render(hbs`
-      <EmberDragula
+      <Dragula
         @onReady={{this.handleReady}}
         @onDrag={{fn this.test "drag"}}
         @onDragEnd={{fn this.test "dragEnd"}}
@@ -37,7 +45,7 @@ module('Integration | Component | ember-dragula', function (hooks) {
       />
     `);
 
-    keys(EmberDragula.events).forEach((name) => {
+    keys(Dragula.events).forEach((name) => {
       drake.emit(name, ...testArgs);
     });
 
@@ -62,14 +70,14 @@ module('Integration | Component | ember-dragula', function (hooks) {
     this.handleReady = (d) => (drake = d);
 
     await render(hbs`
-      <EmberDragula @onReady={{this.handleReady}} as |d|>
+      <Dragula @onReady={{this.handleReady}} as |d|>
         <d.Container />
-      </EmberDragula>
+      </Dragula>
     `);
 
     assert.deepEqual(
       drake.containers[0],
-      find('.ember-dragula__container:nth-child(1)')
+      find('.dragula__container:nth-child(1)')
     );
   });
 
@@ -82,16 +90,16 @@ module('Integration | Component | ember-dragula', function (hooks) {
     this.handleReady = (d) => (drake = d);
 
     await render(hbs`
-      <EmberDragula @onReady={{this.handleReady}} as |d|>
+      <Dragula @onReady={{this.handleReady}} as |d|>
         {{#if this.showContainer}}
           <d.Container />
         {{/if}}
-      </EmberDragula>
+      </Dragula>
     `);
 
     assert.deepEqual(
       drake.containers[0],
-      find('.ember-dragula__container:nth-child(1)')
+      find('.dragula__container:nth-child(1)')
     );
 
     this.set('showContainer', false);
@@ -109,7 +117,7 @@ module('Integration | Component | ember-dragula', function (hooks) {
 
     await render(hbs`
       {{#if this.show}}
-        <EmberDragula @onReady={{this.handleReady}} />
+        <Dragula @onReady={{this.handleReady}} />
       {{/if}}
     `);
 

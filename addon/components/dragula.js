@@ -1,5 +1,5 @@
 import Component from '@glimmer/component';
-import EmberDragulaContainer from './ember-dragula-container';
+import DragulaContainer from './dragula-container';
 import dragula from 'dragula';
 import { action } from '@ember/object';
 
@@ -17,10 +17,10 @@ const events = {
   cloned: 'onCloned'
 };
 
-export default class EmberDragula extends Component {
+export default class Dragula extends Component {
   static events = events;
 
-  EmberDragulaContainer = EmberDragulaContainer;
+  DragulaContainer = DragulaContainer;
 
   constructor() {
     super(...arguments);

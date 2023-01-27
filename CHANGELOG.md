@@ -1,5 +1,11 @@
 # Changelog
 
+## 12.0.0
+
+- Remove `Ember` prefix from components
+- Run `ember-cli-update`
+- Upgrade dependencies
+
 ## 11.0.2
 
 - Upgrade dependencies

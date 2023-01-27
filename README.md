@@ -27,7 +27,7 @@ https://zestia.github.io/ember-dragula
 ## Example
 
 ```handlebars
-<EmberDragula as |d|>
+<Dragula as |d|>
   <d.Container>
     {{#each this.listOne as |item|}}
       {{item}}
@@ -39,10 +39,10 @@ https://zestia.github.io/ember-dragula
       {{item}}
     {{/each}}
   </d.Container>
-</EmberDragula>
+</Dragula>
 ```
 
-## `EmberDragula`
+## `Dragula`
 
 ### Arguments
 

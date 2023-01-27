@@ -3,7 +3,7 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-module('Integration | Component | ember-dragula container', function (hooks) {
+module('Integration | Component | dragula container', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it sends an action when inserted into the dom', async function (assert) {
@@ -15,7 +15,7 @@ module('Integration | Component | ember-dragula container', function (hooks) {
     this.handleDestroyed = () => {};
 
     await render(hbs`
-      <EmberDragulaContainer
+      <DragulaContainer
         @onInsert={{this.handleInserted}}
         @onDestroy={{this.handleDestroyed}}
       />
@@ -34,7 +34,7 @@ module('Integration | Component | ember-dragula container', function (hooks) {
 
     await render(hbs`
       {{#if this.renderComponent}}
-        <EmberDragulaContainer
+        <DragulaContainer
           @onDestroy={{this.handleDestroyed}}
           @onInsert={{this.handleInserted}}
         />
