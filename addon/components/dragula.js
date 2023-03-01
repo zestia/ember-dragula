@@ -20,6 +20,8 @@ const events = {
 export default class Dragula extends Component {
   static events = events;
 
+  drake;
+
   DragulaContainer = DragulaContainer;
 
   constructor() {
