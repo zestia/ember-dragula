@@ -1,5 +1,5 @@
 import Component from '@glimmer/component';
-import DragulaContainer from './dragula-container';
+import DragulaContainer from '@zestia/ember-dragula/components/dragula-container';
 import dragula from 'dragula';
 import { action } from '@ember/object';
 
