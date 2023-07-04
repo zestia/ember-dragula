@@ -1,5 +1,9 @@
 # Changelog
 
+## 12.1.0
+
+- Run `ember-cli-update`
+
 ## 12.0.0
 
 - Remove `Ember` prefix from components
