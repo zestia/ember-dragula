@@ -1,9 +1,13 @@
+:root {
+  --space: 10px;
+}
+
 .list {
-  margin-right: 10px;
+  margin-right: var(--space);
 }
 
 .item {
-  margin: 5px auto;
+  margin: var(--space) auto;
 }
 
 .dragula {
