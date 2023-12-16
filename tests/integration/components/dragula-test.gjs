@@ -1,7 +1,9 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { find, render } from '@ember/test-helpers';
+import { find, render, rerender } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
+import { fn } from '@ember/helper';
+import { tracked } from '@glimmer/tracking';
 import Dragula from '@zestia/ember-dragula/components/dragula';
 const { keys } = Object;
 
@@ -23,27 +25,27 @@ module('Integration | Component | dragula', function (hooks) {
 
     let drake;
 
-    this.handleReady = (d) => (drake = d);
+    const handleReady = (d) => (drake = d);
 
-    this.test = (name, ...args) => {
+    const check = (name, ...args) => {
       assert.step(name);
       assert.deepEqual(args, testArgs);
     };
 
-    await render(hbs`
+    await render(<template>
       <Dragula
-        @onReady={{this.handleReady}}
-        @onDrag={{fn this.test "drag"}}
-        @onDragEnd={{fn this.test "dragEnd"}}
-        @onDrop={{fn this.test "drop"}}
-        @onCancel={{fn this.test "cancel"}}
-        @onRemove={{fn this.test "remove"}}
-        @onShadow={{fn this.test "shadow"}}
-        @onOver={{fn this.test "over"}}
-        @onOut={{fn this.test "out"}}
-        @onCloned={{fn this.test "cloned"}}
+        @onReady={{handleReady}}
+        @onDrag={{fn check "drag"}}
+        @onDragEnd={{fn check "dragEnd"}}
+        @onDrop={{fn check "drop"}}
+        @onCancel={{fn check "cancel"}}
+        @onRemove={{fn check "remove"}}
+        @onShadow={{fn check "shadow"}}
+        @onOver={{fn check "over"}}
+        @onOut={{fn check "out"}}
+        @onCloned={{fn check "cloned"}}
       />
-    `);
+    </template>);
 
     keys(Dragula.events).forEach((name) => {
       drake.emit(name, ...testArgs);
@@ -67,13 +69,13 @@ module('Integration | Component | dragula', function (hooks) {
 
     let drake;
 
-    this.handleReady = (d) => (drake = d);
+    const handleReady = (d) => (drake = d);
 
-    await render(hbs`
-      <Dragula @onReady={{this.handleReady}} as |Container|>
+    await render(<template>
+      <Dragula @onReady={{handleReady}} as |Container|>
         <Container />
       </Dragula>
-    `);
+    </template>);
 
     assert.deepEqual(
       drake.containers[0],
@@ -86,23 +88,28 @@ module('Integration | Component | dragula', function (hooks) {
 
     let drake;
 
-    this.showContainer = true;
-    this.handleReady = (d) => (drake = d);
+    const state = new (class {
+      @tracked showContainer = true;
+    })();
 
-    await render(hbs`
-      <Dragula @onReady={{this.handleReady}} as |Container|>
-        {{#if this.showContainer}}
+    const handleReady = (d) => (drake = d);
+
+    await render(<template>
+      <Dragula @onReady={{handleReady}} as |Container|>
+        {{#if state.showContainer}}
           <Container />
         {{/if}}
       </Dragula>
-    `);
+    </template>);
 
     assert.deepEqual(
       drake.containers[0],
       find('.dragula__container:nth-child(1)')
     );
 
-    this.set('showContainer', false);
+    state.showContainer = false;
+
+    await rerender();
 
     assert.deepEqual(drake.containers, []);
   });
@@ -112,14 +119,17 @@ module('Integration | Component | dragula', function (hooks) {
 
     let drake;
 
-    this.show = true;
-    this.handleReady = (d) => (drake = d);
+    const state = new (class {
+      @tracked show = true;
+    })();
 
-    await render(hbs`
-      {{#if this.show}}
-        <Dragula @onReady={{this.handleReady}} />
+    const handleReady = (d) => (drake = d);
+
+    await render(<template>
+      {{#if state.show}}
+        <Dragula @onReady={{handleReady}} />
       {{/if}}
-    `);
+    </template>);
 
     const originalDrakeDestroy = drake.destroy;
 
@@ -128,7 +138,9 @@ module('Integration | Component | dragula', function (hooks) {
       originalDrakeDestroy();
     };
 
-    this.set('show', false);
+    state.show = false;
+
+    await rerender();
 
     assert.verifySteps(
       ['destroyed drake'],
