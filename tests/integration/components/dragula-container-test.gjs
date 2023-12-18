@@ -1,5 +1,5 @@
 import { module, test } from 'qunit';
-import { setupRenderingTest } from 'ember-qunit';
+import { setupRenderingTest } from 'dummy/tests/helpers';
 import { render } from '@ember/test-helpers';
 import { tracked } from '@glimmer/tracking';
 import DragulaContainer from '@zestia/ember-dragula/components/dragula-container';

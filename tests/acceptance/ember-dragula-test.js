@@ -1,5 +1,5 @@
 import { module, test } from 'qunit';
-import { setupApplicationTest } from 'ember-qunit';
+import { setupApplicationTest } from 'dummy/tests/helpers';
 import { simulateDragDrop } from '@zestia/ember-dragula/test-support/helpers/simulate-drag-drop';
 import { find, findAll, visit } from '@ember/test-helpers';
 
