@@ -12,7 +12,7 @@
   "description": "An ember addon for dragula support.",
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",
-    "@ember/test-helpers": "^3.2.1",
+    "@ember/test-helpers": "^4.0.2",
     "@embroider/test-setup": "^3.0.3",
     "@glimmer/component": "^1.1.2",
     "@glimmer/tracking": "^1.1.2",
@@ -32,10 +32,10 @@
     "ember-load-initializers": "^2.1.2",
     "ember-qunit": "^8.0.2",
     "ember-resolver": "^11.0.1",
-    "ember-source": "^5.5.0",
+    "ember-source": "~4.8.0",
     "ember-source-channel-url": "^3.0.0",
     "ember-template-imports": "^4.0.0",
-    "ember-template-lint": "^5.13.0",
+    "ember-template-lint": "^6.0.0",
     "ember-try": "^3.0.0",
     "eslint": "^8.56.0",
     "eslint-plugin-n": "^16.4.0",
@@ -70,7 +70,13 @@
   "license": "MIT",
   "name": "@zestia/ember-dragula",
   "peerDependencies": {
-    "ember-source": ">= 4.0.0"
+    "ember-source": ">= 4.0.0",
+    "@ember/test-helpers": ">= 3.2.1"
+  },
+  "peerDependenciesMeta": {
+    "@ember/test-helpers": {
+      "optional": true
+    }
   },
   "repository": {
     "type": "git",
