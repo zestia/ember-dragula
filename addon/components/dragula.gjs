@@ -5,7 +5,7 @@ import { action } from '@ember/object';
 
 const { keys } = Object;
 
-const events = {
+export const events = {
   drag: 'onDrag',
   dragend: 'onDragEnd',
   drop: 'onDrop',
@@ -18,19 +18,13 @@ const events = {
 };
 
 export default class Dragula extends Component {
-  static events = events;
-
   drake;
-
-  DragulaContainer = DragulaContainer;
 
   constructor() {
     super(...arguments);
 
     this.drake = dragula({ ...this.args.options });
-
     this._setupHandlers();
-
     this.args.onReady?.(this.drake);
   }
 
@@ -58,4 +52,19 @@ export default class Dragula extends Component {
       }
     });
   }
+
+  <template>
+    <div class="dragula" ...attributes {{this.dragula}}>
+      {{#let
+        (component
+          DragulaContainer
+          onInsert=this.addContainer
+          onDestroy=this.removeContainer
+        )
+        as |Container|
+      }}
+        {{yield Container}}
+      {{/let}}
+    </div>
+  </template>
 }

@@ -2,12 +2,13 @@
   "author": "Zestia",
   "dependencies": {
     "@babel/core": "^7.25.2",
-    "@ember/render-modifiers": "^2.1.0",
     "@embroider/util": "^1.12.1",
     "dragula": "^3.7.3",
     "ember-auto-import": "^2.7.4",
     "ember-cli-babel": "^8.2.0",
-    "ember-cli-htmlbars": "^6.3.0"
+    "ember-cli-htmlbars": "^6.3.0",
+    "ember-template-imports": "^4.0.0",
+    "ember-modifier": "^4.2.0"
   },
   "description": "An ember addon for dragula support.",
   "devDependencies": {
@@ -80,7 +81,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zestia/ember-dragula.git"
+    "url": "git+https://github.com/zestia/ember-dragula.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"

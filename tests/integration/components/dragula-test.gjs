@@ -4,7 +4,7 @@ import { find, render, rerender } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 import { fn } from '@ember/helper';
 import { tracked } from '@glimmer/tracking';
-import Dragula from '@zestia/ember-dragula/components/dragula';
+import Dragula, { events } from '@zestia/ember-dragula/components/dragula';
 const { keys } = Object;
 
 module('Integration | Component | dragula', function (hooks) {
@@ -47,7 +47,7 @@ module('Integration | Component | dragula', function (hooks) {
       />
     </template>);
 
-    keys(Dragula.events).forEach((name) => {
+    keys(events).forEach((name) => {
       drake.emit(name, ...testArgs);
     });
 
