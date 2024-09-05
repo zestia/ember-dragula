@@ -1,5 +1,10 @@
 # Changelog
 
+## 12.1.4
+
+- Run ember-cli-update
+- Upgrade dependencies
+
 ## 12.1.3
 
 - Run ember-cli-update
