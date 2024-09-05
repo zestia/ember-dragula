@@ -4,6 +4,7 @@
 
 - Run ember-cli-update
 - Upgrade dependencies
+- Convert to `.gjs`
 
 ## 12.1.3
 
