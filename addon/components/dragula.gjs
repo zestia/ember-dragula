@@ -18,29 +18,29 @@ export const events = {
 };
 
 export default class Dragula extends Component {
-  #drake;
+  drake;
 
   constructor() {
     super(...arguments);
 
-    this.#drake = dragula({ ...this.args.options });
+    this.drake = dragula({ ...this.args.options });
     this._setupHandlers();
-    this.args.onReady?.(this.#drake);
+    this.args.onReady?.(this.drake);
   }
 
   @action
   addContainer(element) {
-    this.#drake.containers.push(element);
+    this.drake.containers.push(element);
   }
 
   @action
   removeContainer(element) {
-    this.#drake.containers.splice(this.#drake.containers.indexOf(element), 1);
+    this.drake.containers.splice(this.drake.containers.indexOf(element), 1);
   }
 
   willDestroy() {
     super.willDestroy(...arguments);
-    this.#drake.destroy();
+    this.drake.destroy();
   }
 
   _setupHandlers() {
@@ -48,7 +48,7 @@ export default class Dragula extends Component {
       const handler = this.args[events[name]];
 
       if (typeof handler === 'function') {
-        this.#drake.on(name, handler);
+        this.drake.on(name, handler);
       }
     });
   }
