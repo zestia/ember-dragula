@@ -15,7 +15,7 @@ This Ember addon provides support for drag and drop using [dragula](https://beva
 ## Installation
 
 ```
-ember install @zestia/ember-dragula
+ember install @zestia/ember-dragula dragula
 ```
 
 Add the following to `~/.npmrc` to pull @zestia scoped packages from Github instead of NPM.
@@ -23,6 +23,12 @@ Add the following to `~/.npmrc` to pull @zestia scoped packages from Github inst
 ```
 @zestia:registry=https://npm.pkg.github.com
 //npm.pkg.github.com/:_authToken=<YOUR_GH_TOKEN>
+```
+
+Add this line to `app/app.js` to import the base `dragula` styles:
+
+```
+import 'dragula/dist/dragula.css';
 ```
 
 ## Demo
