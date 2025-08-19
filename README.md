@@ -77,7 +77,7 @@ To simulate dragging and dropping, test helpers are provided.
   <summary>Example</summary>
 
 ```javascript
-import { simulateDragDrop } from '@zestia/ember-dragula/test-support/helpers/simulate-drag-drop';
+import { simulateDragDrop } from '@zestia/ember-dragula/test-helpers/simulate-drag-drop';
 ```
 
 Within a test:

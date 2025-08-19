@@ -1,7 +1,8 @@
 # Changelog
 
-# 12.2.0
+# 13.0.0
 
+- Convert to v2 addon
 - Removal of `dragula.css` [#31](https://github.com/zestia/ember-dragula/pull/31)
 
 ## 12.1.4
