@@ -1,5 +1,9 @@
 # Changelog
 
+# 12.2.0
+
+- Removal of `dragula.css` [#31](https://github.com/zestia/ember-dragula/pull/31)
+
 ## 12.1.4
 
 - Run ember-cli-update
