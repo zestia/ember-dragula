@@ -1,0 +1,40 @@
+import Route from 'ember-route-template';
+import TestDrag from '../components/test-drag';
+import TestOptions from '../components/test-options';
+import TestStyles from '../components/test-styles';
+import '../styles/app.css';
+
+export default Route(
+  <template>
+    <h1>
+      @zestia/ember-dragula
+    </h1>
+
+    <div class="example test-drag">
+      <TestDrag />
+    </div>
+
+    <div class="example test-options">
+      <TestOptions />
+    </div>
+
+    <div class="example test-styles">
+      <TestStyles />
+    </div>
+
+    {{outlet}}
+
+    {{! template-lint-disable no-inline-styles }}
+    <a href="https://github.com/zestia/ember-dragula">
+      <img
+        style="position: absolute; top: 0; right: 0; border: 0;"
+        width="149"
+        height="149"
+        src="https://github.blog/wp-content/uploads/2008/12/forkme_right_darkblue_121621.png?resize=149%2C149"
+        class="attachment-full size-full"
+        alt="Fork me on GitHub"
+        data-recalc-dims="1"
+      />
+    </a>
+  </template>
+);
