@@ -25,10 +25,13 @@ Add the following to `~/.npmrc` to pull @zestia scoped packages from Github inst
 //npm.pkg.github.com/:_authToken=<YOUR_GH_TOKEN>
 ```
 
-Add this line to `app/app.js` to import the base `dragula` styles:
+Add the following lines to `app/app.js` to import the base `dragula` styles and work around a bug in `dragula`:
 
 ```js
+// Import the styles for dragged elements
 import 'dragula/dist/dragula.css';
+// Work around a dragula bug: https://github.com/bevacqua/dragula/issues/602#issuecomment-1917936901
+globalThis.global = globalThis;
 ```
 
 ## Demo
