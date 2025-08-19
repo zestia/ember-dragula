@@ -27,7 +27,7 @@ Add the following to `~/.npmrc` to pull @zestia scoped packages from Github inst
 
 Add this line to `app/app.js` to import the base `dragula` styles:
 
-```
+```js
 import 'dragula/dist/dragula.css';
 ```
 
