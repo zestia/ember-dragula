@@ -37,13 +37,13 @@
     "@embroider/addon-shim": "^1.8.9",
     "decorator-transforms": "^2.2.2",
     "ember-modifier": "^4.2.0",
+    "@ember/test-helpers": "^5.2.1",
     "dragula": "^3.7.3"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@babel/eslint-parser": "^7.25.1",
     "@babel/runtime": "^7.25.6",
-    "@ember/test-helpers": "^5.2.1",
     "@embroider/addon-dev": "^8.1.0",
     "@embroider/compat": "^4.1.0",
     "@embroider/core": "^4.1.0",
@@ -85,7 +85,10 @@
     "version": 2,
     "type": "addon",
     "main": "addon-main.cjs",
-    "app-js": {}
+    "app-js": {
+      "./components/dragula-container.js": "./dist/_app_/components/dragula-container.js",
+      "./components/dragula.js": "./dist/_app_/components/dragula.js"
+    }
   },
   "imports": {
     "#app/*": "./demo/*",
