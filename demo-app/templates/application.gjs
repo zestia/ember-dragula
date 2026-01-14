@@ -2,7 +2,6 @@ import Route from 'ember-route-template';
 import TestDrag from '../components/test-drag';
 import TestOptions from '../components/test-options';
 import TestStyles from '../components/test-styles';
-import '../styles/app.css';
 
 export default Route(
   <template>

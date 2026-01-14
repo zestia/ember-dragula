@@ -1,6 +1,21 @@
-/**
-* See: https://vite.dev/guide/features.html#css
-*      for features beyond normal CSS that are available to you.
-*
-* This CSS is meant for the demo-app only, and will not be included in the published assets for this library.
-*/
+@import 'dragula/dist/dragula.css';
+
+:root {
+  --space: 10px;
+}
+
+.list {
+  margin-right: var(--space);
+}
+
+.item {
+  margin: var(--space) auto;
+}
+
+.dragula {
+  display: flex;
+}
+
+.item.restyle.gu-mirror {
+  transform: rotate(7deg);
+}
