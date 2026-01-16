@@ -1,3 +1,4 @@
+import '@zestia/ember-dragula/components/global-fix';
 import Component from '@glimmer/component';
 import DragulaContainer from '@zestia/ember-dragula/components/dragula-container';
 import dragula from 'dragula';

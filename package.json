@@ -99,7 +99,8 @@
     "main": "addon-main.cjs",
     "app-js": {
       "./components/dragula-container.js": "./dist/_app_/components/dragula-container.js",
-      "./components/dragula.js": "./dist/_app_/components/dragula.js"
+      "./components/dragula.js": "./dist/_app_/components/dragula.js",
+      "./components/global-fix.js": "./dist/_app_/components/global-fix.js"
     }
   },
   "imports": {
