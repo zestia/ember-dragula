@@ -16,6 +16,7 @@
       "default": "./dist/index.js"
     },
     "./addon-main.js": "./addon-main.cjs",
+    "./*.css": "./dist/*.css",
     "./*": {
       "default": "./dist/*.js"
     }
