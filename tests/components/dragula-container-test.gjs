@@ -2,7 +2,7 @@ import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import { tracked } from '@glimmer/tracking';
-import DragulaContainer from '@zestia/ember-dragula/components/dragula-container';
+import DragulaContainer from '#src/components/dragula-container';
 
 module('Integration | Component | dragula container', function (hooks) {
   setupRenderingTest(hooks);

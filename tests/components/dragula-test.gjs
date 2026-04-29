@@ -3,7 +3,7 @@ import { setupRenderingTest } from 'ember-qunit';
 import { find, render, rerender } from '@ember/test-helpers';
 import { fn } from '@ember/helper';
 import { tracked } from '@glimmer/tracking';
-import Dragula, { events } from '@zestia/ember-dragula/components/dragula';
+import Dragula, { events } from '#src/components/dragula';
 const { keys } = Object;
 
 module('Integration | Component | dragula', function (hooks) {

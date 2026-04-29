@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 
 import Component from '@glimmer/component';
-import Dragula from '@zestia/ember-dragula/components/dragula';
+import Dragula from '#src/components/dragula';
 import { hash } from '@ember/helper';
 
 export default class TestOptionsComponent extends Component {

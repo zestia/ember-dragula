@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 
 import Component from '@glimmer/component';
-import Dragula from '@zestia/ember-dragula/components/dragula';
+import Dragula from '#src/components/dragula';
 
 export default class TestDragComponent extends Component {
   listOne = [{ name: 'Item 1' }, { name: 'Item 2' }, { name: 'Item 3' }];
