@@ -1,5 +1,9 @@
 # Changelog
 
+## 13.1.0
+
+- Test helpers accept `slideFactorX` and `slideFactorY`, to simulate drags past a threshold
+
 # 13.0.0
 
 - Convert to v2 addon

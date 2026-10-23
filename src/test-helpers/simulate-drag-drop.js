@@ -1,17 +1,23 @@
 import { triggerEvent } from '@ember/test-helpers';
 const { floor } = Math;
 
-export async function simulateDragDrop(elemDrag, elemDrop) {
-  await simulateDrag(elemDrag);
+export async function simulateDragDrop(elemDrag, elemDrop, options) {
+  await simulateDrag(elemDrag, options);
   await simulateDrop(elemDrag, elemDrop);
 }
 
-export async function simulateDrag(elemDrag) {
+export async function simulateDrag(
+  elemDrag,
+  { slideFactorX = 0, slideFactorY = 0 } = {}
+) {
   const rectDrag = elemDrag.getBoundingClientRect();
   const centerDragX = floor(rectDrag.left + rectDrag.width / 2);
   const centerDragY = floor(rectDrag.top + rectDrag.height / 2);
   const fromOptions = { clientX: centerDragX, clientY: centerDragY };
-  const toOptions = { clientX: centerDragX + 1, clientY: centerDragY + 1 };
+  const toOptions = {
+    clientX: centerDragX + slideFactorX + 1,
+    clientY: centerDragY + slideFactorY + 1
+  };
 
   await triggerEvent(elemDrag, 'mousedown', fromOptions);
   await triggerEvent(elemDrag, 'mousemove', toOptions);
